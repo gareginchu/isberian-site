@@ -7,7 +7,7 @@ type Slide = { src: string; alt: string };
 
 type Props = {
   slides: Slide[];
-  /** ms between auto-advances. Default 6500. */
+  /** ms between auto-advances. Default 7000 (Flexslider default, matches isberian.com). */
   interval?: number;
   /** Render-prop for the overlay content so the host page controls headline/CTAs. */
   children: React.ReactNode;
@@ -18,7 +18,7 @@ type Props = {
  * prefers-reduced-motion. Each slide is a separate <Image> so Next.js can optimize them
  * independently; only the first is `priority` to keep LCP clean.
  */
-export function HeroCarousel({ slides, interval = 6500, children }: Props) {
+export function HeroCarousel({ slides, interval = 7000, children }: Props) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -80,8 +80,8 @@ export function HeroCarousel({ slides, interval = 6500, children }: Props) {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/25 to-ink/30 pointer-events-none" />
         <div className="relative h-full">{children}</div>
 
-        {/* Indicators */}
-        <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-3 z-10">
+        {/* Indicators — small circular dots, matching upstream Flexslider style */}
+        <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2.5 z-10">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -90,8 +90,8 @@ export function HeroCarousel({ slides, interval = 6500, children }: Props) {
               aria-current={i === index}
               onClick={() => jumpTo(i)}
               className={
-                "h-1.5 transition-all duration-500 " +
-                (i === index ? "w-10 bg-cream" : "w-5 bg-cream/40 hover:bg-cream/70")
+                "w-3 h-3 rounded-full transition-colors duration-300 " +
+                (i === index ? "bg-cream" : "bg-cream/60 hover:bg-cream/85")
               }
             />
           ))}

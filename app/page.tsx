@@ -9,16 +9,17 @@ import { listRugs } from "@/lib/catalog";
 import type { Rug } from "@/lib/types/rug";
 
 // Hero carousel slides — mirrored from isberian.com's original 8-image rotation. Files live in
-// /public/hero/. Order roughly matches the upstream carousel (Home-1 first).
+// /public/hero/. Order matches the upstream Fusion/Flexslider sequence exactly:
+// 1 → 7 → 5 → 6 → 3 → 4 → 2 → 8 (verified from the rendered DOM).
 const HERO_SLIDES = [
-  { src: "/hero/home-1.jpg", alt: "An installed antique rug seen in a Chicago interior." },
-  { src: "/hero/home-2.jpg", alt: "A rug rolled in the showroom." },
-  { src: "/hero/home-3.jpg", alt: "A close-up of the pile and dye saturation." },
-  { src: "/hero/home-4.jpg", alt: "A piece laid in a sunlit room." },
-  { src: "/hero/home-5.jpg", alt: "An antique rug in situ." },
-  { src: "/hero/home-6.jpg", alt: "Wool and silk highlights catching window light." },
-  { src: "/hero/home-7.jpg", alt: "A wide overhead view of a hand-knotted rug." },
-  { src: "/hero/home-8.jpg", alt: "A rug from the showroom floor." },
+  { src: "/hero/home-1.jpg", alt: "Brand hero — antique rug photographed in the Chicago showroom." },
+  { src: "/hero/home-7.jpg", alt: "Moroccan rug." },
+  { src: "/hero/home-5.jpg", alt: "Leather and hide rug." },
+  { src: "/hero/home-6.jpg", alt: "Flatweave rug." },
+  { src: "/hero/home-3.jpg", alt: "Mosaic rug." },
+  { src: "/hero/home-4.jpg", alt: "Antique rug." },
+  { src: "/hero/home-2.jpg", alt: "Overdyed rug." },
+  { src: "/hero/home-8.jpg", alt: "Hand-knotted rug from the showroom floor." },
 ];
 
 /** Pick a rug from a pool by partial title match (case-insensitive). */
