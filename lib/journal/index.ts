@@ -1,3 +1,5 @@
+import { sanity } from "@/lib/sanity/client";
+
 export type JournalEntry = {
   slug: string;
   title: string;
@@ -44,10 +46,44 @@ export const journalEntries: JournalEntry[] = [
   },
 ];
 
+const JOURNAL_QUERY = /* groq */ `*[_type == "journalEntry"] | order(publishedAt desc) {
+  "slug": slug.current,
+  title,
+  excerpt,
+  body,
+  "publishedAt": publishedAt,
+  author,
+  tags
+}`;
+
+async function fetchJournal(): Promise<JournalEntry[]> {
+  const client = sanity();
+  if (!client) return journalEntries;
+  try {
+    const live = await client.fetch<JournalEntry[]>(JOURNAL_QUERY);
+    return live?.length ? live : journalEntries;
+  } catch (err) {
+    console.warn("[journal] Sanity fetch failed, falling back to fixtures", err);
+    return journalEntries;
+  }
+}
+
+// Synchronous list/get retained for places that called them at build time (e.g. metadata, sitemap).
+// New async variants prefer Sanity when configured. Pages should migrate to the async forms.
 export function listJournal() {
   return [...journalEntries].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
 export function getJournal(slug: string) {
   return journalEntries.find((j) => j.slug === slug) ?? null;
+}
+
+export async function listJournalAsync(): Promise<JournalEntry[]> {
+  const all = await fetchJournal();
+  return [...all].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+}
+
+export async function getJournalAsync(slug: string): Promise<JournalEntry | null> {
+  const all = await fetchJournal();
+  return all.find((j) => j.slug === slug) ?? null;
 }

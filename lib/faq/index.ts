@@ -1,15 +1,64 @@
 import type { FaqEntry, CareGuide } from "@/lib/types/faq";
 import { faqEntries, careGuides } from "./kb";
+import { sanity } from "@/lib/sanity/client";
 
 /**
- * FAQ / care KB retrieval. Real implementation will use pgvector + a small BM25 fallback. The
- * concierge orchestrator calls `answerFaq`; the public /care pages render `listFaq`/`getCare`.
+ * FAQ / care KB retrieval. When NEXT_PUBLIC_SANITY_PROJECT_ID is set, reads live from Sanity;
+ * otherwise serves the curated fixtures. Same shape either way so the concierge orchestrator,
+ * the /care pages, and the eval suite don't care which source is active.
  *
  * Low-confidence retrieval returns `routesToHuman: true` so the model hands off rather than guesses.
  */
 
 const TERM_BOOST = 2;
 const TITLE_BOOST = 3;
+
+const FAQ_QUERY = /* groq */ `*[_type == "faqEntry"] | order(category asc, question asc) {
+  "id": _id,
+  "slug": slug.current,
+  category,
+  question,
+  answer,
+  routing,
+  routesToHuman,
+  verified,
+  "updatedAt": coalesce(_updatedAt, _createdAt)
+}`;
+
+const CARE_QUERY = /* groq */ `*[_type == "careGuide"] | order(title asc) {
+  "id": _id,
+  "slug": slug.current,
+  title,
+  excerpt,
+  body,
+  routing,
+  "related": coalesce(related[]->_id, []),
+  "updatedAt": coalesce(_updatedAt, _createdAt)
+}`;
+
+async function fetchFaq(): Promise<FaqEntry[]> {
+  const client = sanity();
+  if (!client) return faqEntries;
+  try {
+    const live = await client.fetch<FaqEntry[]>(FAQ_QUERY);
+    return live?.length ? live : faqEntries;
+  } catch (err) {
+    console.warn("[faq] Sanity fetch failed, falling back to fixtures", err);
+    return faqEntries;
+  }
+}
+
+async function fetchCare(): Promise<CareGuide[]> {
+  const client = sanity();
+  if (!client) return careGuides;
+  try {
+    const live = await client.fetch<CareGuide[]>(CARE_QUERY);
+    return live?.length ? live : careGuides;
+  } catch (err) {
+    console.warn("[care] Sanity fetch failed, falling back to fixtures", err);
+    return careGuides;
+  }
+}
 
 function tokens(s: string): string[] {
   return s
@@ -29,8 +78,11 @@ function scoreEntry(entry: FaqEntry, qTokens: string[]): number {
     if (qWord.includes(t)) score += TITLE_BOOST;
     if (aWord.includes(t)) score += TERM_BOOST;
   }
-  // category nudge
-  if (qWord.split(/\s+/).filter((t) => qSet.has(t)).length > 0 && entry.category === "care" && /clean|wash|spill|stain|care|silk|vacuum|moth/.test(qStr)) {
+  if (
+    qWord.split(/\s+/).filter((t) => qSet.has(t)).length > 0 &&
+    entry.category === "care" &&
+    /clean|wash|spill|stain|care|silk|vacuum|moth/.test(qStr)
+  ) {
     score += 1;
   }
   return score;
@@ -45,10 +97,9 @@ export type FaqAnswer = {
 
 export async function answerFaq(query: string, category?: string): Promise<FaqAnswer> {
   const qTokens = tokens(query);
-  const pool = category ? faqEntries.filter((e) => e.category === category) : faqEntries;
-  const scored = pool
-    .map((e) => ({ e, s: scoreEntry(e, qTokens) }))
-    .sort((a, b) => b.s - a.s);
+  const all = await fetchFaq();
+  const pool = category ? all.filter((e) => e.category === category) : all;
+  const scored = pool.map((e) => ({ e, s: scoreEntry(e, qTokens) })).sort((a, b) => b.s - a.s);
   const top = scored[0];
   if (!top || top.s === 0) {
     return { matched: null, confidence: "low", routesToHuman: true };
@@ -63,17 +114,19 @@ export async function answerFaq(query: string, category?: string): Promise<FaqAn
 }
 
 export async function listFaq(): Promise<FaqEntry[]> {
-  return faqEntries;
+  return fetchFaq();
 }
 
 export async function getFaq(slug: string): Promise<FaqEntry | null> {
-  return faqEntries.find((e) => e.slug === slug) ?? null;
+  const all = await fetchFaq();
+  return all.find((e) => e.slug === slug) ?? null;
 }
 
 export async function listCare(): Promise<CareGuide[]> {
-  return careGuides;
+  return fetchCare();
 }
 
 export async function getCare(slug: string): Promise<CareGuide | null> {
-  return careGuides.find((c) => c.slug === slug) ?? null;
+  const all = await fetchCare();
+  return all.find((c) => c.slug === slug) ?? null;
 }

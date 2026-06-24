@@ -31,7 +31,10 @@ export default async function HomePage() {
   const rugs = await listRugs();
 
   // Hand-picked rug imagery for the home page surfaces.
-  const heroRug = pick(rugs, "imperial medallion kazak") ?? pick(rugs, "karabagh") ?? rugs[0];
+  // Hero photography: pick a piece with an open field, not a dense all-over pattern — the
+  // headline overlay needs negative space to land. Sivas + Cloud-band are the calmest in the
+  // current catalog; the dense Kazaks fight the type.
+  const heroRug = pick(rugs, "sivas") ?? pick(rugs, "cloud-band") ?? pick(rugs, "imperial rose") ?? rugs[0];
   const stepsRug = pick(rugs, "imperial rose runner") ?? pick(rugs, "runner") ?? rugs[6];
   const repairRug = pick(rugs, "armenian cloud-band") ?? pick(rugs, "kazak") ?? rugs[3];
 
