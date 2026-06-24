@@ -46,7 +46,20 @@ export type LeadInput = z.infer<typeof LeadInputSchema>;
  * even when the CRM is down; lost-lead replay belongs in /scripts.
  */
 export async function createLead(input: LeadInput): Promise<{ ok: boolean; id: string }> {
-  const parsed = LeadInputSchema.parse(input);
+  // Honor the contract: do not throw. Truncate over-long fields, then validate; if validation
+  // still fails (genuinely malformed input), log and return `ok: false` so the caller can
+  // surface a path-to-a-human without 500-ing the page.
+  const safe: LeadInput = {
+    ...input,
+    transcript: input.transcript?.slice(0, 20000),
+    transcriptSummary: input.transcriptSummary?.slice(0, 2000),
+  };
+  const result = LeadInputSchema.safeParse(safe);
+  if (!result.success) {
+    console.error("[lead] schema validation failed", result.error.issues);
+    return { ok: false, id: cryptoRandomId() };
+  }
+  const parsed = result.data;
   const lead: Lead = {
     id: cryptoRandomId(),
     type: parsed.type as LeadType,

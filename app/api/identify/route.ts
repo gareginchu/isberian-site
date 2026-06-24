@@ -30,6 +30,7 @@ export async function POST(req: Request) {
   );
 
   let result: unknown = null;
+  let aiError: string | null = null;
   try {
     const client = anthropic();
     const response = await client.messages.create({
@@ -58,16 +59,30 @@ export async function POST(req: Request) {
       result = { note: text };
     }
   } catch (err) {
+    aiError = err instanceof Error ? err.message : "vision_error";
     console.error("[identify] vision call failed", err);
   }
 
-  await createLead({
-    type: "identify",
-    contact: { name: contact.name, email: contact.email!, phone: contact.phone },
-    transcriptSummary: `Identify. Note: ${note}\nAI impression: ${JSON.stringify(result)}`,
-    consent: { given: true, text: consent.text ?? "" },
-    source: "identify",
-  });
+  // The lead must land even when the vision call fails — the team can still follow up by hand.
+  // createLead now truncates over-long fields itself, but we slim the summary first so the
+  // truncation never bites useful content.
+  const transcriptSummary =
+    `Identify. Note: ${note}\nAI impression: ${aiError ? `(vision unavailable: ${aiError})` : JSON.stringify(result).slice(0, 1500)}`.slice(0, 1900);
 
-  return NextResponse.json({ ok: true, result });
+  try {
+    await createLead({
+      type: "identify",
+      contact: { name: contact.name, email: contact.email!, phone: contact.phone },
+      transcriptSummary,
+      consent: { given: true, text: consent.text || "I'd like to be contacted about my inquiry." },
+      source: "identify",
+    });
+  } catch (err) {
+    // createLead is supposed to never throw, but belt-and-braces.
+    console.error("[identify] createLead unexpectedly threw", err);
+  }
+
+  // Always 200 so the user gets the preliminary impression + a human path. If both AI and lead
+  // failed, the form's success state still surfaces the showroom phone numbers.
+  return NextResponse.json({ ok: true, result, aiError });
 }

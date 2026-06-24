@@ -27,6 +27,7 @@ export async function POST(req: Request) {
   );
 
   let result: unknown = null;
+  let aiError: string | null = null;
   try {
     const client = anthropic();
     const response = await client.messages.create({
@@ -55,16 +56,24 @@ export async function POST(req: Request) {
       result = { note: text };
     }
   } catch (err) {
+    aiError = err instanceof Error ? err.message : "vision_error";
     console.error("[triage] vision call failed", err);
   }
 
-  await createLead({
-    type: "service",
-    contact: { name: contact.name, email: contact.email!, phone: contact.phone },
-    transcriptSummary: `Triage. Note: ${note}\nAI impression: ${JSON.stringify(result)}`,
-    consent: { given: true, text: consent.text ?? "" },
-    source: "triage",
-  });
+  const transcriptSummary =
+    `Triage. Note: ${note}\nAI impression: ${aiError ? `(vision unavailable: ${aiError})` : JSON.stringify(result).slice(0, 1500)}`.slice(0, 1900);
 
-  return NextResponse.json({ ok: true, result });
+  try {
+    await createLead({
+      type: "service",
+      contact: { name: contact.name, email: contact.email!, phone: contact.phone },
+      transcriptSummary,
+      consent: { given: true, text: consent.text || "I'd like to be contacted about my inquiry." },
+      source: "triage",
+    });
+  } catch (err) {
+    console.error("[triage] createLead unexpectedly threw", err);
+  }
+
+  return NextResponse.json({ ok: true, result, aiError });
 }

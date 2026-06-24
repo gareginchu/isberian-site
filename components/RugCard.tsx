@@ -9,14 +9,16 @@ export function RugCard({ rug, priority = false }: { rug: Rug; priority?: boolea
       href={`/rugs/${rug.slug}`}
       className="group block focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-4"
     >
-      <div className="relative aspect-square overflow-hidden bg-cream-200">
+      <div className="relative aspect-square overflow-hidden bg-cream-200 flex items-center justify-center">
         {primary ? (
           <Image
             src={primary.src}
             alt={primary.alt}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-            className="object-cover transition-transform duration-700 ease-out-soft group-hover:scale-[1.02]"
+            // object-contain so every rug shows in full — runners as runners, scatters as scatters,
+            // no cropping the top off a 4'2"×8'0" Oushak. Cream letterbox fills the square.
+            className="object-contain transition-transform duration-700 ease-out-soft group-hover:scale-[1.02] p-2"
             priority={priority}
           />
         ) : null}
