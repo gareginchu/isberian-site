@@ -11,6 +11,20 @@ import { HumanExit } from "@/components/HumanExit";
 import { RugJsonLd } from "@/components/JsonLd";
 import { getRug, findSimilar, listRugs } from "@/lib/catalog";
 
+/**
+ * Parse a rug size like `4'2" × 8'0"` into a width/length aspect ratio. Used to shape the
+ * detail-page image frame so runners aren't cropped to squares and scatters aren't stretched.
+ * Falls back to 4/5 if the string doesn't parse.
+ */
+function parseRugAspect(size: string): number {
+  const m = size.match(/(\d+)'\s*(\d+)?"?\s*[×x]\s*(\d+)'\s*(\d+)?"?/);
+  if (!m) return 4 / 5;
+  const w = parseInt(m[1] ?? "0", 10) * 12 + parseInt(m[2] ?? "0", 10);
+  const l = parseInt(m[3] ?? "0", 10) * 12 + parseInt(m[4] ?? "0", 10);
+  if (!w || !l) return 4 / 5;
+  return w / l;
+}
+
 export async function generateStaticParams() {
   const rugs = await listRugs();
   return rugs.map((r) => ({ slug: r.slug }));
@@ -48,18 +62,28 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
         </section>
         <section className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 pb-20">
           <div className="space-y-6">
-            {rug.images.map((img, i) => (
-              <div key={i} className="relative aspect-[4/5] bg-cream-200 overflow-hidden">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  priority={i === 0}
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
+            {rug.images.map((img, i) => {
+              // Use the rug's real physical dimensions (e.g. 4'2" × 8'0") to shape the frame.
+              // Without this every rug would be cropped to a single aspect — runners would lose
+              // their length, scatters would lose their squareness.
+              const ratio = parseRugAspect(rug.description.details.sizeImperial);
+              return (
+                <div
+                  key={i}
+                  className="relative bg-cream-200 overflow-hidden mx-auto"
+                  style={{ aspectRatio: ratio, maxWidth: ratio < 0.7 ? "70%" : "100%" }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    priority={i === 0}
+                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              );
+            })}
           </div>
           <div className="lg:sticky lg:top-24 lg:self-start space-y-10">
             <div>
