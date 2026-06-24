@@ -3,9 +3,23 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { showrooms } from "@/lib/booking/showrooms";
 import { listRugs } from "@/lib/catalog";
 import type { Rug } from "@/lib/types/rug";
+
+// Hero carousel slides — mirrored from isberian.com's original 8-image rotation. Files live in
+// /public/hero/. Order roughly matches the upstream carousel (Home-1 first).
+const HERO_SLIDES = [
+  { src: "/hero/home-1.jpg", alt: "An installed antique rug seen in a Chicago interior." },
+  { src: "/hero/home-2.jpg", alt: "A rug rolled in the showroom." },
+  { src: "/hero/home-3.jpg", alt: "A close-up of the pile and dye saturation." },
+  { src: "/hero/home-4.jpg", alt: "A piece laid in a sunlit room." },
+  { src: "/hero/home-5.jpg", alt: "An antique rug in situ." },
+  { src: "/hero/home-6.jpg", alt: "Wool and silk highlights catching window light." },
+  { src: "/hero/home-7.jpg", alt: "A wide overhead view of a hand-knotted rug." },
+  { src: "/hero/home-8.jpg", alt: "A rug from the showroom floor." },
+];
 
 /** Pick a rug from a pool by partial title match (case-insensitive). */
 function pick(rugs: Rug[], match: string): Rug | undefined {
@@ -30,11 +44,8 @@ const PARTNERS = [
 export default async function HomePage() {
   const rugs = await listRugs();
 
-  // Hand-picked rug imagery for the home page surfaces.
-  // Hero photography: pick a piece with an open field, not a dense all-over pattern — the
-  // headline overlay needs negative space to land. Sivas + Cloud-band are the calmest in the
-  // current catalog; the dense Kazaks fight the type.
-  const heroRug = pick(rugs, "sivas") ?? pick(rugs, "cloud-band") ?? pick(rugs, "imperial rose") ?? rugs[0];
+  // Hand-picked rug imagery for the home page surfaces below the hero. The hero itself runs
+  // through HERO_SLIDES via the carousel — same 8 images as the upstream isberian.com.
   const stepsRug = pick(rugs, "imperial rose runner") ?? pick(rugs, "runner") ?? rugs[6];
   const repairRug = pick(rugs, "armenian cloud-band") ?? pick(rugs, "kazak") ?? rugs[3];
 
@@ -100,24 +111,14 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO — full-bleed image, refined headline overlay */}
-      <section className="relative -mt-px">
-        <div className="relative h-[78dvh] min-h-[560px] max-h-[820px] w-full">
-          <Image
-            src={imageOf(heroRug, FALLBACK_BG)}
-            alt={heroRug?.images[0]?.alt ?? "An antique rug from the Isberian collection."}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/25 to-ink/30" />
-          <Container>
-            <div className="relative h-[78dvh] min-h-[560px] max-h-[820px] flex items-end pb-16 lg:pb-24">
-              <div className="max-w-2xl text-cream">
-                <p className="text-[10px] tracking-wide-3 uppercase opacity-80">Chicago since 1920</p>
-                <h1 className="display text-4xl lg:text-6xl mt-5 leading-[1.05]">
-                  Rugs, carpeting, and custom work — chosen one piece at a time.
+      {/* HERO — 8-image rotating carousel (matches upstream isberian.com) */}
+      <HeroCarousel slides={HERO_SLIDES}>
+        <Container>
+          <div className="relative h-[78dvh] min-h-[560px] max-h-[820px] flex items-end pb-20 lg:pb-28">
+            <div className="max-w-2xl text-cream">
+              <p className="text-[10px] tracking-wide-3 uppercase opacity-80">Chicago since 1920</p>
+              <h1 className="display text-4xl lg:text-6xl mt-5 leading-[1.05]">
+                Rugs, carpeting, and custom work — chosen one piece at a time.
                 </h1>
                 <p className="mt-5 text-base lg:text-lg opacity-90 max-w-xl leading-relaxed">
                   Four generations of family practice. Antique, vintage, and contemporary rugs;
@@ -140,8 +141,7 @@ export default async function HomePage() {
               </div>
             </div>
           </Container>
-        </div>
-      </section>
+      </HeroCarousel>
 
       {/* FOUR ACTION TILES */}
       <section>
