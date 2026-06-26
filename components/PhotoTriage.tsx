@@ -70,8 +70,12 @@ export function PhotoTriage({ mode }: { mode: TriageMode }) {
           {impression ? (
             <details className="mt-5">
               <summary className="eyebrow cursor-pointer">Preliminary impression</summary>
-              <div className="mt-3 text-sm text-ink-700 whitespace-pre-line leading-relaxed">
-                {impression}
+              <div className="mt-3 text-sm text-ink-700 leading-relaxed space-y-3">
+                {impression.split(/\n\s*\n/).map((para, i) => (
+                  <p key={i} className="whitespace-pre-line">
+                    {renderInline(para)}
+                  </p>
+                ))}
               </div>
             </details>
           ) : null}
@@ -163,6 +167,16 @@ function readImpression(payload: unknown): string {
 
 function labelize(key: string): string {
   return key.replace(/[_-]+/g, " ").replace(/^./, (c) => c.toUpperCase());
+}
+
+// Tiny inline renderer: turns `**bold**` markers into <strong> elements, leaves the
+// rest as plain text. Avoids pulling in a full markdown library for one surface.
+function renderInline(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    const m = part.match(/^\*\*(.+)\*\*$/);
+    return m ? <strong key={i}>{m[1]}</strong> : <span key={i}>{part}</span>;
+  });
 }
 
 function Field({

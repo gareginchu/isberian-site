@@ -116,12 +116,12 @@ export function SiteHeader() {
                     </Link>
                     {item.children && open === item.href && (
                       <div className="absolute left-0 top-full pt-2">
-                        <ul className="min-w-[16rem] bg-transparent py-2">
+                        <ul className="min-w-[16rem] bg-ink border border-cream/10 py-2 shadow-lg">
                           {item.children.map((child) => (
                             <li key={child.href}>
                               <Link
                                 href={child.href}
-                                className="block px-4 py-2 nav-text text-[14px] text-cream hover:text-cream/70"
+                                className="block px-4 py-2 nav-text text-[14px] text-cream hover:bg-cream/10"
                               >
                                 {child.label}
                               </Link>
