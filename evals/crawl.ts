@@ -222,6 +222,8 @@ function pad(s: string, n: number): string {
   return s + " ".repeat(n - s.length);
 }
 
+export {};
+
 async function main() {
   process.stdout.write(`crawl eval against ${BASE_URL}\n\n`);
 
