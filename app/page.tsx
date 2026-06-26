@@ -112,37 +112,10 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO — 8-image rotating carousel (matches upstream isberian.com) */}
-      <HeroCarousel slides={HERO_SLIDES}>
-        <Container>
-          <div className="relative h-[78dvh] min-h-[560px] max-h-[820px] flex items-end pb-20 lg:pb-28">
-            <div className="max-w-2xl text-cream">
-              <p className="text-[10px] tracking-wide-3 uppercase opacity-80">Chicago since 1920</p>
-              <h1 className="display text-4xl lg:text-6xl mt-5 leading-[1.05]">
-                Rugs, carpeting, and custom work — chosen one piece at a time.
-                </h1>
-                <p className="mt-5 text-base lg:text-lg opacity-90 max-w-xl leading-relaxed">
-                  Four generations of family practice. Antique, vintage, and contemporary rugs;
-                  wall-to-wall carpeting; custom commissions; cleaning and restoration.
-                </p>
-                <div className="mt-9 flex flex-wrap gap-3">
-                  <Link
-                    href="/rugs"
-                    className="inline-flex items-center justify-center bg-cream text-ink px-6 py-3 text-sm tracking-wide-2 hover:bg-cream-200 transition-colors"
-                  >
-                    Browse the collection
-                  </Link>
-                  <Link
-                    href="/visit"
-                    className="inline-flex items-center justify-center border border-cream text-cream px-6 py-3 text-sm tracking-wide-2 hover:bg-cream hover:text-ink transition-colors"
-                  >
-                    Visit a showroom
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Container>
-      </HeroCarousel>
+      {/* HERO — 8-image rotating carousel (matches upstream isberian.com).
+          No text overlay — the navbar floats on top, the imagery does the work. */}
+      <HeroCarousel slides={HERO_SLIDES} />
+
 
       {/* FOUR ACTION TILES */}
       <section>

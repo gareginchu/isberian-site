@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -16,6 +16,13 @@ const sans = Inter({
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+const nav = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-nav",
   weight: ["400", "500"],
   display: "swap",
 });
@@ -44,7 +51,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${nav.variable}`}>
       <body className="min-h-dvh bg-cream text-ink antialiased">
         <a
           href="#main"

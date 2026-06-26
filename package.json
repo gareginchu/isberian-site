@@ -14,6 +14,8 @@
     "catalog:ingest": "tsx scripts/ingest-catalog.ts",
     "vision:classify": "tsx scripts/vision-classify.ts",
     "vision:apply": "tsx scripts/apply-vision-classify.ts",
+    "deck:build": "tsx scripts/build-deck.ts",
+    "shots": "tsx scripts/capture-screenshots.ts",
     "a11y": "echo 'a11y check stub — wire pa11y-ci or axe-core in CI'"
   },
   "dependencies": {
@@ -32,7 +34,10 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.18.0",
     "eslint-config-next": "16.2.9",
+    "playwright": "^1.61.1",
     "postcss": "^8.5.1",
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.35.2",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",

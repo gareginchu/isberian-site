@@ -5,6 +5,14 @@
 :root {
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-nav: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+/* Navbar text — matches upstream isberian.com (Montserrat 400, 0.25px tracking). */
+.nav-text {
+  font-family: var(--font-nav);
+  font-weight: 400;
+  letter-spacing: 0.25px;
 }
 
 html {

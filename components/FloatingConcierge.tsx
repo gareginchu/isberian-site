@@ -114,7 +114,7 @@ export function FloatingConcierge() {
           />
           <aside
             id="concierge-panel"
-            className="relative w-full sm:w-[28rem] lg:w-[32rem] h-full bg-cream border-l border-ink-300/70 flex flex-col shadow-2xl"
+            className="relative w-full sm:w-[14rem] lg:w-[16rem] h-full bg-cream border-l border-ink-300/70 flex flex-col shadow-2xl"
           >
             <header className="flex items-start justify-between px-6 py-5 border-b border-ink-300/60">
               <div>

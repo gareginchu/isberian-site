@@ -9,14 +9,13 @@ type Props = {
   slides: Slide[];
   /** ms between auto-advances. Default 7000 (Flexslider default, matches isberian.com). */
   interval?: number;
-  /** Render-prop for the overlay content so the host page controls headline/CTAs. */
-  children: React.ReactNode;
+  /** Optional overlay content (legacy). Omit for a clean carousel like upstream isberian.com. */
+  children?: React.ReactNode;
 };
 
 /**
  * Hero carousel — crossfade between slides, auto-advance, pause on hover/focus, respects
- * prefers-reduced-motion. Each slide is a separate <Image> so Next.js can optimize them
- * independently; only the first is `priority` to keep LCP clean.
+ * prefers-reduced-motion. Prev/next arrows let visitors drive it manually (matches upstream).
  */
 export function HeroCarousel({ slides, interval = 7000, children }: Props) {
   const [index, setIndex] = useState(0);
@@ -41,13 +40,15 @@ export function HeroCarousel({ slides, interval = 7000, children }: Props) {
     return clear;
   }, [paused, interval, slides.length, clear]);
 
-  function jumpTo(i: number) {
-    clear();
-    setIndex(i);
-    // re-arm after a beat so users see the slide they picked
-    setPaused(true);
-    setTimeout(() => setPaused(false), 50);
-  }
+  const jumpTo = useCallback(
+    (i: number) => {
+      clear();
+      setIndex(((i % slides.length) + slides.length) % slides.length);
+      setPaused(true);
+      setTimeout(() => setPaused(false), 50);
+    },
+    [clear, slides.length],
+  );
 
   return (
     <section
@@ -77,10 +78,31 @@ export function HeroCarousel({ slides, interval = 7000, children }: Props) {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/25 to-ink/30 pointer-events-none" />
-        <div className="relative h-full">{children}</div>
+        {children && <div className="relative h-full">{children}</div>}
 
-        {/* Indicators — small circular dots, matching upstream Flexslider style */}
+        {/* Prev / Next — chevron arrows on each side, like upstream Flexslider. */}
+        <button
+          type="button"
+          aria-label="Previous slide"
+          onClick={() => jumpTo(index - 1)}
+          className="absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-11 h-11 rounded-full bg-ink/30 text-cream hover:bg-ink/55 transition-colors"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Next slide"
+          onClick={() => jumpTo(index + 1)}
+          className="absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center w-11 h-11 rounded-full bg-ink/30 text-cream hover:bg-ink/55 transition-colors"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+
+        {/* Indicator dots — bottom-center. */}
         <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2.5 z-10">
           {slides.map((_, i) => (
             <button
