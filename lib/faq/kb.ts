@@ -131,6 +131,76 @@ export const faqEntries: FaqEntry[] = [
     verified: true,
     updatedAt: "2026-04-12T00:00:00.000Z",
   },
+  {
+    id: "faq-antique-spill",
+    slug: "small-spill-antique-rug",
+    category: "care",
+    question: "How do I clean a small spill on my antique rug?",
+    answer:
+      "Blot, don't rub — work from the outside of the spill in, with a clean white cloth. Use cool water on the cloth, not poured onto the pile. No household cleaners, no soap, no vinegar, no salt; on antique, silk, or natural-dye pieces these can set the stain or shift the dye permanently. Once the spot is blotted as dry as you can get it, call us. If the piece has any value to you, we'd rather inspect it than have you keep working at it.",
+    routing: "professional-only",
+    routesToHuman: true,
+    verified: false,
+    updatedAt: "2026-06-27T00:00:00.000Z",
+  },
+  {
+    id: "faq-rotate",
+    slug: "how-often-rotate-rug",
+    category: "care",
+    question: "How often should I rotate my rug?",
+    answer:
+      "Every six to twelve months — turn the rug 180° between rotations. There are two reasons to do it: sun fade is uneven across the room, and traffic wears the pile in patterns set by how you walk and where the furniture sits. Rotating spreads both out. It is the single most useful habit for keeping a rug even over decades.",
+    routing: "diy-ok",
+    routesToHuman: false,
+    verified: false,
+    updatedAt: "2026-06-27T00:00:00.000Z",
+  },
+  {
+    id: "faq-shedding",
+    slug: "new-wool-rug-shedding",
+    category: "care",
+    question: "Why does my new wool rug shed?",
+    answer:
+      "Shedding is normal for the first six to twelve months on a hand-knotted wool rug. Loose fibers left from spinning and weaving work their way out as the pile compacts under use. Vacuum gently — suction only, no beater bar — and the shedding settles. If you're still seeing significant fiber after a year, call us; we'll take a look.",
+    routing: "diy-ok",
+    routesToHuman: false,
+    verified: false,
+    updatedAt: "2026-06-27T00:00:00.000Z",
+  },
+  {
+    id: "faq-kpsi",
+    slug: "what-is-kpsi",
+    category: "materials",
+    question: "What does 'KPSI' mean and does it matter?",
+    answer:
+      "KPSI is knots per square inch — a measure of weave density. Higher KPSI means a finer grid, denser pile, and generally more time at the loom. It matters most as a within-tradition signal. A 200-KPSI Tabriz and an 80-KPSI Kazak are not a quality comparison — they're different traditions, with different intentions, different wools, and different drawings. A Kazak is supposed to be bold and tactile; a fine Tabriz is supposed to read like a painting. Come into the showroom and we'll show you both, side by side; KPSI reads differently in the hand than on a spec sheet.",
+    routesToHuman: true,
+    verified: false,
+    updatedAt: "2026-06-27T00:00:00.000Z",
+  },
+  {
+    id: "faq-pad-any-rug",
+    slug: "rug-pad-under-any-rug",
+    category: "care",
+    question: "Can I put a rug pad under any rug?",
+    answer:
+      "Yes, and you should. A pad protects the pile, keeps the rug from slipping, and adds years to its life. On hard floors — wood, stone, tile — we recommend a felt-and-rubber pad. Over wall-to-wall carpet, a thinner felt pad works better and keeps the rug from creeping. Cut the pad about an inch shorter than the rug on each side so it doesn't show at the edges. We stock pads in the showroom and cut to size.",
+    routing: "diy-ok",
+    routesToHuman: false,
+    verified: false,
+    updatedAt: "2026-06-27T00:00:00.000Z",
+  },
+  {
+    id: "faq-no-prices-on-site",
+    slug: "why-no-prices-on-site",
+    category: "quote-process",
+    question: "Why don't you publish prices on the site?",
+    answer:
+      "Every piece is unique — condition, knot count, dye source, age, and provenance all move the number, and the right rug also depends on the room it's going into. We quote in person or by phone after we understand the use, the space, and what you're choosing between. This is consistent with how the trade has worked for a century, and it lets us be straight with you about value rather than anchoring to a sticker. Save pieces to a wishlist and we'll follow up with a clear quote.",
+    routesToHuman: true,
+    verified: false,
+    updatedAt: "2026-06-27T00:00:00.000Z",
+  },
 ];
 
 export const careGuides: CareGuide[] = [
