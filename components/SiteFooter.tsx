@@ -42,9 +42,9 @@ export function SiteFooter() {
             <Image
               src="/logo.png"
               alt="Oscar Isberian Rugs — Established 1920"
-              width={660}
-              height={130}
-              className="h-12 w-auto"
+              width={337}
+              height={94}
+              className="h-[63px] w-auto"
             />
             <p className="text-sm text-ink-700 mt-4 max-w-xs leading-relaxed">
               A century-old rug house. Antique, vintage, and contemporary rugs; carpeting; custom

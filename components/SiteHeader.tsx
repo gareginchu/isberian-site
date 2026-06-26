@@ -75,10 +75,10 @@ export function SiteHeader() {
             <Image
               src="/logo.png"
               alt="Oscar Isberian Rugs — Established 1920"
-              width={660}
-              height={130}
+              width={337}
+              height={94}
               priority
-              className="h-10 lg:h-12 w-auto"
+              className="h-[63px] w-auto"
             />
           </Link>
 
