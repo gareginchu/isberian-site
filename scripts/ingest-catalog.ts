@@ -14,6 +14,8 @@
  *   5. Enqueue AI enrichment of the structured RugDescription for editor review.
  */
 
+export {};
+
 const DRY = process.argv.includes("--dry");
 
 async function main() {
