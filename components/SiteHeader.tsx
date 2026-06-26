@@ -25,16 +25,16 @@ const PRIMARY: Item[] = [
   { href: "/custom", label: "Custom" },
   {
     href: "/services",
-    label: "Cleaning & Restoration",
+    label: "Cleaning/Services",
     children: [
       { href: "/services", label: "Overview" },
       { href: "/services/triage", label: "Service triage" },
       { href: "/care", label: "Care & FAQ" },
     ],
   },
-  { href: "/rugs?status=on-memo", label: "On the floor now" },
-  { href: "/trade", label: "Trade benefits" },
-  { href: "/visit", label: "Contact us" },
+  { href: "/rugs?status=on-memo", label: "Clearance" },
+  { href: "/trade", label: "Trade Benefits" },
+  { href: "/visit", label: "Contact Us" },
   { href: "/wishlists", label: "Wishlists" },
 ];
 
@@ -64,17 +64,17 @@ export function SiteHeader() {
       {/* Top utility strip — solid black, white text, 48px tall, Montserrat 14px.
           Houses the secondary nav (concierge, identify, journal, story) + phones. */}
       <div className="hidden lg:block bg-ink h-[48px] px-[25px] py-[10px]">
-        <div className="flex items-center justify-end gap-6 nav-text text-[14px] text-cream h-full">
+        <div className="flex items-center justify-end gap-6 nav-text text-[14px] text-cream h-full whitespace-nowrap">
           {SECONDARY.map((s) => (
-            <Link key={s.href} href={s.href} className="hover:text-cream/70 transition-colors">
+            <Link key={s.href} href={s.href} className="hover:text-cream/70 transition-colors whitespace-nowrap">
               {s.label}
             </Link>
           ))}
           <span aria-hidden className="text-cream/40">·</span>
-          <a href="tel:+13124671212" className="hover:text-cream/70">
+          <a href="tel:+13124671212" className="hover:text-cream/70 whitespace-nowrap">
             Chicago 312-467-1212
           </a>
-          <a href="tel:+18474750000" className="hover:text-cream/70">
+          <a href="tel:+18474750000" className="hover:text-cream/70 whitespace-nowrap">
             Evanston 847-475-0000
           </a>
         </div>
@@ -95,7 +95,7 @@ export function SiteHeader() {
             </Link>
 
             <nav aria-label="Primary" className="hidden lg:block">
-              <ul className="flex items-center gap-7 nav-text text-[15px] uppercase">
+              <ul className="flex items-center gap-6 nav-text text-[15px] uppercase whitespace-nowrap">
                 {PRIMARY.map((item) => (
                   <li
                     key={item.href}
@@ -105,7 +105,7 @@ export function SiteHeader() {
                   >
                     <Link
                       href={item.href}
-                      className="text-cream hover:text-cream/70 py-2 inline-flex items-center gap-1"
+                      className="text-cream hover:text-cream/70 py-2 inline-flex items-center gap-1 whitespace-nowrap"
                     >
                       {item.label}
                       {item.children && (
