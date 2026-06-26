@@ -59,15 +59,76 @@ export function OrganizationJsonLd() {
   return <Script data={data} />;
 }
 
+/**
+ * Parse a rug size like `9'2" × 12'4"` into `{ widthIn, heightIn }` in whole inches. Returns null
+ * if the string doesn't parse so callers can omit the QuantitativeValue rather than emit zeros.
+ * "width" is taken as the first dimension and "height" as the second — schema.org `width`/`height`
+ * on Product describe the physical extent of the object, not pixel dimensions, so this maps to the
+ * rug's woven width and length.
+ */
+function parseRugDimensionsInches(imperial: string): { widthIn: number; heightIn: number } | null {
+  const m = imperial.match(/(\d+)'\s*(\d+)?"?\s*[×x]\s*(\d+)'\s*(\d+)?"?/);
+  if (!m) return null;
+  const widthIn = parseInt(m[1] ?? "0", 10) * 12 + parseInt(m[2] ?? "0", 10);
+  const heightIn = parseInt(m[3] ?? "0", 10) * 12 + parseInt(m[4] ?? "0", 10);
+  if (!widthIn || !heightIn) return null;
+  return { widthIn, heightIn };
+}
+
 export function RugJsonLd({ rug }: { rug: Rug }) {
-  const data = {
+  const dims = parseRugDimensionsInches(rug.description.details.sizeImperial);
+  // `itemCondition` is our replacement for `offers.availability` — we never emit offers because
+  // we never publish prices, but we can still communicate whether the listing is a contemporary
+  // new weave or an antique/vintage piece. Sold rugs omit condition (the listing is historical).
+  // "Contemporary" origin OR no `age` field → NewCondition; otherwise UsedCondition for the
+  // antique/vintage category. This is conservative: any rug with a circa-date is treated as used.
+  const isContemporary =
+    rug.description.provenance.origin === "Contemporary" || !rug.description.details.age;
+  const itemCondition =
+    rug.status === "sold"
+      ? undefined
+      : isContemporary
+        ? "https://schema.org/NewCondition"
+        : "https://schema.org/UsedCondition";
+
+  // Primary palette → schema.org `color` (comma-separated, primary chips only). Falls back to
+  // omitting if the rug hasn't been editorially enriched yet (lean records have empty palette).
+  const primaryColors = rug.description.colorPalette
+    .filter((c) => c.weight === "primary")
+    .map((c) => c.name);
+  const colorString = primaryColors.length > 0 ? primaryColors.join(", ") : undefined;
+
+  const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: rug.title,
     description: rug.description.lead,
-    image: rug.images.map((i) => i.src),
+    // Absolute URLs so crawlers and AEO consumers don't have to guess the origin.
+    image: rug.images.map((i) => absoluteUrl(i.src)),
     brand: { "@type": "Brand", name: "Oscar Isberian Rugs" },
     category: rug.description.provenance.origin,
+    // Top-level `material` (in addition to the `additionalProperty` "Materials" entry below — the
+    // latter is preserved so existing consumers don't break).
+    material: rug.description.details.materials.join(", "),
+    ...(colorString ? { color: colorString } : {}),
+    ...(itemCondition ? { itemCondition } : {}),
+    ...(dims
+      ? {
+          width: { "@type": "QuantitativeValue", value: dims.widthIn, unitText: "inch" },
+          height: { "@type": "QuantitativeValue", value: dims.heightIn, unitText: "inch" },
+        }
+      : {}),
+    // Stable identifier so we're discoverable even if the slug/URL changes. `isberian_rug_id` is
+    // the stock number from the in-house catalog.
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "isberian_rug_id",
+      value: rug.id,
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Interior designers, design-conscious homeowners, antique-rug collectors",
+    },
     // Intentionally no `offers` field — quoted only.
     additionalProperty: [
       { "@type": "PropertyValue", name: "Size", value: rug.description.details.sizeImperial },
