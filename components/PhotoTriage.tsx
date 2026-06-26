@@ -87,7 +87,7 @@ export function PhotoTriage({ mode }: { mode: TriageMode }) {
   return (
     <form onSubmit={submit} className="space-y-6">
       <div>
-        <p className="display text-3xl text-ink">{copy.heading}</p>
+        <h1 className="display text-3xl text-ink">{copy.heading}</h1>
         <p className="mt-3 text-sm text-ink-700 max-w-2xl">{copy.blurb}</p>
       </div>
       <div>
