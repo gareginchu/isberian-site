@@ -55,6 +55,7 @@ export function PhotoTriage({ mode }: { mode: TriageMode }) {
   }
 
   if (status === "ok") {
+    const impression = readImpression(result);
     return (
       <div className="space-y-5">
         <div className="border border-oxblood/40 bg-cream p-6">
@@ -66,10 +67,12 @@ export function PhotoTriage({ mode }: { mode: TriageMode }) {
             </a>
             .
           </p>
-          {result ? (
-            <details className="mt-4 text-xs text-ink-500">
-              <summary>Preliminary impression</summary>
-              <pre className="mt-2 whitespace-pre-wrap">{JSON.stringify(result, null, 2)}</pre>
+          {impression ? (
+            <details className="mt-5">
+              <summary className="eyebrow cursor-pointer">Preliminary impression</summary>
+              <div className="mt-3 text-sm text-ink-700 whitespace-pre-line leading-relaxed">
+                {impression}
+              </div>
             </details>
           ) : null}
         </div>
@@ -138,6 +141,28 @@ export function PhotoTriage({ mode }: { mode: TriageMode }) {
       </div>
     </form>
   );
+}
+
+// Turn the API response into a readable text impression. The vision call may return
+// either a JSON object with structured fields (origin, age, type, …) or a free-text
+// note. Either way, render plain prose, not raw JSON.
+function readImpression(payload: unknown): string {
+  if (!payload || typeof payload !== "object") return "";
+  const r = payload as Record<string, unknown>;
+  const inner = "result" in r ? r.result : r;
+  if (!inner) return "";
+  if (typeof inner === "string") return inner;
+  if (typeof inner !== "object") return String(inner);
+  const obj = inner as Record<string, unknown>;
+  if (typeof obj.note === "string") return obj.note;
+  return Object.entries(obj)
+    .filter(([, v]) => v != null && v !== "")
+    .map(([k, v]) => `${labelize(k)}: ${typeof v === "string" ? v : JSON.stringify(v)}`)
+    .join("\n\n");
+}
+
+function labelize(key: string): string {
+  return key.replace(/[_-]+/g, " ").replace(/^./, (c) => c.toUpperCase());
 }
 
 function Field({

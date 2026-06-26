@@ -50,14 +50,14 @@ export function SiteHeader() {
   const isHome = pathname === "/";
   const [open, setOpen] = useState<string | null>(null);
 
-  // Header is always overlaid (matches upstream isberian.com): absolute on the home
-  // page so the carousel can start at y=0; sticky-transparent on interior pages so
-  // it floats over the page content the same way.
+  // Home: header overlays the carousel (absolute, transparent main row).
+  // Interior pages: sticky header on solid black so logo + nav stay legible
+  // against the cream page background.
   const headerCls = isHome
     ? "absolute top-0 left-0 right-0 z-30 text-cream"
-    : "sticky top-0 z-30 text-cream";
+    : "sticky top-0 z-30 text-cream bg-ink";
 
-  const mainRowCls = "bg-transparent";
+  const mainRowCls = isHome ? "bg-transparent" : "bg-ink";
 
   return (
     <header className={headerCls}>
