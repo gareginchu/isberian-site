@@ -61,24 +61,22 @@ export function SiteHeader() {
 
   return (
     <header className={headerCls}>
-      {/* Top utility row — transparent, white text, Montserrat 14px. */}
-      <div className="hidden lg:block bg-transparent">
-        <Container>
-          <div className="flex items-center justify-end gap-6 py-2 nav-text text-[14px] text-cream">
-            {SECONDARY.map((s) => (
-              <Link key={s.href} href={s.href} className="hover:text-cream/70 transition-colors">
-                {s.label}
-              </Link>
-            ))}
-            <span className="text-cream/40">·</span>
-            <a href="tel:+13124671212" className="hover:text-cream/70">
-              Chicago 312-467-1212
-            </a>
-            <a href="tel:+18474750000" className="hover:text-cream/70">
-              Evanston 847-475-0000
-            </a>
-          </div>
-        </Container>
+      {/* Top utility strip — solid black, white text, 48px tall, centered. Matches the
+          upstream isberian.com Fusion alert strip exactly (h=48, pad 10px 25px, Montserrat 14px). */}
+      <div className="hidden lg:block bg-ink h-[48px] px-[25px] py-[10px]">
+        <div className="flex items-center justify-center gap-3 nav-text text-[14px] text-cream h-full">
+          <a href="tel:+13124671212" className="hover:text-cream/70">
+            Chicago: 312 467 1212
+          </a>
+          <span aria-hidden className="text-cream/60">|</span>
+          <a href="tel:+18474750000" className="hover:text-cream/70">
+            Evanston: 847 475 0000
+          </a>
+          <span aria-hidden className="text-cream/60">|</span>
+          <Link href="/rugs?status=on-memo" className="hover:text-cream/70">
+            Over 1,000 rugs on clearance
+          </Link>
+        </div>
       </div>
 
       <div className={mainRowCls}>
