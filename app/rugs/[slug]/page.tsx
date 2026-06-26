@@ -8,7 +8,7 @@ import { RugDescriptionBlock } from "@/components/RugDescriptionBlock";
 import { RugCard } from "@/components/RugCard";
 import { LeadForm } from "@/components/LeadForm";
 import { HumanExit } from "@/components/HumanExit";
-import { RugJsonLd } from "@/components/JsonLd";
+import { RugJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { getRug, findSimilar, listRugs } from "@/lib/catalog";
 
 /**
@@ -54,6 +54,13 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
   return (
     <>
       <RugJsonLd rug={rug} />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Rugs", href: "/rugs" },
+          { name: rug.title, href: `/rugs/${rug.slug}` },
+        ]}
+      />
       <Container size="wide">
         <section className="pt-10 pb-6">
           <Link href="/rugs" className="text-xs tracking-wide-2 uppercase text-oxblood hover:underline">

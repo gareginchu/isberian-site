@@ -8,6 +8,18 @@ import { showrooms } from "@/lib/booking/showrooms";
  * preferable to a fabricated one.
  */
 
+/**
+ * Canonical site origin. Mirrors `metadataBase` in `app/layout.tsx`. JSON-LD `item` URLs must be
+ * absolute, so we resolve relative hrefs against this.
+ */
+const SITE_ORIGIN = "https://isberian.com";
+
+function absoluteUrl(href: string): string {
+  if (/^https?:\/\//i.test(href)) return href;
+  const path = href.startsWith("/") ? href : `/${href}`;
+  return `${SITE_ORIGIN}${path}`;
+}
+
 function Script({ data }: { data: unknown }) {
   return (
     <script
@@ -80,6 +92,26 @@ export function FaqJsonLd({ entries }: { entries: FaqEntry[] }) {
       "@type": "Question",
       name: e.question,
       acceptedAnswer: { "@type": "Answer", text: e.answer },
+    })),
+  };
+  return <Script data={data} />;
+}
+
+export type BreadcrumbItem = { name: string; href: string };
+
+/**
+ * Emits a `BreadcrumbList` JSON-LD block. `item` URLs are resolved to absolute against the
+ * canonical site origin so crawlers and AEO consumers get fully-qualified URLs.
+ */
+export function BreadcrumbListJsonLd({ items }: { items: BreadcrumbItem[] }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: absoluteUrl(it.href),
     })),
   };
   return <Script data={data} />;

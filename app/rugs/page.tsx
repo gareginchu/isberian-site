@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { RugFilters } from "@/components/RugFilters";
 import { RugGrid } from "@/components/RugGrid";
+import { BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { listRugs } from "@/lib/catalog";
 import { filterRugs } from "@/lib/search";
 import type { RugFacets } from "@/lib/types/rug";
@@ -36,6 +37,12 @@ export default async function RugsPage({
 
   return (
     <Container size="wide">
+      <BreadcrumbListJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Rugs", href: "/rugs" },
+        ]}
+      />
       <section className="py-16 lg:py-20">
         <Eyebrow>The collection</Eyebrow>
         <h1 className="display text-5xl text-ink mt-3 leading-tight">{rugs.length} of {all.length} pieces</h1>
