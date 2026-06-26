@@ -16,10 +16,18 @@ this," services photo triage, rug identification, and AI-enriched catalog copy i
 description schema** + structured data. Room visualizer and trade copilot are later phases — don't
 pull them forward without sign-off.
 
+## North star
+
+A buyer asking an AI assistant *"antique Heriz dealer in Chicago"* can be surfaced and routed to
+Isberian, and a human can book a showroom visit from any rug page. Crawlability + grounded
+conversation + a visible booking path — that's the bar.
+
 ## The five rules (gate every PR; centralized in `/lib/guardrails`)
 
 1. **No prices, ever.** Quoted only. Price intent → quote / visit / wishlist. Automated eval guards this.
-2. **No fabricated inventory.** Only real catalog records; always link the real rug page.
+2. **No fabricated inventory or stats.** Only real catalog records; always link the real rug page.
+   No invented numbers either — "98% stain removal," "10,000+ rugs sold" — unless sourced from
+   operations.
 3. **No valuations or authenticity guarantees.** Rug ID is preliminary → human appraiser.
 4. **No risky DIY** on valuable/antique pieces → route to inspection.
 5. **Always a visible human exit** — phone (Chicago 312-467-1212 / Evanston 847-475-0000) + book-a-visit.
@@ -38,6 +46,39 @@ pull them forward without sign-off.
 - **Booking:** Cal.com (showroom-aware) behind an adapter. **Leads:** HubSpot webhook + email.
 - **Deploy:** Vercel. **Analytics:** privacy-respecting, with lead attribution.
 - No payments. No consumer accounts in v1 beyond email-based wishlists.
+
+## Inventory feed — the critical dependency
+
+The catalog data lives upstream (currently served as an AJAX endpoint that the legacy
+`isberian.com` loads client-side, which is why crawlers see `Total Results: 0`). Before any
+SSR catalog work, resolve **one** of:
+
+- **Plan A (preferred):** a real product feed/API — fields include `id`, `slug`, `title`,
+  `origin`, `age/period`, `size`, `material`, `weave/knot`, `color tags`, `style/category`,
+  `images[]`, `showroom/location`, `status`. Build a typed client + mapper in `/lib/catalog`.
+- **Plan B:** thin ingestion adapter over the current AJAX endpoint. Use only if Plan A is
+  blocked. Flag the data-access gap to the client immediately — **this is schedule risk #1**.
+
+Do not hard-code sample catalog data beyond local dev fixtures. The data contract lives in
+`/lib/catalog/types.ts` and is the source of truth.
+
+## Imagery policy (MVP)
+
+Reuse existing assets — no new photo shoot gates the MVP.
+
+- **Editorial / hero / category tiles:** reuse files already in the WordPress media library
+  (`wp-content/uploads/...`). Re-export through our image pipeline (responsive `srcset`,
+  modern formats, strip EXIF). Don't link them hot from upstream.
+- **Catalog product photos:** arrive with the inventory feed; PDPs display whatever per-rug
+  images already exist. Don't commission new product photography for v1.
+- **OG / Twitter images are the rug, never the logo.** Per-rug share images via
+  `app/rugs/[slug]/opengraph-image.tsx`. The legacy site shipping the grey logo as the share
+  image is a measurable GEO loss — don't replicate it.
+- **Alt text on every image,** descriptive not decorative. Required for a11y and AI parsing.
+- **Rights check before reuse of partner / designer imagery** (RugStar, Michael Del Piero,
+  2to5Design, IIDA, etc.). Confirm Isberian holds reuse rights — flag, don't assume.
+- **Hero photography pass is Phase 3.** Color-accurate, consistent photography is a
+  prerequisite for the *visualizer and visual search*, not for the catalog or concierge.
 
 ## Repository layout
 
@@ -133,6 +174,8 @@ SESSION_RETENTION_DAYS=30
 ## Definition of done (every feature)
 
 - [ ] `pnpm evals` green (price / fabricated-inventory / valuation guardrails).
+- [ ] **Crawlable:** `curl` of any catalog/rug route (JS off) returns the primary content
+      and valid JSON-LD in the initial HTML. If a crawler can't see the rug, it's a bug.
 - [ ] Core Web Vitals within budget on affected routes.
 - [ ] WCAG 2.2 AA pass (`pnpm a11y`).
 - [ ] Correct JSON-LD where applicable; AI copy human-reviewed.
@@ -147,3 +190,21 @@ SESSION_RETENTION_DAYS=30
 - Do not let the concierge answer care/material/FAQ questions from model memory — KB-grounded only.
 - Do not suggest DIY cleaning/repair for valuable, antique, or silk rugs — route to a specialist.
 - Do not exceed the performance budget for the sake of a heavier hero animation.
+- **Heritage > discount.** Do not use red "sale" styling as a primary accent or CTA color.
+  Clearance is a tab, never the brand's opening line.
+- Do not render primary catalog content client-side. Server-rendered HTML or it's a bug.
+- Do not ship the logo as an OG / Twitter share image — every rug page emits its own.
+
+## Suggested agents (parallelizable)
+
+Use these as the orchestration spine when splitting work across Claude Code runs:
+
+- **catalog-ssr** — feed client, mappers, SSR/ISR for `/rugs` listing + PDP. Critical path.
+- **seo-geo** — JSON-LD, sitemap, metadata helpers, per-rug OG images, GEO content scaffolds.
+- **concierge** — RAG store, system prompt, guardrails, hand-off, `/api/concierge` route.
+- **funnel** — booking forms, upload signer, staff notifications, showroom pages.
+- **design-system** — tokens, hero, typography, polish fixes, accessibility.
+- **qa** — crawlability suite, CWV budgets, a11y audit, eval harness.
+
+`catalog-ssr` + `seo-geo` are on the critical path and unblock the rest. `concierge`,
+`funnel`, and `design-system` run in parallel once the data contract is locked.
