@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "evals": "vitest run",
     "evals:watch": "vitest",
+    "evals:crawl": "tsx evals/crawl.ts",
     "catalog:ingest": "tsx scripts/ingest-catalog.ts",
     "vision:classify": "tsx scripts/vision-classify.ts",
     "vision:apply": "tsx scripts/apply-vision-classify.ts",
