@@ -60,7 +60,7 @@ export function HeroCarousel({ slides, interval = 7000, children }: Props) {
       aria-roledescription="carousel"
       aria-label="Featured rooms and rugs"
     >
-      <div className="relative h-[78dvh] min-h-[560px] max-h-[820px] w-full overflow-hidden bg-ink">
+      <div className="relative aspect-[1440/700] min-h-[420px] max-h-[820px] w-full overflow-hidden bg-ink">
         {slides.map((s, i) => (
           <div
             key={s.src}
