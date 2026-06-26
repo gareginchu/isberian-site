@@ -27,8 +27,25 @@ const nav = Montserrat({
   display: "swap",
 });
 
+/**
+ * Resolve the canonical origin for OG / canonical URLs.
+ *
+ * Order of precedence:
+ *   1. `NEXT_PUBLIC_SITE_URL` — explicit override for the production apex once it's live.
+ *   2. `VERCEL_URL` — set automatically on every Vercel build/preview; resolves OG images to
+ *      the actual deployed host instead of a 404 on the apex.
+ *   3. `https://isberian.com` — the eventual canonical, used for local builds and as a final
+ *      fallback. Don't remove this; flipping the env var is how we cut over once DNS lands.
+ *
+ * Captured at build time, which is exactly what we want — `metadataBase` is baked into
+ * every rendered page's OG tags.
+ */
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://isberian.com");
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://isberian.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Oscar Isberian Rugs — Heritage rug house, Chicago & Evanston",
     template: "%s · Oscar Isberian Rugs",

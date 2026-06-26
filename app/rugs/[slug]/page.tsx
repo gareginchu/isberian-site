@@ -34,13 +34,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const r = await getRug(slug);
   if (!r) return {};
+  // NOTE: do NOT set `openGraph.images` here. The colocated `opengraph-image.tsx` generator
+  // is auto-resolved by Next.js and renders the actual rug into a 1200x630 PNG. Setting
+  // `images` here would override the generator and point at a path that 404s on apex.
   return {
     title: r.title,
     description: r.description.lead,
     openGraph: {
       title: r.title,
       description: r.description.lead,
-      images: r.images.map((i) => ({ url: i.src, alt: i.alt })),
     },
   };
 }
