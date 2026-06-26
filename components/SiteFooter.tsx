@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 import { showrooms } from "@/lib/booking/showrooms";
@@ -38,8 +39,13 @@ export function SiteFooter() {
       <Container>
         <div className="py-14 grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div>
-            <p className="wordmark text-2xl text-ink">Oscar Isberian Rugs</p>
-            <p className="eyebrow mt-2">Chicago since 1920</p>
+            <Image
+              src="/logo.png"
+              alt="Oscar Isberian Rugs — Established 1920"
+              width={660}
+              height={130}
+              className="h-12 w-auto"
+            />
             <p className="text-sm text-ink-700 mt-4 max-w-xs leading-relaxed">
               A century-old rug house. Antique, vintage, and contemporary rugs; carpeting; custom
               commissions; cleaning and restoration. Quoted in person, never online.

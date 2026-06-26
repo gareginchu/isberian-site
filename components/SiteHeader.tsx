@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "./Container";
@@ -70,13 +71,15 @@ export function SiteHeader() {
 
       <Container>
         <div className="flex items-center justify-between py-5 lg:py-6">
-          <Link href="/" className="block">
-            <span className="wordmark text-2xl lg:text-[26px] text-ink leading-none">
-              Oscar Isberian Rugs
-            </span>
-            <span className="block text-[10px] tracking-wide-3 uppercase text-ink-500 mt-1">
-              Chicago since 1920
-            </span>
+          <Link href="/" className="block" aria-label="Oscar Isberian Rugs — Established 1920">
+            <Image
+              src="/logo.png"
+              alt="Oscar Isberian Rugs — Established 1920"
+              width={660}
+              height={130}
+              priority
+              className="h-10 lg:h-12 w-auto"
+            />
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
