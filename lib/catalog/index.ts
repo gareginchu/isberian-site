@@ -1,47 +1,74 @@
 import type { Rug } from "@/lib/types/rug";
-import { fixtureRugs, collections } from "./fixtures";
+import type { CatalogSource } from "./source";
+import type { RugSearchFilters } from "./types";
+import { FixtureCatalogSource } from "./fixture-source";
+import { PostgresCatalogSource } from "./postgres-source";
 
 /**
- * Catalog adapter. In v1 reads from in-memory fixtures; on ingestion this becomes a thin layer
- * over Postgres + pgvector. The shape of these calls is the contract used by /lib/search, the
- * concierge orchestrator, and every page.
+ * Catalog adapter — the single seam between the rest of the app and whichever source backs the
+ * inventory. Per CLAUDE.md → "Inventory feed — the critical dependency", Plan A is a real
+ * Postgres feed; Plan B is the current fixture-backed dev mode. This module picks one based on
+ * `CATALOG_SOURCE` and re-exports the three contract methods plus the auxiliary ones the app
+ * already depends on, so call sites under /app and /lib stay untouched.
+ *
+ * Default: `fixture` (the current dev behavior). Set `CATALOG_SOURCE=postgres` when the real DB
+ * and the row-to-domain mapper land.
  */
 
+function selectSource(): CatalogSource {
+  const choice = (process.env.CATALOG_SOURCE ?? "fixture").toLowerCase();
+  if (choice === "postgres") return new PostgresCatalogSource();
+  if (choice !== "fixture") {
+    // Unknown value → fall back to fixtures rather than crash dev. Log once so it's not silent.
+    // eslint-disable-next-line no-console
+    console.warn(
+      `[catalog] Unknown CATALOG_SOURCE="${process.env.CATALOG_SOURCE}". Falling back to "fixture".`,
+    );
+  }
+  return new FixtureCatalogSource();
+}
+
+// Module-level singleton — cheap to construct and stateless today; with Postgres this also
+// gives us one place to hang the connection pool.
+const source: CatalogSource = selectSource();
+
+/** Re-export the selected source instance for callers that want the full interface. */
+export function getCatalogSource(): CatalogSource {
+  return source;
+}
+
+export type { CatalogSource } from "./source";
+export type { RugSearchFilters } from "./types";
+
+// ── Public flat API ──────────────────────────────────────────────────────────
+// Existing call sites (under /app, /lib/search, /lib/ai) import these directly. Their
+// signatures match the previous implementation 1:1 — the only change is that the implementation
+// now lives behind `CatalogSource` and is swappable via `CATALOG_SOURCE`.
+
 export async function listRugs(): Promise<Rug[]> {
-  return fixtureRugs.filter((r) => !r.draft);
+  return source.listRugs();
 }
 
 export async function getRug(slug: string): Promise<Rug | null> {
-  return fixtureRugs.find((r) => r.slug === slug && !r.draft) ?? null;
+  return source.getRug(slug);
 }
 
 export async function getRugById(id: string): Promise<Rug | null> {
-  return fixtureRugs.find((r) => r.id === id && !r.draft) ?? null;
+  return source.getRugById(id);
+}
+
+export async function searchRugs(
+  query: string,
+  filters?: RugSearchFilters,
+  limit?: number,
+): Promise<Rug[]> {
+  return source.searchRugs(query, filters, limit);
+}
+
+export async function findSimilar(rugId: string, limit = 4): Promise<Rug[]> {
+  return source.findSimilar(rugId, limit);
 }
 
 export async function listCollections() {
-  return collections;
-}
-
-/**
- * Visual-similarity stub. With pgvector wired, this becomes a `<->` query against the image
- * embedding of the source rug. Here we fall back to a hand-crafted "near" rule: same collection
- * or shared origin, excluding the source piece.
- */
-export async function findSimilar(rugId: string, limit = 4): Promise<Rug[]> {
-  const src = await getRugById(rugId);
-  if (!src) return [];
-  const pool = (await listRugs()).filter((r) => r.id !== rugId);
-  const scored = pool.map((r) => {
-    let score = 0;
-    if (r.collection && r.collection === src.collection) score += 3;
-    if (r.description.provenance.origin === src.description.provenance.origin) score += 2;
-    const sharedColors = r.description.colorPalette.filter((c) =>
-      src.description.colorPalette.some((sc) => sc.name === c.name),
-    ).length;
-    score += sharedColors;
-    return { r, score };
-  });
-  scored.sort((a, b) => b.score - a.score);
-  return scored.slice(0, limit).map((s) => s.r);
+  return source.listCollections();
 }
