@@ -32,9 +32,14 @@ const nav = Montserrat({
  *
  * Order of precedence:
  *   1. `NEXT_PUBLIC_SITE_URL` — explicit override for the production apex once it's live.
- *   2. `VERCEL_URL` — set automatically on every Vercel build/preview; resolves OG images to
- *      the actual deployed host instead of a 404 on the apex.
- *   3. `https://isberian.com` — the eventual canonical, used for local builds and as a final
+ *   2. `VERCEL_PROJECT_PRODUCTION_URL` — stable production alias on Vercel (e.g.
+ *      `isberian-site.vercel.app`). Set on production deployments only. Public, not SSO-gated.
+ *   3. `VERCEL_BRANCH_URL` — branch-stable alias for previews (e.g.
+ *      `isberian-site-git-main.vercel.app`). Less SSO-friction than the per-deployment URL.
+ *   4. `VERCEL_URL` — per-deployment host. SSO-gated on preview projects, so external scrapers
+ *      hitting OG images served from this host get the login page, not the image. Kept as a
+ *      last-resort fallback.
+ *   5. `https://isberian.com` — the eventual canonical, used for local builds and as a final
  *      fallback. Don't remove this; flipping the env var is how we cut over once DNS lands.
  *
  * Captured at build time, which is exactly what we want — `metadataBase` is baked into
@@ -42,7 +47,13 @@ const nav = Montserrat({
  */
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://isberian.com");
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_BRANCH_URL
+      ? `https://${process.env.VERCEL_BRANCH_URL}`
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "https://isberian.com");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -8,17 +8,22 @@ export const contentType = "image/png";
 
 /**
  * Resolve the absolute origin so `<img src=…>` inside the OG canvas can actually be fetched
- * by next/og. Mirrors the precedence used in `app/layout.tsx` for `metadataBase`:
+ * by next/og. Must mirror the precedence used in `app/layout.tsx` for `metadataBase`:
  *
- *   NEXT_PUBLIC_SITE_URL  ›  VERCEL_URL  ›  https://isberian.com
+ *   NEXT_PUBLIC_SITE_URL  ›  VERCEL_PROJECT_PRODUCTION_URL  ›  VERCEL_BRANCH_URL  ›
+ *   VERCEL_URL  ›  https://isberian.com
  *
- * On a Vercel deploy `VERCEL_URL` is the actual deployed host (e.g.
- * `isberian-site-qbj6.vercel.app`), which is where the `/rugs/<id>.jpg` static assets
- * actually live. The apex `isberian.com` 404s today; once it's wired we'll set
- * `NEXT_PUBLIC_SITE_URL` to flip the canonical.
+ * Why the order matters: `VERCEL_URL` is the per-deployment host, which on this project is
+ * SSO-gated. Asking next/og to fetch `/rugs/17109.jpg` from an SSO-gated host returns the
+ * login HTML, not the JPEG — the right pane renders blank grey. The stable
+ * `VERCEL_PROJECT_PRODUCTION_URL` / `VERCEL_BRANCH_URL` aliases are public and serve the
+ * static asset directly.
  */
 function originForAssets(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL)
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.VERCEL_BRANCH_URL) return `https://${process.env.VERCEL_BRANCH_URL}`;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return "https://isberian.com";
 }
