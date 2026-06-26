@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { LeadForm } from "@/components/LeadForm";
+import { ShowroomLocalBusinessJsonLd } from "@/components/JsonLd";
 import { showrooms } from "@/lib/booking/showrooms";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function VisitPage() {
   return (
     <Container size="default">
+      <ShowroomLocalBusinessJsonLd />
       <section className="py-20 lg:py-28">
         <Eyebrow>Visit</Eyebrow>
         <h1 className="display text-5xl text-ink mt-4 leading-tight">

@@ -137,3 +137,59 @@ export function ServiceJsonLd({
   };
   return <Script data={data} />;
 }
+
+/**
+ * Per-showroom `LocalBusiness` (Store) JSON-LD so map snippets and per-location rich results can
+ * render. The aggregate `RugStore` in `OrganizationJsonLd` covers the brand; this covers each
+ * physical location with its own address, phone, hours, and stable `@id` anchor. Intentionally no
+ * `priceRange` — quoted only — and no `geo`/`image` since they aren't in the showroom source.
+ */
+const DAY_OF_WEEK: Record<string, string> = {
+  Mon: "https://schema.org/Monday",
+  Tue: "https://schema.org/Tuesday",
+  Wed: "https://schema.org/Wednesday",
+  Thu: "https://schema.org/Thursday",
+  Fri: "https://schema.org/Friday",
+  Sat: "https://schema.org/Saturday",
+  Sun: "https://schema.org/Sunday",
+};
+
+export function ShowroomLocalBusinessJsonLd() {
+  const keys = ["chicago", "evanston"] as const;
+  return (
+    <>
+      {keys.map((key) => {
+        const s = showrooms[key];
+        // phoneHref is "tel:+13124671212" — turn into "+1-312-467-1212".
+        const telDigits = s.phoneHref.replace(/^tel:\+/, "");
+        const telephone =
+          telDigits.length === 11
+            ? `+${telDigits[0]}-${telDigits.slice(1, 4)}-${telDigits.slice(4, 7)}-${telDigits.slice(7)}`
+            : s.phoneHref.replace(/^tel:/, "");
+        const data = {
+          "@context": "https://schema.org",
+          "@type": "Store",
+          "@id": `https://isberian.com/visit#${key}`,
+          name: `Oscar Isberian Rugs — ${s.label}`,
+          url: `https://isberian.com/visit#${key}`,
+          telephone,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: s.street,
+            addressLocality: s.city,
+            addressRegion: s.state,
+            postalCode: s.zip,
+            addressCountry: "US",
+          },
+          openingHoursSpecification: s.hours.map((h) => ({
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: DAY_OF_WEEK[h.day] ?? h.day,
+            opens: h.open,
+            closes: h.close,
+          })),
+        };
+        return <Script key={key} data={data} />;
+      })}
+    </>
+  );
+}
