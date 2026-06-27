@@ -8,6 +8,7 @@ import { RugDescriptionBlock } from "@/components/RugDescriptionBlock";
 import { RugCard } from "@/components/RugCard";
 import { LeadForm } from "@/components/LeadForm";
 import { HumanExit } from "@/components/HumanExit";
+import { View3DButton } from "@/components/View3DButton";
 import { RugJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { getRug, findSimilar, listRugs } from "@/lib/catalog";
 
@@ -102,6 +103,9 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
               </Eyebrow>
               <h1 className="display text-4xl text-ink mt-3 leading-tight">{rug.title}</h1>
             </div>
+            {rug.viewer3dUrl && (
+              <View3DButton url={rug.viewer3dUrl} title={rug.title} />
+            )}
             <RugDescriptionBlock d={rug.description} />
             {rug.status === "available" && (
               <div className="border-t border-ink-300/40 pt-8">

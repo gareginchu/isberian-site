@@ -71,6 +71,10 @@ export type Rug = {
   images: { src: string; alt: string; primary?: boolean }[];
   // Embedding vectors are stored server-side; never sent to the client.
   embeddingId?: string;
+  /** External 3D / AR viewer URL (e.g. Carpetify). Renders a "View in 3D"
+   * button on the rug detail page that opens an iframe modal. Omit for rugs
+   * without a 3D model yet. */
+  viewer3dUrl?: string;
   updatedAt: string; // ISO
   draft: boolean; // until editor approves
 };

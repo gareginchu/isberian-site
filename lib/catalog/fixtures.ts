@@ -47,6 +47,9 @@ type Seed = {
    * Set false for AI-drafted entries so the UI flags unverified claims as
    * "preliminary" without removing the rug from the catalog. */
   verified?: boolean;
+  /** External 3D / AR viewer URL (e.g. Carpetify). Surfaces a "View in 3D"
+   * button on the rug detail page. */
+  viewer3dUrl?: string;
 };
 
 const seeds: Seed[] = [];
@@ -93,6 +96,7 @@ function build(seed: Seed): Rug {
         primary: true,
       },
     ],
+    ...(seed.viewer3dUrl ? { viewer3dUrl: seed.viewer3dUrl } : {}),
     updatedAt: "2026-06-24T00:00:00.000Z",
     draft: seed.draft === true,
   };
