@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Container } from "@/components/Container";
 import { ConciergeChat } from "@/components/ConciergeChat";
 
@@ -12,7 +13,12 @@ export default function DiscoverPage() {
   return (
     <Container size="narrow">
       <section className="pt-10 pb-14 lg:pt-14">
-        <ConciergeChat />
+        {/* Suspense boundary so ConciergeChat can read `?q=` (the query
+            handed off from the homepage's HomeConcierge surface) without
+            bailing static rendering. */}
+        <Suspense fallback={null}>
+          <ConciergeChat />
+        </Suspense>
       </section>
     </Container>
   );

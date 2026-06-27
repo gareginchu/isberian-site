@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { humanExitContent } from "@/lib/guardrails/human-exit";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -12,6 +13,17 @@ const OPENERS = [
   "Want to come in this week?",
 ];
 
+/** Read `?q=...` from the URL inside a Suspense boundary so Next.js doesn't
+ * bail static rendering of /discover. Returns null if no query is present. */
+function useInitialQuery(): string | null {
+  try {
+    const params = useSearchParams();
+    return params?.get("q") ?? null;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Concierge chat surface. Streams the structured /api/concierge response. Human-exit visible
  * throughout; never blocks the visible phone numbers behind a loading state.
@@ -21,10 +33,20 @@ export function ConciergeChat() {
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const initialQuery = useInitialQuery();
+  const autoFiredRef = useRef(false);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [history, pending]);
+
+  // If the user landed via /discover?q=..., auto-fire the question once.
+  useEffect(() => {
+    if (autoFiredRef.current || !initialQuery) return;
+    autoFiredRef.current = true;
+    void send(initialQuery);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialQuery]);
 
   async function send(text: string) {
     if (!text.trim() || pending) return;
