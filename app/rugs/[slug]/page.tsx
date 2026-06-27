@@ -106,12 +106,20 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
               <h1 className="display text-4xl text-ink mt-3 leading-tight">{rug.title}</h1>
             </div>
             {rug.model3dGlbUrl ? (
-              <RugViewer3D
-                glbUrl={rug.model3dGlbUrl}
-                usdzUrl={rug.model3dUsdzUrl}
-                alt={`3D view of ${rug.title}`}
-                posterUrl={rug.images.find((i) => i.primary)?.src ?? rug.images[0]?.src}
-              />
+              <div className="space-y-5">
+                <RugViewer3D
+                  glbUrl={rug.model3dGlbUrl}
+                  usdzUrl={rug.model3dUsdzUrl}
+                  alt={`3D view of ${rug.title}`}
+                  posterUrl={rug.images.find((i) => i.primary)?.src ?? rug.images[0]?.src}
+                />
+                {/* Dynamic QR — visitor scans with their phone camera and lands
+                    directly in AR (Scene Viewer on Android, Quick Look on iOS). */}
+                <View3DQr
+                  src={`/api/rugs/${rug.slug}/qr`}
+                  alt={`QR code to view ${rug.title} in AR on your phone`}
+                />
+              </div>
             ) : rug.viewer3dQrUrl ? (
               <View3DQr src={rug.viewer3dQrUrl} alt={`QR code — view ${rug.title} in 3D`} />
             ) : rug.viewer3dUrl ? (
