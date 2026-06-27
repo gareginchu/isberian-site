@@ -53,6 +53,10 @@ type Seed = {
   /** Path under /public to a QR code image. Preferred over viewer3dUrl when
    * the provider blocks iframe embedding. */
   viewer3dQrUrl?: string;
+  /** Path under /public to a self-hosted .glb 3D model. */
+  model3dGlbUrl?: string;
+  /** Optional iOS-specific .usdz model for Quick Look AR. */
+  model3dUsdzUrl?: string;
 };
 
 const seeds: Seed[] = [];
@@ -101,6 +105,8 @@ function build(seed: Seed): Rug {
     ],
     ...(seed.viewer3dUrl ? { viewer3dUrl: seed.viewer3dUrl } : {}),
     ...(seed.viewer3dQrUrl ? { viewer3dQrUrl: seed.viewer3dQrUrl } : {}),
+    ...(seed.model3dGlbUrl ? { model3dGlbUrl: seed.model3dGlbUrl } : {}),
+    ...(seed.model3dUsdzUrl ? { model3dUsdzUrl: seed.model3dUsdzUrl } : {}),
     updatedAt: "2026-06-24T00:00:00.000Z",
     draft: seed.draft === true,
   };

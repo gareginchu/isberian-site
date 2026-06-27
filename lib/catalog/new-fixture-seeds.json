@@ -478,7 +478,8 @@
       ]
     },
     "collection": "antique-caucasian",
-    "viewer3dQrUrl": "/rugs/qr-71750.png"
+    "viewer3dQrUrl": "/rugs/qr-71750.png",
+    "model3dGlbUrl": "/rugs/71750.glb"
   },
   {
     "id": 79000,

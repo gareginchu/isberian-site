@@ -80,6 +80,14 @@ export type Rug = {
    * load the AR view directly on the visitor's phone. Preferred over
    * viewer3dUrl when the provider blocks iframe embedding. */
   viewer3dQrUrl?: string;
+  /** Path (relative to /public) of a self-hosted .glb 3D model. Preferred
+   * over the third-party paths above — renders inline via Google's
+   * `<model-viewer>` component with native AR support on Android and (with
+   * a .usdz companion) iOS. */
+  model3dGlbUrl?: string;
+  /** Optional iOS-specific .usdz model. Without it, iOS users see the 3D
+   * viewer but not the AR button (Quick Look needs USDZ). */
+  model3dUsdzUrl?: string;
   updatedAt: string; // ISO
   draft: boolean; // until editor approves
 };

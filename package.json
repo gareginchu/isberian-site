@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.69.0",
+    "@gltf-transform/core": "^4.4.0",
+    "@google/model-viewer": "^4.3.1",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@sanity/client": "^7.0.0",
@@ -41,6 +43,7 @@
     "dotenv": "^17.4.2",
     "eslint": "^9.18.0",
     "eslint-config-next": "16.2.9",
+    "jsqr": "^1.4.0",
     "playwright": "^1.61.1",
     "postcss": "^8.5.1",
     "pptxgenjs": "^4.0.1",
