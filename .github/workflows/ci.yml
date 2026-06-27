@@ -34,3 +34,4 @@ jobs:
         env:
           EVAL_BASE_URL: https://isberian-site-qbj6.vercel.app
         run: pnpm evals:crawl
+# verified 2026-06-27
