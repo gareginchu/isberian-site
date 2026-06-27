@@ -39,7 +39,7 @@ const PRIMARY: Item[] = [
 ];
 
 const SECONDARY: Item[] = [
-  { href: "/discover", label: "Concierge" },
+  { href: "/discover", label: "Ask" },
   { href: "/identify", label: "Identify a rug" },
   { href: "/journal", label: "Journal" },
   { href: "/story", label: "Story" },
