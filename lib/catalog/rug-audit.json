@@ -1,0 +1,596 @@
+[
+  {
+    "id": "14010",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "14149",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": false,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Date inscription '1881' visible in lower field counts as an embedded label/text distraction, and slight perspective taper suggests the shot is not perfectly orthographic."
+  },
+  {
+    "id": "14204",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "17109",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "fail",
+    "reason": "Rug appears to be hung or laid on a slightly angled surface rather than shot from directly overhead, introducing perspective distortion unsuitable for flat-plane compositing."
+  },
+  {
+    "id": "17370",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "18778",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean near-top-down flat lay with tight crop, no distractions, and good resolution ready for compositing."
+  },
+  {
+    "id": "19016",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "19017",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Rug appears to be hung or laid on a slight angle rather than shot from directly overhead, with visible perspective distortion and uneven edges indicating a non-top-down catalog-style shot."
+  },
+  {
+    "id": "22084",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Rug appears to be hung or draped vertically rather than photographed from above, indicating a catalog/hanging shot rather than a flat top-down capture."
+  },
+  {
+    "id": "22085",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Rug is photographed at a slight perspective angle rather than true top-down, causing trapezoidal distortion that makes it unsuitable for flat-plane compositing."
+  },
+  {
+    "id": "24122",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "25270",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "31010",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Rug appears photographed flat but with slight perspective distortion and trapezoid shape indicating a non-overhead angle, not a true top-down orthographic shot suitable for warping."
+  },
+  {
+    "id": "31018",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "fail",
+    "reason": "The rug is photographed at a slight perspective angle rather than a true orthographic top-down view, making it unsuitable for flat-plane warping in a visualizer."
+  },
+  {
+    "id": "31755",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "32364",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "34545",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "fail",
+    "reason": "Rug appears photographed at a slight angle rather than true top-down orthographic view, causing visible perspective distortion that would degrade warping accuracy in a visualizer."
+  },
+  {
+    "id": "36192",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "43370",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": false,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Inscription text/script visible woven into the rug field area that may be a catalog watermark or label overlay, failing noDistractions criterion."
+  },
+  {
+    "id": "43371",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean flat lay with tight crop and no distractions, though significant pile wear reduces texture detail."
+  },
+  {
+    "id": "43373",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": false,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Visible date inscription '1713' and alphanumeric markings/watermarks on the rug surface count as distractions that would interfere with clean compositing."
+  },
+  {
+    "id": "43911",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "The rug appears to be hung or draped vertically rather than photographed from above, making it unsuitable for floor compositing."
+  },
+  {
+    "id": "51108",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "52285",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "53276",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "62274",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "63000",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "67432",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "69068",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "70703",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "73404",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "76404",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "76522",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": false,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Inscription/label strip visible along the left border of the rug constitutes a distraction that would corrupt compositing."
+  },
+  {
+    "id": "76820",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "77529",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "fail",
+    "reason": "Rug is photographed at a slight vertical perspective angle rather than a true top-down orthographic view, causing trapezoid distortion that would corrupt floor-plane warping."
+  },
+  {
+    "id": "77546",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "77548",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "The rug appears photographed at a slight angle with visible perspective distortion rather than a true flat top-down overhead shot, making it unsuitable for accurate floor compositing."
+  },
+  {
+    "id": "78529",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "80335",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "80337",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "83541",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "84070",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "84195",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Rug appears to be hung or draped vertically rather than shot from above, making it unsuitable for floor plane compositing."
+  },
+  {
+    "id": "86335",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "86721",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "Rug appears hung or laid on a slight angle rather than shot from directly overhead, giving a flat-catalog perspective that is not true top-down."
+  },
+  {
+    "id": "86777",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "88834",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88837",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and acceptable resolution for compositing despite slight center fold shadow."
+  },
+  {
+    "id": "88839",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "88841",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88843",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88845",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88847",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing despite some visible wear-related texture noise."
+  },
+  {
+    "id": "88849",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88851",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing despite minor wrinkling and age-related texture."
+  },
+  {
+    "id": "88853",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88855",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay, tight crop with minimal background, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "88857",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "88859",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": false,
+    "resolution": "good",
+    "fit": "fail",
+    "reason": "Rug appears to be hung or draped vertically with a visible fold/crease running down the center, indicating a wall-hung or draped display rather than a flat top-down shot, and the fold itself is a distraction."
+  },
+  {
+    "id": "88885",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "88889",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "fail",
+    "reason": "The rug appears to be hung or draped vertically rather than photographed from above, with visible surface flow suggesting a non-flat, angled presentation unsuitable for floor compositing."
+  },
+  {
+    "id": "89068",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution ready for compositing."
+  },
+  {
+    "id": "89082",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "ok",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and adequate resolution for compositing."
+  },
+  {
+    "id": "89090",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay, tight crop with no background, no distractions, and sufficient resolution for compositing."
+  },
+  {
+    "id": "89111",
+    "topDown": true,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "pass",
+    "reason": "Clean top-down flat lay with tight crop, no distractions, and good resolution — ready for compositing."
+  },
+  {
+    "id": "89134",
+    "topDown": false,
+    "tightCrop": true,
+    "noDistractions": true,
+    "resolution": "good",
+    "fit": "fail",
+    "reason": "Rug appears to be photographed hung or draped vertically rather than laid flat and shot from above, making it unsuitable for floor compositing."
+  }
+]

@@ -63,6 +63,27 @@ export const ROOMS: Room[] = [
   // The room photo is staying on disk for the eventual masked-render pass.
 
   {
+    slug: "living-modern",
+    label: "Living (modern)",
+    description:
+      "Minimalist living room with a herringbone parquet floor, mid-century sideboard, and a grey armchair beside a tall window.",
+    src: "/visualizer/rooms/living-modern.jpg",
+    width: 3000,
+    height: 4500,
+    // Open foreground floor in front of the armchair and sideboard. The
+    // herringbone parquet competes visually with busy fields — best for
+    // solid or restrained rugs (Moroccan flatweave, modern minimal, etc.).
+    placement: {
+      topLeft: [400, 2400],
+      topRight: [2700, 2400],
+      bottomRight: [2950, 4400],
+      bottomLeft: [50, 4400],
+    },
+    realDimensions: { widthFt: 12, depthFt: 9 },
+    recommendedSize: "large",
+    notes: "Herringbone parquet — pairs best with restrained-field rugs.",
+  },
+  {
     slug: "bedroom",
     label: "Bedroom",
     description:
@@ -71,13 +92,17 @@ export const ROOMS: Room[] = [
     width: 3800,
     height: 2533,
     // Floor in front of the bed. Light wood; most rugs read well against it.
+    // Tightened from earlier estimate — the visible bedroom floor is closer
+    // to 11×7 ft of usable rug zone, not 14×9. Result: most catalog rugs
+    // (which average 6×9) now fill a larger fraction of the visible floor
+    // and read at a believable scale.
     placement: {
       topLeft: [1300, 1750],
       topRight: [2800, 1750],
       bottomRight: [3400, 2480],
       bottomLeft: [500, 2480],
     },
-    realDimensions: { widthFt: 14, depthFt: 9 },
+    realDimensions: { widthFt: 11, depthFt: 7 },
     recommendedSize: "large",
     notes: "Generous rug zone at the foot of the bed. Works for 5×8 through 9×12.",
   },
@@ -95,10 +120,10 @@ export const ROOMS: Room[] = [
     // Front:back ratio kept around 2:1 for natural convergence — too strong a
     // ratio makes the runner taper to a thread in the distance.
     placement: {
-      topLeft: [900, 1750],
-      topRight: [1650, 1750],
-      bottomRight: [2050, 3450],
-      bottomLeft: [550, 3450],
+      topLeft: [950, 1850],
+      topRight: [1620, 1850],
+      bottomRight: [2100, 3450],
+      bottomLeft: [480, 3450],
     },
     realDimensions: { widthFt: 6, depthFt: 12 },
     recommendedSize: "runner",

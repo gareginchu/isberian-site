@@ -1,4 +1,5 @@
 import type { Rug, RugOrigin, RugDescription } from "@/lib/types/rug";
+import newSeedsRaw from "./new-fixture-seeds.json" with { type: "json" };
 
 /**
  * Catalog records sourced from isberian.com (stock numbers, titles, sizes). Images mirrored
@@ -40,6 +41,12 @@ type Seed = {
   lead: string;
   enrichment?: Enrichment;
   collection?: string;
+  /** Top-level publish gate. Drafts are hidden from `listRugs`. Default false. */
+  draft?: boolean;
+  /** Has an editor verified the origin / age / provenance claims? Default true.
+   * Set false for AI-drafted entries so the UI flags unverified claims as
+   * "preliminary" without removing the rug from the catalog. */
+  verified?: boolean;
 };
 
 const seeds: Seed[] = [
@@ -215,7 +222,7 @@ function build(seed: Seed): Rug {
         technique,
         materials,
         pile: seed.pile ?? "Medium",
-        ...(seed.age ? { age: { circa: seed.age, verified: true } } : {}),
+        ...(seed.age ? { age: { circa: seed.age, verified: seed.verified !== false } } : {}),
         condition: seed.condition,
       },
       colorPalette: seed.enrichment?.colorPalette ?? [],
@@ -224,7 +231,7 @@ function build(seed: Seed): Rug {
       provenance: {
         origin: seed.origin,
         ...(seed.region ? { region: seed.region } : {}),
-        verified: true,
+        verified: seed.verified !== false,
       },
     },
     images: [
@@ -235,11 +242,25 @@ function build(seed: Seed): Rug {
       },
     ],
     updatedAt: "2026-06-24T00:00:00.000Z",
-    draft: false,
+    draft: seed.draft === true,
   };
 }
 
-export const fixtureRugs: Rug[] = seeds.map(build);
+// AI-drafted entries for the 20 upstream rugs we fetched. Visible in the
+// catalog but with age.verified / provenance.verified both false — the UI
+// surfaces those flags as "preliminary" so the editor's review status is
+// honest without hiding the rugs from the demo.
+//
+// The Seed-level `draft: false` is what lets them appear in /rugs and the
+// visualizer picker; the field-level verified flags keep CLAUDE.md's "no
+// unverified claims published as fact" rule honest.
+const draftSeeds: Seed[] = (newSeedsRaw as Omit<Seed, "draft" | "verified">[]).map((s) => ({
+  ...s,
+  draft: false,    // visible in catalog
+  verified: false, // age + provenance claims show as preliminary in the UI
+}));
+
+export const fixtureRugs: Rug[] = [...seeds, ...draftSeeds].map(build);
 
 export const collections = [
   { slug: "antique-persian", title: "Antique Persian" },
