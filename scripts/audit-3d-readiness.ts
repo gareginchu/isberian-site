@@ -124,7 +124,7 @@ async function main() {
   const results: Verdict[] = [];
   for (let i = 0; i < ids.length; i += CONCURRENCY) {
     const batch = ids.slice(i, i + CONCURRENCY);
-    const r = await Promise.all(batch.map((id) => auditOne(client, id)));
+    const r = await Promise.all(batch.map((id: string) => auditOne(client, id)));
     for (const v of r) {
       results.push(v);
       const tag = v.fit === "pass" ? "PASS" : "FAIL";
