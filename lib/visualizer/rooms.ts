@@ -46,27 +46,12 @@ export type Room = {
 };
 
 export const ROOMS: Room[] = [
-  {
-    slug: "dining",
-    label: "Dining",
-    description:
-      "Modern dining room with a dark sculptural table, black wishbone chairs, and a light-wood floor.",
-    src: "/visualizer/rooms/dining.jpg",
-    width: 3200,
-    height: 2133,
-    // Rug zone under the dining table. The table + chairs will occlude part of
-    // the composited rug — accepted v0 limitation; a proper render mask comes
-    // later. Placement covers the visible foreground floor.
-    placement: {
-      topLeft: [700, 1150],
-      topRight: [2500, 1150],
-      bottomRight: [2750, 1950],
-      bottomLeft: [450, 1950],
-    },
-    recommendedSize: "large",
-    notes:
-      "Modern, neutral palette. Note: the table partially occludes the rug zone — accepted v0 limitation.",
-  },
+  // Dining (public/visualizer/rooms/dining.jpg) is deliberately not yet in v0.
+  // Dining rugs sit UNDER the table — visualizing that needs an alpha mask of
+  // the table + chairs as occluding geometry. Without that mask the rug renders
+  // ON TOP of the furniture, which reads worse than no visualization at all.
+  // The room photo is staying on disk for the eventual masked-render pass.
+
   {
     slug: "bedroom",
     label: "Bedroom",
