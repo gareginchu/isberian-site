@@ -1,0 +1,362 @@
+[
+  {
+    "id": "17600",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot of a rectangular rug with clean edges, neutral uniform background, no extraneous objects, and good color/sharpness throughout."
+  },
+  {
+    "id": "20300",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot of a rectangular rug with clean edges, dark uniform background, no extraneous objects, and good resolution."
+  },
+  {
+    "id": "23000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, uniform neutral background, no foreign objects, and good color clarity."
+  },
+  {
+    "id": "39500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, plain white background, no extraneous objects, and good resolution with accurate color rendering."
+  },
+  {
+    "id": "41000",
+    "fit": "fail",
+    "topDown": false,
+    "cleanEdges": false,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "Shot at a steep angle producing a trapezoid perspective, background shows busy hardwood floor and stacked rugs, and the non-orthogonal view makes clean rectangular mapping impossible."
+  },
+  {
+    "id": "42500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot with a pure white background, sharp detail, full rectangular rug visible, and no extraneous objects."
+  },
+  {
+    "id": "63750",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot of a rectangular Caucasian rug on a clean neutral background with no extraneous objects and good color/sharpness."
+  },
+  {
+    "id": "71750",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, uniform white background, no extraneous objects, and sharp color-accurate detail throughout."
+  },
+  {
+    "id": "79000",
+    "fit": "fail",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": false,
+    "reason": "A small white label/tag is visible near the bottom-left of the rug field."
+  },
+  {
+    "id": "79250",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot of a rectangular rug filling the frame with no background distractions or foreign objects."
+  },
+  {
+    "id": "82000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with a clean rectangular outline, uniform light background, no extraneous objects, and sufficient resolution despite natural age wear."
+  },
+  {
+    "id": "86000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, solid white background, no foreign objects, and sharp color-accurate detail throughout."
+  },
+  {
+    "id": "18800",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight top-down shot with clean rectangular edges, uniform white background, no extraneous objects, and good sharpness throughout."
+  },
+  {
+    "id": "37500",
+    "fit": "fail",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "The background is busy textured hardwood flooring, and a small white paper/tag object is visible on the lower-right edge of the rug."
+  },
+  {
+    "id": "38000",
+    "fit": "fail",
+    "topDown": false,
+    "cleanEdges": true,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "The rug is shot at a noticeable angle (not straight overhead), producing a trapezoidal perspective, and the background shows a busy wood floor with other objects visible in the upper-left corner."
+  },
+  {
+    "id": "41500",
+    "fit": "fail",
+    "topDown": false,
+    "cleanEdges": false,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "Shot at a strong angle producing a trapezoidal perspective, background contains stacked rugs and wooden floor, and corners are not fully visible."
+  },
+  {
+    "id": "61500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, uniform dark background, no extraneous objects, and good sharpness throughout."
+  },
+  {
+    "id": "44000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, rug fills the frame entirely, no extraneous objects, and the image is sharp with accurate dark charcoal and ivory tones."
+  },
+  {
+    "id": "57750",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot of a rectangular rug with a tight crop, uniform light background, no extraneous objects, and good sharpness throughout."
+  },
+  {
+    "id": "58750",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot of a rectangular rug filling the frame with no background, objects, or overlays."
+  },
+  {
+    "id": "40000",
+    "fit": "fail",
+    "topDown": false,
+    "cleanEdges": true,
+    "cleanBackground": false,
+    "noObjects": true,
+    "reason": "Shot at a strong perspective angle, making the rug appear as a trapezoid rather than a clean rectangle, and the wood floor background is busy and textured."
+  },
+  {
+    "id": "40500",
+    "fit": "fail",
+    "topDown": true,
+    "cleanEdges": false,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "Rug is round/oval shaped (not rectangular), background shows busy hardwood floor with visible furniture, and a price tag is visible on the edge."
+  },
+  {
+    "id": "51750",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot of a clean rectangular rug filling the frame with no background or extraneous objects visible."
+  },
+  {
+    "id": "65000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, uniform white background, no extraneous objects, and sufficient sharpness and color fidelity."
+  },
+  {
+    "id": "64750",
+    "fit": "fail",
+    "topDown": true,
+    "cleanEdges": false,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "The rug appears to be only partially shown — the right side and bottom are cut off or missing, resulting in an incomplete rectangle without clean full edges."
+  },
+  {
+    "id": "80100",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, uniform neutral background, no extraneous objects, and good resolution."
+  },
+  {
+    "id": "36500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot with the rug filling the frame, sharp detail, no extraneous objects, and a modern geometric pattern in warm reds and oranges."
+  },
+  {
+    "id": "42000",
+    "fit": "fail",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "Visible wood floor background is busy and textured, and a small label/tag is visible at the bottom-left edge of the rug."
+  },
+  {
+    "id": "49000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Tight top-down crop of a plain-field rug with no visible background, clean rectangular edges, and no extraneous objects."
+  },
+  {
+    "id": "50000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, rug fills the frame entirely, no extraneous objects, and resolution is sharp with accurate muted purple-grey tones."
+  },
+  {
+    "id": "53000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down crop of a lavender trellis rug filling the entire frame with no distractions or foreign objects."
+  },
+  {
+    "id": "39000",
+    "fit": "fail",
+    "topDown": false,
+    "cleanEdges": true,
+    "cleanBackground": false,
+    "noObjects": false,
+    "reason": "Shot at a significant angle (not top-down), producing a trapezoid perspective distortion, and the background shows busy wood-grain flooring plus a rolled rug visible in the upper right corner."
+  },
+  {
+    "id": "54500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot with the rug filling the entire frame, rectangular edges, no background or extraneous objects, and good sharpness throughout."
+  },
+  {
+    "id": "45500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot of a flatweave rug filling the frame with no background distractions or foreign objects."
+  },
+  {
+    "id": "52250",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot of a striped flatweave rug filling the frame with no background, objects, or distortion."
+  },
+  {
+    "id": "51500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Clean top-down shot of a runner rug on a white background with sharp detail and no extraneous objects."
+  },
+  {
+    "id": "50500",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, solid white background, no extraneous objects, and sharp color-accurate detail throughout."
+  },
+  {
+    "id": "50750",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, solid white background, no extraneous objects, and sharp color-accurate detail throughout."
+  },
+  {
+    "id": "51250",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot of a rectangular rug filling the frame cleanly with no background, objects, or overlays."
+  },
+  {
+    "id": "52000",
+    "fit": "pass",
+    "topDown": true,
+    "cleanEdges": true,
+    "cleanBackground": true,
+    "noObjects": true,
+    "reason": "Straight overhead shot with clean rectangular edges, uniform white background, no extraneous objects, and good color clarity throughout."
+  }
+]
