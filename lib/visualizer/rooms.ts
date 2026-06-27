@@ -33,6 +33,23 @@ export type RoomSlot =
   | "stair"
   | "loft";
 
+export type Scene3DConfig = {
+  /** Camera position in scene units, where the floor is y=0 and the back-plane is at z=-5. */
+  cameraPos: [number, number, number];
+  /** Where the camera is looking. */
+  cameraTarget: [number, number, number];
+  /** Field of view in degrees. Lower = tighter / more zoomed. */
+  cameraFov: number;
+  /** Directional light position (mimics window/skylight direction). */
+  lightPos: [number, number, number];
+  lightIntensity: number;
+  /** Hex color for the virtual floor beneath the rug — should match the photo's floor. */
+  floorColor: string;
+  /** Real-world width of the visible floor area in feet. Scales the rug texture. */
+  floorWidthFt: number;
+  floorDepthFt: number;
+};
+
 export type Room = {
   slug: RoomSlot;
   label: string;
@@ -51,6 +68,8 @@ export type Room = {
    * `depthFt`  = front-to-back (camera-to-far-wall) extent, in feet
    */
   realDimensions: { widthFt: number; depthFt: number };
+  /** Scene config for the 3D visualizer (Visualizer3D.tsx). */
+  scene3d: Scene3DConfig;
   recommendedSize?: "small" | "medium" | "large" | "runner";
   notes?: string;
 };
@@ -80,6 +99,19 @@ export const ROOMS: Room[] = [
       bottomLeft: [50, 4400],
     },
     realDimensions: { widthFt: 12, depthFt: 9 },
+    // Portrait photo of a corner room with herringbone parquet in the
+    // foreground. Camera sits at eye-level, looking slightly down toward
+    // the floor area in front of the sideboard.
+    scene3d: {
+      cameraPos: [0, 1.5, 3.5],
+      cameraTarget: [0, 0.3, -1.5],
+      cameraFov: 32,
+      lightPos: [3, 4, 2], // window light from the right (matches photo)
+      lightIntensity: 1.7,
+      floorColor: "#b08858", // honey-toned herringbone oak
+      floorWidthFt: 12,
+      floorDepthFt: 9,
+    },
     recommendedSize: "large",
     notes: "Herringbone parquet — pairs best with restrained-field rugs.",
   },
@@ -103,6 +135,19 @@ export const ROOMS: Room[] = [
       bottomLeft: [500, 2480],
     },
     realDimensions: { widthFt: 11, depthFt: 7 },
+    // Landscape photo of a bedroom with light-wood floor in front of the
+    // bed. Camera at standing-height, looking slightly down at the floor
+    // area. Window light from the left.
+    scene3d: {
+      cameraPos: [0, 1.6, 4],
+      cameraTarget: [0, 0, -1],
+      cameraFov: 35,
+      lightPos: [-3, 5, 2],
+      lightIntensity: 1.6,
+      floorColor: "#d8c7a8", // pale, slightly warm oak
+      floorWidthFt: 11,
+      floorDepthFt: 7,
+    },
     recommendedSize: "large",
     notes: "Generous rug zone at the foot of the bed. Works for 5×8 through 9×12.",
   },
@@ -126,6 +171,19 @@ export const ROOMS: Room[] = [
       bottomLeft: [480, 3450],
     },
     realDimensions: { widthFt: 6, depthFt: 12 },
+    // Portrait photo with strong one-point perspective down a hallway.
+    // Camera centered, looking straight into the corridor. Light from
+    // the chandelier above — softer ambient.
+    scene3d: {
+      cameraPos: [0, 1.6, 3],
+      cameraTarget: [0, 1, -5],
+      cameraFov: 55,
+      lightPos: [0, 4, 1],
+      lightIntensity: 1.3,
+      floorColor: "#5a3d29", // dark rich hardwood
+      floorWidthFt: 6,
+      floorDepthFt: 14,
+    },
     recommendedSize: "runner",
     notes: "Runner zone with strong one-point perspective. Best for long narrow runners.",
   },
