@@ -78,12 +78,16 @@ export const ROOMS: Room[] = [
     src: "/visualizer/rooms/foyer.jpg",
     width: 2576,
     height: 3568,
-    // One-point perspective hallway. Narrow at the back, wider at the front.
+    // One-point perspective hallway. The back of the runner sits where the
+    // hallway floor BECOMES VISIBLE (around y=1750), not at the chandelier
+    // (which is ceiling/wall). The front sits at the foreground floor edge.
+    // Front:back ratio kept around 2:1 for natural convergence — too strong a
+    // ratio makes the runner taper to a thread in the distance.
     placement: {
-      topLeft: [1080, 880],
-      topRight: [1500, 880],
-      bottomRight: [2400, 3500],
-      bottomLeft: [180, 3500],
+      topLeft: [900, 1750],
+      topRight: [1650, 1750],
+      bottomRight: [2050, 3450],
+      bottomLeft: [550, 3450],
     },
     recommendedSize: "runner",
     notes: "Runner zone with strong one-point perspective. Best for long narrow runners.",
