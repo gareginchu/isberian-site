@@ -94,3 +94,63 @@ export function scaleQuad(q: Quadrilateral, scale: number): Quadrilateral {
     bottomLeft: [q.bottomLeft[0] * scale, q.bottomLeft[1] * scale] as const,
   };
 }
+
+/**
+ * Bilinear interpolation inside a quadrilateral. (u, v) are unit coords where
+ * u=0 is the left edge, u=1 is the right edge, v=0 is the top (far) edge, and
+ * v=1 is the bottom (near) edge. Used to find the corners of a rug's actual
+ * coverage area inside the room's full placement quad.
+ */
+function bilerp(q: Quadrilateral, u: number, v: number): Point {
+  const [tlx, tly] = q.topLeft;
+  const [trx, try_] = q.topRight;
+  const [brx, bry] = q.bottomRight;
+  const [blx, bly] = q.bottomLeft;
+  const x =
+    (1 - u) * (1 - v) * tlx + u * (1 - v) * trx + u * v * brx + (1 - u) * v * blx;
+  const y =
+    (1 - u) * (1 - v) * tly + u * (1 - v) * try_ + u * v * bry + (1 - u) * v * bly;
+  return [x, y];
+}
+
+/**
+ * Compute the sub-quadrilateral that a `rugWidthFt × rugDepthFt` rug occupies
+ * inside the room's full placement quad, centered. Respects the room's
+ * `realDimensions` so a 4×6 reads as a scatter and a 9×12 nearly fills the floor.
+ *
+ * If the rug is taller than the room's depth, the depth ratio clamps to 1
+ * (rug doesn't extend past the back of the room).
+ */
+export function rugSubQuad(
+  room: { placement: Quadrilateral; realDimensions: { widthFt: number; depthFt: number } },
+  rugWidthFt: number,
+  rugDepthFt: number,
+): Quadrilateral {
+  const wRatio = Math.min(rugWidthFt / room.realDimensions.widthFt, 1);
+  const dRatio = Math.min(rugDepthFt / room.realDimensions.depthFt, 1);
+  const uLo = (1 - wRatio) / 2;
+  const uHi = (1 + wRatio) / 2;
+  const vLo = (1 - dRatio) / 2;
+  const vHi = (1 + dRatio) / 2;
+  return {
+    topLeft: bilerp(room.placement, uLo, vLo),
+    topRight: bilerp(room.placement, uHi, vLo),
+    bottomRight: bilerp(room.placement, uHi, vHi),
+    bottomLeft: bilerp(room.placement, uLo, vHi),
+  };
+}
+
+/**
+ * Parse an `sizeImperial` like `4'2" × 8'0"` into `{ widthFt, depthFt }`. The
+ * convention used throughout the catalog: the first dimension is the rug's
+ * shorter (width) side, the second is the longer (length / depth) side.
+ * Falls back to 6×9 if parsing fails — sensible default for an unknown rug.
+ */
+export function parseRugSizeFt(sizeImperial: string): { widthFt: number; depthFt: number } {
+  const m = sizeImperial.match(/(\d+)'\s*(\d+)?"?\s*[×x]\s*(\d+)'\s*(\d+)?"?/);
+  if (!m) return { widthFt: 6, depthFt: 9 };
+  const w = parseInt(m[1] ?? "0", 10) + parseInt(m[2] ?? "0", 10) / 12;
+  const l = parseInt(m[3] ?? "0", 10) + parseInt(m[4] ?? "0", 10) / 12;
+  if (!w || !l) return { widthFt: 6, depthFt: 9 };
+  return { widthFt: w, depthFt: l };
+}

@@ -23,3 +23,6 @@ scripts/vision-results.json
 
 # Generated client reports (source MD is in docs/)
 *.docx
+
+# Claude Code agent worktrees (locked by harness)
+.claude/

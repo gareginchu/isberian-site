@@ -2,6 +2,27 @@ import type { Rug } from "@/lib/types/rug";
 import type { CatalogSource } from "./source";
 import type { RugSearchFilters } from "./types";
 import { fixtureRugs, collections } from "./fixtures";
+import { similarRugIds } from "@/lib/similarity/visual";
+
+/**
+ * Heuristic similarity used when CLIP embeddings are missing. Same scoring the
+ * codebase shipped with before the visual embeddings landed: shared collection,
+ * shared origin, shared palette names. Honest but coarse — kept as a safety net.
+ */
+function scoreByMetadata(src: Rug, pool: Rug[]): Rug[] {
+  const scored = pool.map((r) => {
+    let score = 0;
+    if (r.collection && r.collection === src.collection) score += 3;
+    if (r.description.provenance.origin === src.description.provenance.origin) score += 2;
+    const sharedColors = r.description.colorPalette.filter((c) =>
+      src.description.colorPalette.some((sc) => sc.name === c.name),
+    ).length;
+    score += sharedColors;
+    return { r, score };
+  });
+  scored.sort((a, b) => b.score - a.score);
+  return scored.map((s) => s.r);
+}
 
 /**
  * Dev-mode catalog source. Reads from the in-memory fixtures in `./fixtures`. This is the
@@ -37,19 +58,25 @@ export class FixtureCatalogSource implements CatalogSource {
   async findSimilar(rugId: string, limit = 4): Promise<Rug[]> {
     const src = await this.getRugById(rugId);
     if (!src) return [];
-    const pool = (await this.listRugs()).filter((r) => r.id !== rugId);
-    const scored = pool.map((r) => {
-      let score = 0;
-      if (r.collection && r.collection === src.collection) score += 3;
-      if (r.description.provenance.origin === src.description.provenance.origin) score += 2;
-      const sharedColors = r.description.colorPalette.filter((c) =>
-        src.description.colorPalette.some((sc) => sc.name === c.name),
-      ).length;
-      score += sharedColors;
-      return { r, score };
-    });
-    scored.sort((a, b) => b.score - a.score);
-    return scored.slice(0, limit).map((s) => s.r);
+    const all = await this.listRugs();
+    const byId = new Map(all.map((r) => [r.id, r]));
+
+    // Primary path: CLIP visual embeddings (precomputed offline). Honest visual
+    // similarity — palette, weave density, motif scale — not just metadata bumps.
+    const visualIds = similarRugIds(rugId, limit);
+    if (visualIds.length > 0) {
+      const visual = visualIds
+        .map((id) => byId.get(id))
+        .filter((r): r is Rug => Boolean(r));
+      if (visual.length >= limit) return visual.slice(0, limit);
+      // If embeddings cover fewer rugs than we want, top up from metadata fallback.
+      const seen = new Set(visual.map((r) => r.id));
+      const fallback = scoreByMetadata(src, all.filter((r) => r.id !== rugId && !seen.has(r.id)));
+      return [...visual, ...fallback.slice(0, limit - visual.length)];
+    }
+
+    // Fallback: same metadata heuristic the codebase shipped with before CLIP.
+    return scoreByMetadata(src, all.filter((r) => r.id !== rugId)).slice(0, limit);
   }
 
   /**

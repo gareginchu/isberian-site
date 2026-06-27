@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ROOMS, type Room } from "@/lib/visualizer/rooms";
-import { buildMatrix3d, scaleQuad } from "@/lib/visualizer/transform";
+import { buildMatrix3d, scaleQuad, rugSubQuad, parseRugSizeFt } from "@/lib/visualizer/transform";
 import type { Rug } from "@/lib/types/rug";
 
 type Props = {
@@ -34,24 +34,29 @@ export function Visualizer({ rugs, initialRoomSlug = "bedroom", initialRugId }: 
   const containerRef = useRef<HTMLDivElement>(null);
   const [matrix3d, setMatrix3d] = useState<string>("");
 
-  // Recompute the matrix when the room or container size changes. The destination
-  // quad lives in intrinsic photo pixel space; we scale it to the displayed width.
+  // Recompute the matrix when the room, rug, or container size changes. The
+  // destination quad is the rug's REAL-SIZE sub-quad inside the room's full
+  // placement quad — so a 4×6 reads as a scatter, a 9×12 nearly fills the floor.
   useEffect(() => {
     function update() {
       const el = containerRef.current;
       if (!el) return;
       const displayWidth = el.clientWidth;
       if (!displayWidth) return;
-      const scale = displayWidth / room.width;
-      const scaled = scaleQuad(room.placement, scale);
-      // The rug overlay is rendered as a 100×100 div, so the source rect is 100×100.
+      const sizeFt = rug
+        ? parseRugSizeFt(rug.description.details.sizeImperial)
+        : { widthFt: room.realDimensions.widthFt, depthFt: room.realDimensions.depthFt };
+      // Sub-quad in intrinsic photo pixel coords, then scaled to display size.
+      const sub = rugSubQuad(room, sizeFt.widthFt, sizeFt.depthFt);
+      const displayScale = displayWidth / room.width;
+      const scaled = scaleQuad(sub, displayScale);
       setMatrix3d(buildMatrix3d(100, 100, scaled));
     }
     update();
     const ro = new ResizeObserver(update);
     if (containerRef.current) ro.observe(containerRef.current);
     return () => ro.disconnect();
-  }, [room]);
+  }, [room, rug]);
 
   // Aspect ratio of the room photo, used to size the container before the image loads.
   const aspect = useMemo(() => `${room.width} / ${room.height}`, [room.width, room.height]);

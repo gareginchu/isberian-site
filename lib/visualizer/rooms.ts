@@ -41,6 +41,16 @@ export type Room = {
   width: number;
   height: number;
   placement: Quadrilateral;
+  /**
+   * Real-world footage the placement quadrilateral represents. Lets the
+   * visualizer place a rug at its actual physical size — a 4×6 reads as a
+   * scatter, a 9×12 fills most of the floor. Without this every rug would
+   * stretch to fill the quad and look identical.
+   *
+   * `widthFt`  = left-to-right extent of the quad on the floor, in feet
+   * `depthFt`  = front-to-back (camera-to-far-wall) extent, in feet
+   */
+  realDimensions: { widthFt: number; depthFt: number };
   recommendedSize?: "small" | "medium" | "large" | "runner";
   notes?: string;
 };
@@ -67,6 +77,7 @@ export const ROOMS: Room[] = [
       bottomRight: [3400, 2480],
       bottomLeft: [500, 2480],
     },
+    realDimensions: { widthFt: 14, depthFt: 9 },
     recommendedSize: "large",
     notes: "Generous rug zone at the foot of the bed. Works for 5×8 through 9×12.",
   },
@@ -89,6 +100,7 @@ export const ROOMS: Room[] = [
       bottomRight: [2050, 3450],
       bottomLeft: [550, 3450],
     },
+    realDimensions: { widthFt: 6, depthFt: 12 },
     recommendedSize: "runner",
     notes: "Runner zone with strong one-point perspective. Best for long narrow runners.",
   },
