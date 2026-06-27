@@ -55,7 +55,8 @@
         "Field drawing maintains precise vertical and diagonal symmetry across a very large area, indicating a master cartoon."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/17600.glb"
   },
   {
     "id": 20300,
@@ -113,7 +114,8 @@
         "Field pattern retains legibility across the full length, indicating even wear and quality of original dyestuffs."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/20300.glb"
   },
   {
     "id": 23000,
@@ -177,7 +179,8 @@
         "Natural dye palette shows characteristic abrash variation in the terracotta border field."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/23000.glb"
   },
   {
     "id": 39500,
@@ -241,7 +244,8 @@
         "The border's running geometric reciprocal pattern contrasts effectively with the naturalistic field, a hallmark of the Chahar Mahal workshops."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/39500.glb"
   },
   {
     "id": 41000,
@@ -299,7 +303,8 @@
         "Minor color oxidation in deep brown areas consistent with natural iron-based dyes"
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/41000.glb"
   },
   {
     "id": 42500,
@@ -356,7 +361,8 @@
         "Consistent drawing quality and even color distribution suggest a well-organized commercial atelier rather than village production."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/42500.glb"
   },
   {
     "id": 63750,
@@ -419,7 +425,8 @@
         "Natural dye palette retains exceptional saturation consistent with late 19th-century pre-synthetic production."
       ]
     },
-    "collection": "antique-caucasian"
+    "collection": "antique-caucasian",
+    "model3dGlbUrl": "/rugs/63750.glb"
   },
   {
     "id": 71750,
@@ -536,7 +543,8 @@
         "Small white label visible at lower center edge — easily removed without affecting pile."
       ]
     },
-    "collection": "antique-caucasian"
+    "collection": "antique-caucasian",
+    "model3dGlbUrl": "/rugs/79000.glb"
   },
   {
     "id": 79250,
@@ -599,7 +607,8 @@
         "Natural dye integrity appears strong; the madder retains warmth without the brown-fade associated with later synthetic overdyeing."
       ]
     },
-    "collection": "antique-caucasian"
+    "collection": "antique-caucasian",
+    "model3dGlbUrl": "/rugs/79250.glb"
   },
   {
     "id": 82000,
@@ -657,7 +666,8 @@
         "Abrash visible in mid-field terracotta tone, consistent with hand-spun wool dyed in separate lots across an extended weaving period."
       ]
     },
-    "collection": "antique-caucasian"
+    "collection": "antique-caucasian",
+    "model3dGlbUrl": "/rugs/82000.glb"
   },
   {
     "id": 86000,
@@ -714,7 +724,8 @@
         "Border ivory ground with dense polychrome patterning reflects classic South Caucasian workshop practice."
       ]
     },
-    "collection": "antique-caucasian"
+    "collection": "antique-caucasian",
+    "model3dGlbUrl": "/rugs/86000.glb"
   },
   {
     "id": 18800,
@@ -771,7 +782,8 @@
         "Restrained coral-and-taupe palette gives the piece unusual quietness for Anatolian work of this period"
       ]
     },
-    "collection": "antique-turkish"
+    "collection": "antique-turkish",
+    "model3dGlbUrl": "/rugs/18800.glb"
   },
   {
     "id": 37500,
@@ -818,7 +830,8 @@
         "Lower field panel appears intentionally open—may reflect a prayer-format influence"
       ]
     },
-    "collection": "antique-turkish"
+    "collection": "antique-turkish",
+    "model3dGlbUrl": "/rugs/37500.glb"
   },
   {
     "id": 38000,
@@ -865,7 +878,8 @@
         "Overall patina and pile reduction consistent with genuine age and domestic use over many decades."
       ]
     },
-    "collection": "antique-turkish"
+    "collection": "antique-turkish",
+    "model3dGlbUrl": "/rugs/38000.glb"
   },
   {
     "id": 41500,
@@ -917,7 +931,8 @@
         "Scale appropriate for a principal reception room or dining hall."
       ]
     },
-    "collection": "antique-turkish"
+    "collection": "antique-turkish",
+    "model3dGlbUrl": "/rugs/41500.glb"
   },
   {
     "id": 61500,
@@ -974,7 +989,8 @@
         "Exceptional scale and regularity of the repeat indicate a professional cartoon-based loom weaving."
       ]
     },
-    "collection": "antique-european"
+    "collection": "antique-european",
+    "model3dGlbUrl": "/rugs/61500.glb"
   },
   {
     "id": 44000,
@@ -1021,7 +1037,8 @@
         "Band sequencing follows traditional Azilal compositional structure"
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/44000.glb"
   },
   {
     "id": 57750,
@@ -1068,7 +1085,8 @@
         "Zigzag selvage border at the upper edge is consistent with traditional Beni Ourain-influenced urban workshop production."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/57750.glb"
   },
   {
     "id": 58750,
@@ -1116,7 +1134,8 @@
         "Runner proportion makes it well-suited to corridor or hallway placement without visual interruption."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/58750.glb"
   },
   {
     "id": 40000,
@@ -1168,7 +1187,8 @@
         "Overall color harmony suggests deliberate use of abrash to animate the sage ground."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/40000.glb"
   },
   {
     "id": 40500,
@@ -1273,7 +1293,8 @@
         "Palette restraint — no saturated hues — makes this piece adaptable across neutral contemporary and transitional interiors."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/51750.glb"
   },
   {
     "id": 65000,
@@ -1332,7 +1353,8 @@
         "Asymmetric layout and collage-like motif placement indicate a workshop piece drawing from multiple canonical design sources rather than a single pattern repeat."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/65000.glb"
   },
   {
     "id": 64750,
@@ -1384,7 +1406,8 @@
         "The interplay of woven plaid ground with painted or overdyed green panel is characteristic of mid-century Swedish workshop practice."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/64750.glb"
   },
   {
     "id": 80100,
@@ -1441,7 +1464,8 @@
         "Palette and geometric discipline align closely with weavings produced in Swedish cooperative workshops active between approximately 1945 and 1970."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/80100.glb"
   },
   {
     "id": 36500,
@@ -1493,7 +1517,8 @@
         "Color gradation within individual blocks suggests hand-dyeing in small batches rather than uniform commercial dye lots."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/36500.glb"
   },
   {
     "id": 42000,
@@ -1539,7 +1564,8 @@
         "Coloration consistent across full field with no visible fading"
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/42000.glb"
   },
   {
     "id": 49000,
@@ -1584,7 +1610,8 @@
         "Aspect ratio and handle suggest a traditional room-size format suited to minimal interiors."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/49000.glb"
   },
   {
     "id": 50000,
@@ -1637,7 +1664,8 @@
         "Silk content contributes low-level sheen across the field without heaviness"
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/50000.glb"
   },
   {
     "id": 53000,
@@ -1678,7 +1706,8 @@
         "No visible border — pattern runs edge to edge in a contemporary frameless format."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/53000.glb"
   },
   {
     "id": 39000,
@@ -1741,7 +1770,8 @@
         "Color saturation is deliberately muted, suggesting a vegetable or low-chrome dye approach."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/39000.glb"
   },
   {
     "id": 54500,
@@ -1793,7 +1823,8 @@
         "Border is absent — the composition relies entirely on interior rhythm for structure."
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/54500.glb"
   },
   {
     "id": 45500,
@@ -1838,7 +1869,8 @@
         "Tonal variation across the field gives subtle depth without formal pattern"
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/45500.glb"
   },
   {
     "id": 52250,
@@ -1882,7 +1914,8 @@
         "Neutral palette offers broad decorative compatibility"
       ]
     },
-    "collection": "contemporary"
+    "collection": "contemporary",
+    "model3dGlbUrl": "/rugs/52250.glb"
   },
   {
     "id": 51500,
@@ -1940,7 +1973,8 @@
         "Border proportion is generous relative to field width, a hallmark of quality Tabriz runners"
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/51500.glb"
   },
   {
     "id": 50500,
@@ -1998,7 +2032,8 @@
         "Fringe intact at both ends, consistent with original foundation"
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/50500.glb"
   },
   {
     "id": 50750,
@@ -2051,7 +2086,8 @@
         "Ivory ground with low pile density preserves strong chromatic contrast between field and motif."
       ]
     },
-    "collection": "antique-turkish"
+    "collection": "antique-turkish",
+    "model3dGlbUrl": "/rugs/50750.glb"
   },
   {
     "id": 51250,
@@ -2109,7 +2145,8 @@
         "Navy border dye shows characteristic abrash typical of period indigo use."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/51250.glb"
   },
   {
     "id": 52000,
@@ -2167,6 +2204,7 @@
         "The sage-green ground is characteristic of Tabriz workshops sourcing regional plant-based dyes blended with chrome mordants in the early twentieth century."
       ]
     },
-    "collection": "antique-persian"
+    "collection": "antique-persian",
+    "model3dGlbUrl": "/rugs/52000.glb"
   }
 ]
