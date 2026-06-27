@@ -158,6 +158,41 @@ export function FaqJsonLd({ entries }: { entries: FaqEntry[] }) {
   return <Script data={data} />;
 }
 
+/**
+ * Emits a `Service` JSON-LD block. Used by /services/triage and any other
+ * service-funnel surface where we want crawlers to understand we offer a
+ * named service inside the rug-care / restoration domain. No price fields.
+ */
+export function ServiceJsonLd({
+  name,
+  description,
+  serviceType,
+  url,
+  areaServed = "Chicago metropolitan area",
+}: {
+  name: string;
+  description: string;
+  serviceType: string;
+  url: string;
+  areaServed?: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    serviceType,
+    description,
+    url,
+    provider: {
+      "@type": "RugStore",
+      name: "Oscar Isberian Rugs",
+      url: "https://isberian.com",
+    },
+    areaServed: { "@type": "AdministrativeArea", name: areaServed },
+  };
+  return <Script data={data} />;
+}
+
 export type BreadcrumbItem = { name: string; href: string };
 
 /**
