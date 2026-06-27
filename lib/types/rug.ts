@@ -75,6 +75,11 @@ export type Rug = {
    * button on the rug detail page that opens an iframe modal. Omit for rugs
    * without a 3D model yet. */
   viewer3dUrl?: string;
+  /** Path (relative to /public) of a QR code image. When set, the rug detail
+   * page shows the QR + caption — phone scans bypass the iframe-embed and
+   * load the AR view directly on the visitor's phone. Preferred over
+   * viewer3dUrl when the provider blocks iframe embedding. */
+  viewer3dQrUrl?: string;
   updatedAt: string; // ISO
   draft: boolean; // until editor approves
 };

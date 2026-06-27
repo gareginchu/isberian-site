@@ -50,6 +50,9 @@ type Seed = {
   /** External 3D / AR viewer URL (e.g. Carpetify). Surfaces a "View in 3D"
    * button on the rug detail page. */
   viewer3dUrl?: string;
+  /** Path under /public to a QR code image. Preferred over viewer3dUrl when
+   * the provider blocks iframe embedding. */
+  viewer3dQrUrl?: string;
 };
 
 const seeds: Seed[] = [];
@@ -97,6 +100,7 @@ function build(seed: Seed): Rug {
       },
     ],
     ...(seed.viewer3dUrl ? { viewer3dUrl: seed.viewer3dUrl } : {}),
+    ...(seed.viewer3dQrUrl ? { viewer3dQrUrl: seed.viewer3dQrUrl } : {}),
     updatedAt: "2026-06-24T00:00:00.000Z",
     draft: seed.draft === true,
   };

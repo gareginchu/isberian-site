@@ -9,6 +9,7 @@ import { RugCard } from "@/components/RugCard";
 import { LeadForm } from "@/components/LeadForm";
 import { HumanExit } from "@/components/HumanExit";
 import { View3DButton } from "@/components/View3DButton";
+import { View3DQr } from "@/components/View3DQr";
 import { RugJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { getRug, findSimilar, listRugs } from "@/lib/catalog";
 
@@ -103,9 +104,11 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
               </Eyebrow>
               <h1 className="display text-4xl text-ink mt-3 leading-tight">{rug.title}</h1>
             </div>
-            {rug.viewer3dUrl && (
+            {rug.viewer3dQrUrl ? (
+              <View3DQr src={rug.viewer3dQrUrl} alt={`QR code — view ${rug.title} in 3D`} />
+            ) : rug.viewer3dUrl ? (
               <View3DButton url={rug.viewer3dUrl} title={rug.title} />
-            )}
+            ) : null}
             <RugDescriptionBlock d={rug.description} />
             {rug.status === "available" && (
               <div className="border-t border-ink-300/40 pt-8">
