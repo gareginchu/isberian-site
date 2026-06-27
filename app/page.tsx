@@ -172,7 +172,10 @@ export default async function HomePage() {
               {styles.map((s) => (
                 <li key={s.label}>
                   <Link href={s.href} className="group block">
-                    <div className="relative aspect-square overflow-hidden bg-cream">
+                    {/* Aspect-[3/4] matches rug-photo proportions much better than
+                        aspect-square — most catalog rugs are portrait, so a square
+                        crop was clipping to the central band. */}
+                    <div className="relative aspect-[3/4] overflow-hidden bg-cream">
                       <Image
                         src={s.image}
                         alt=""
