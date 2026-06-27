@@ -116,7 +116,14 @@ export function Visualizer({ rugs, initialRoomSlug = "bedroom", initialRugId }: 
               alt=""
               draggable={false}
               className="block w-full h-full select-none"
-              style={{ objectFit: "cover", boxShadow: "0 6px 18px rgba(20,20,18,0.18)" }}
+              style={{
+                objectFit: "cover",
+                // Soft ground shadow so the rug reads as sitting on the floor,
+                // not pasted on. Filter-based shadow follows the warped shape
+                // (box-shadow doesn't, because matrix3d defeats it). Strong
+                // bottom-falloff via a slightly offset, blurred drop-shadow.
+                filter: "drop-shadow(0 8px 14px rgba(20,20,18,0.45))",
+              }}
             />
           </div>
         )}
