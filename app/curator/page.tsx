@@ -95,7 +95,8 @@ export default async function CuratorIndex({
           Export full seeds JSON ↓
         </Link>
         <p className="mt-1 text-[11px] text-ink-500">
-          For Vercel: edits land in /tmp and won&apos;t survive a cold start. Export and commit by hand.
+          Edits write directly to the Sanity dataset. Public site reflects changes within ~30s
+          (catalog cache TTL). The export is a manual snapshot for backup.
         </p>
       </div>
     </div>
