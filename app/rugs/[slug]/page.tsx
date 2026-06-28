@@ -109,7 +109,7 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
           <div className="lg:sticky lg:top-24 lg:self-start space-y-10">
             <div>
               <Eyebrow>
-                No. {rug.id} ·{" "}
+                No. {rug.id.replace(/^rug-/, "")} ·{" "}
                 {rug.status === "available" ? "Available" : rug.status === "on-memo" ? "On memo" : "Sold"} ·{" "}
                 {rug.description.provenance.region ?? rug.description.provenance.origin}
               </Eyebrow>

@@ -30,7 +30,7 @@ export function RugCard({ rug, priority = false }: { rug: Rug; priority?: boolea
       </div>
       <div className="pt-4">
         <p className="text-[10px] tracking-wide-3 uppercase text-ink-500">
-          No. {rug.id}
+          No. {rug.id.replace(/^rug-/, "")}
         </p>
         <p className="mt-1.5 text-sm text-ink leading-tight font-medium group-hover:text-ink-500 transition-colors">
           {rug.title}
