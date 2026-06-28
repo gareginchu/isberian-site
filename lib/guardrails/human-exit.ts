@@ -4,7 +4,6 @@
 
 export const HUMAN_EXIT_REQUIRED_ON = [
   "/",
-  "/discover",
   "/rugs",
   "/services",
   "/services/triage",

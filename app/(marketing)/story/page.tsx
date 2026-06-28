@@ -38,9 +38,8 @@ export default function StoryPage() {
         </div>
         <div className="mt-12 flex flex-wrap gap-3">
           <LinkButton href="/visit">Visit a showroom</LinkButton>
-          <LinkButton href="/discover" variant="secondary">
-            Talk to the concierge
-          </LinkButton>
+          {/* Concierge link removed — the floating bottom-right pill is now
+              the single entry point for the concierge on every page. */}
         </div>
       </article>
     </Container>

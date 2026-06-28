@@ -31,9 +31,10 @@ export function FloatingConcierge() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  // Hide on /discover (full-screen concierge owns the conversation) and on /
-  // (the hero already carries an "Ask anything" pill — two would be redundant).
-  const hideOnRoute = pathname === "/discover" || pathname === "/";
+  // Concierge is now the floating bottom-right pill everywhere; the previous
+  // dedicated /discover route has been removed and the home-page hero pill
+  // exclusion lifted so this is the single entry point on every page.
+  const hideOnRoute = false;
   const isIdle = history.length === 0 && !pending;
 
   useEffect(() => {

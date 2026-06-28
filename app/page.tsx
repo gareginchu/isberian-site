@@ -4,8 +4,6 @@ import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { HeroCarousel } from "@/components/HeroCarousel";
-import { HeroAsk } from "@/components/HeroAsk";
-import { HomeConcierge } from "@/components/HomeConcierge";
 import { showrooms } from "@/lib/booking/showrooms";
 import { listRugs } from "@/lib/catalog";
 import type { Rug } from "@/lib/types/rug";
@@ -114,15 +112,13 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO — 8-image rotating carousel with the Ask-anything pill anchored
-          over the imagery. Click expands into the concierge surface in place. */}
-      <HeroCarousel slides={HERO_SLIDES}>
-        <HeroAsk />
-      </HeroCarousel>
-
-      {/* Inline concierge — AI as the front door, in the house voice. */}
-      <HomeConcierge />
-
+      {/* HERO — 8-image rotating carousel. The concierge is the persistent
+          floating pill in the bottom-right corner (FloatingConcierge); no
+          inline "Talk to us" block or hero-overlay pill here anymore — the
+          dedicated /discover page and the home-only HeroAsk pill were both
+          retired so the concierge has a single, predictable surface
+          everywhere on the site. */}
+      <HeroCarousel slides={HERO_SLIDES} />
 
       {/* FOUR ACTION TILES */}
       <section>
