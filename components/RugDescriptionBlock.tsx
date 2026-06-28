@@ -36,25 +36,25 @@ export function RugDescriptionBlock({ d }: { d: RugDescription }) {
       <div className="mt-8">
         <Section label="Details">
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8">
-            <li><strong className="text-ink">Size</strong> · {d.details.sizeImperial} ({d.details.sizeMetric})</li>
-            <li><strong className="text-ink">Technique</strong> · {d.details.technique}</li>
-            <li><strong className="text-ink">Materials</strong> · {d.details.materials.join(", ")}</li>
-            <li><strong className="text-ink">Pile</strong> · {d.details.pile}</li>
+            <li><strong className="text-oxblood">Size</strong> · {d.details.sizeImperial} ({d.details.sizeMetric})</li>
+            <li><strong className="text-oxblood">Technique</strong> · {d.details.technique}</li>
+            <li><strong className="text-oxblood">Materials</strong> · {d.details.materials.join(", ")}</li>
+            <li><strong className="text-oxblood">Pile</strong> · {d.details.pile}</li>
             {d.details.knotDensity && (
               <li>
-                <strong className="text-ink">Knot density</strong> · {d.details.knotDensity.knotsPerSqIn} knots/sq in
+                <strong className="text-oxblood">Knot density</strong> · {d.details.knotDensity.knotsPerSqIn} knots/sq in
                 {!d.details.knotDensity.verified && <UnverifiedNote what="density" />}
               </li>
             )}
             {d.details.age && (
               <li>
-                <strong className="text-ink">Age</strong> · {d.details.age.circa}
+                <strong className="text-oxblood">Age</strong> · {d.details.age.circa}
                 {!d.details.age.verified && <UnverifiedNote what="age" />}
               </li>
             )}
             {d.details.condition && (
               <li className="sm:col-span-2">
-                <strong className="text-ink">Condition</strong> · {d.details.condition}
+                <strong className="text-oxblood">Condition</strong> · {d.details.condition}
               </li>
             )}
           </ul>

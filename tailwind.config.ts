@@ -18,12 +18,17 @@ const config: Config = {
           100: "#FAFAF8",
           200: "#F1F1EE",
         },
-        // `oxblood` → quiet ink accent, used for links and primary CTAs.
+        // `oxblood` → deep burgundy. Matches the legacy isberian.com link /
+        // label color (#570F12, sampled with getComputedStyle on the live
+        // site), so eyebrows, "back" links, field labels, and primary CTAs
+        // carry the heritage burgundy register. The previous value (#1F1F1E)
+        // was the same as ink, which made every "text-oxblood" usage on the
+        // site render as plain black — losing the burgundy accent entirely.
         oxblood: {
-          DEFAULT: "#1F1F1E",
-          700: "#1F1F1E",
-          800: "#141413",
-          900: "#0B0B0A",
+          DEFAULT: "#570F12",
+          700: "#460C0F",
+          800: "#37090B",
+          900: "#280608",
         },
         // `saddle` → muted warm grey (small accent / "needs review" chip).
         saddle: {
