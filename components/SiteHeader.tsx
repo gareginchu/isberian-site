@@ -137,16 +137,16 @@ export function SiteHeader() {
                     </Link>
                     {item.children && open === item.href && (
                       <div className="absolute left-0 top-full pt-2">
-                        {/* Interior-page dropdowns open on a white panel with
-                            ring + shadow so they read clearly against the
-                            gray navbar. Home (/) stays dark — its dropdowns
-                            sit over a busy carousel and need the strong
-                            ink fill to remain legible. */}
+                        {/* Home (/) dropdowns open on a transparent backdrop
+                            with a soft backdrop-blur — items in cream over
+                            the carousel imagery, no panel fill. Interior
+                            pages get a white panel + ring + shadow so the
+                            items read clearly against the gray navbar. */}
                         <ul
-                          className={`min-w-[16rem] py-2 shadow-lg ${
+                          className={`min-w-[16rem] py-2 ${
                             isHome
-                              ? "bg-ink border border-cream/10"
-                              : "bg-white ring-1 ring-ink/5"
+                              ? "bg-transparent backdrop-blur-sm"
+                              : "shadow-lg bg-white ring-1 ring-ink/5"
                           }`}
                         >
                           {item.children.map((child) => (
@@ -155,7 +155,7 @@ export function SiteHeader() {
                                 href={child.href}
                                 className={`block px-4 py-2 nav-text text-[14px] ${
                                   isHome
-                                    ? "text-cream hover:bg-cream/10"
+                                    ? "text-cream hover:text-cream/70"
                                     : "text-ink hover:bg-stone-100 hover:text-oxblood"
                                 }`}
                               >
