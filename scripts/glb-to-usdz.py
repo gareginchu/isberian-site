@@ -41,17 +41,36 @@ def read_glb_buffer_view(gltf: GLTF2, glb_path: str, view_idx: int) -> bytes:
 
 
 def decode_accessor_floats(gltf, glb_path, accessor_idx, components):
-    """Pull a float array out of an accessor (positions, normals, uvs)."""
+    """Pull a float array out of an accessor (positions, normals, uvs).
+
+    Handles both tightly-packed buffers and interleaved attributes:
+      * acc.byteOffset is the start of THIS accessor inside the buffer view
+      * bufferView.byteStride is the bytes between consecutive elements of
+        this accessor (None / 0 means tight, i.e. components * 4 bytes).
+
+    The previous implementation ignored both — fine for non-interleaved
+    GLBs, broken for interleaved ones. gltf-transform 4.x writes our rug
+    GLBs with an interleaved POSITION/TEXCOORD/NORMAL/TANGENT buffer view
+    (stride 48), so this distinction is load-bearing.
+    """
     acc = gltf.accessors[accessor_idx]
+    view = gltf.bufferViews[acc.bufferView]
     raw = read_glb_buffer_view(gltf, glb_path, acc.bufferView)
     count = acc.count
-    fmt = f"<{count * components}f"
-    return list(struct.unpack(fmt, raw[: count * components * 4]))
+    accessor_byte_offset = acc.byteOffset or 0
+    stride = view.byteStride or (components * 4)
+    fmt = f"<{components}f"
+    out = []
+    for i in range(count):
+        offset = accessor_byte_offset + i * stride
+        out.extend(struct.unpack_from(fmt, raw, offset))
+    return out
 
 
 def decode_accessor_indices(gltf, glb_path, accessor_idx):
-    """Pull an index array out of an accessor."""
+    """Pull an index array out of an accessor — same stride-aware decode."""
     acc = gltf.accessors[accessor_idx]
+    view = gltf.bufferViews[acc.bufferView]
     raw = read_glb_buffer_view(gltf, glb_path, acc.bufferView)
     # 5121=u8, 5123=u16, 5125=u32
     if acc.componentType == 5121:
@@ -63,7 +82,13 @@ def decode_accessor_indices(gltf, glb_path, accessor_idx):
     else:
         raise ValueError(f"unsupported index type {acc.componentType}")
     count = acc.count
-    return list(struct.unpack(f"<{count}{fmt}", raw[: count * size]))
+    accessor_byte_offset = acc.byteOffset or 0
+    stride = view.byteStride or size
+    out = []
+    for i in range(count):
+        offset = accessor_byte_offset + i * stride
+        out.extend(struct.unpack_from(f"<{fmt}", raw, offset))
+    return out
 
 
 def extract_image(gltf, glb_path, image_idx, out_dir, name_hint):
