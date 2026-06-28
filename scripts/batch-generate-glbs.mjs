@@ -45,8 +45,14 @@ async function main() {
 
   // Sequential — sharp + glb writes share state, no real benefit to parallel
   // and avoids load spikes on disk.
+  const skipped = [];
   for (const seed of seeds) {
     const jpgPath = path.join(RUGS_DIR, `${seed.id}.jpg`);
+    const glbPath = path.join(RUGS_DIR, `${seed.id}.glb`);
+    if (existsSync(glbPath)) {
+      skipped.push(seed.id);
+      continue;
+    }
     if (!existsSync(jpgPath)) {
       console.warn(`  ${seed.id}: no jpg, skipping`);
       failed.push({ id: seed.id, reason: "no jpg" });
@@ -68,15 +74,16 @@ async function main() {
     }
   }
 
-  // Update seeds with model3dGlbUrl.
+  // Update seeds with model3dGlbUrl. Patch both newly-generated AND previously-
+  // existing GLBs so the seed always reflects what's actually on disk.
   for (const seed of seeds) {
-    if (generated.includes(seed.id)) {
+    if (generated.includes(seed.id) || skipped.includes(seed.id)) {
       seed.model3dGlbUrl = `/rugs/${seed.id}.glb`;
     }
   }
   await writeFile(SEEDS_PATH, JSON.stringify(seeds, null, 2));
 
-  console.log(`\nDone. Generated ${generated.length} / ${seeds.length}. Failed ${failed.length}.`);
+  console.log(`\nDone. Generated ${generated.length} · Skipped ${skipped.length} · Failed ${failed.length} (of ${seeds.length}).`);
   if (failed.length) {
     console.log("\nFailures:");
     for (const f of failed) console.log(`  ${f.id}: ${f.reason}`);

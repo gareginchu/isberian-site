@@ -1,88 +1,5 @@
 [
   {
-    "id": 17600,
-    "title": "Ivory Field Allover Vase and Palmette Persian Carpet",
-    "size": "12'0\" × 13'0\"",
-    "condition": "Good.",
-    "origin": "Persian",
-    "region": "Tabriz or Sultanabad",
-    "age": "c. 1900–1920",
-    "technique": "Hand-knotted",
-    "materials": [
-      "Wool pile",
-      "Cotton foundation"
-    ],
-    "pile": "Low",
-    "lead": "A large square-format carpet woven on an ivory ground with an uninterrupted allover lattice of curving vine, palmette, and rosette — the drawing continuous yet never crowded, its warm terracotta and sage tones held in careful balance.",
-    "enrichment": {
-      "colorPalette": [
-        {
-          "name": "Antique Ivory",
-          "hex": "#E8DDB8",
-          "weight": "primary"
-        },
-        {
-          "name": "Warm Terracotta",
-          "hex": "#C07A50",
-          "weight": "secondary"
-        },
-        {
-          "name": "Sage Green",
-          "hex": "#8A9A78",
-          "weight": "secondary"
-        },
-        {
-          "name": "Soft Gold",
-          "hex": "#C9A96E",
-          "weight": "accent"
-        },
-        {
-          "name": "Dusty Rose",
-          "hex": "#C49080",
-          "weight": "accent"
-        }
-      ],
-      "designFeatures": [
-        "Allover herati-variant vine lattice",
-        "Repeating palmette and rosette nodes",
-        "Reciprocal ivory main border with scrolling floral meander",
-        "Narrow sage guard stripes framing the field",
-        "Square format suggesting room-centered placement"
-      ],
-      "distinguishing": [
-        "Near-square proportions are atypical and suggest a special commission or palace-scale order.",
-        "The palette shows deliberate oxidation softening — consistent with natural dye wool of the late Qajar period.",
-        "Field drawing maintains precise vertical and diagonal symmetry across a very large area, indicating a master cartoon."
-      ]
-    },
-    "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/17600.glb",
-    "suggestedRoomUrl": "/rugs/17600-room.png",
-    "lifestyle": [
-      {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/17600-library.png"
-      },
-      {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/17600-modern-living.png"
-      },
-      {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/17600-dining.png"
-      },
-      {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/17600-bedroom.png"
-      }
-    ],
-    "model3dUsdzUrl": "/rugs/17600.usdz"
-  },
-  {
     "id": 20300,
     "title": "Antique Persian Tabriz All-Over Floral Gold Field",
     "size": "12'0\" × 18'0\"",
@@ -164,95 +81,6 @@
       }
     ],
     "model3dUsdzUrl": "/rugs/20300.usdz"
-  },
-  {
-    "id": 23000,
-    "title": "Ivory-Ground Sarouk Farahan Floral Medallion Carpet",
-    "size": "5'0\" × 6'8\"",
-    "condition": "Good.",
-    "origin": "Persian",
-    "region": "Sarouk / Farahan district, Arak province",
-    "age": "c. 1890–1910",
-    "technique": "Hand-knotted",
-    "materials": [
-      "Wool pile",
-      "Cotton foundation"
-    ],
-    "pile": "Medium",
-    "lead": "An ivory-ground Sarouk Farahan of the late Qajar period, its field organized around a diamond-shaped reserve densely populated with herati-influenced palmettes, lancet leaves, and reciprocating vine scrolls rendered in terracotta, cobalt, and sage.",
-    "enrichment": {
-      "colorPalette": [
-        {
-          "name": "Ivory Cream",
-          "hex": "#F5EDD8",
-          "weight": "primary"
-        },
-        {
-          "name": "Terracotta Rose",
-          "hex": "#C4553A",
-          "weight": "secondary"
-        },
-        {
-          "name": "Cobalt Blue",
-          "hex": "#3A5A8C",
-          "weight": "secondary"
-        },
-        {
-          "name": "Salmon Pink",
-          "hex": "#E8927A",
-          "weight": "accent"
-        },
-        {
-          "name": "Olive Sage",
-          "hex": "#7A8A52",
-          "weight": "accent"
-        },
-        {
-          "name": "Golden Wheat",
-          "hex": "#C9A84C",
-          "weight": "accent"
-        }
-      ],
-      "designFeatures": [
-        "Diamond-shaped central reserve on open ivory field",
-        "Herati-derived palmette and rosette repeats",
-        "Reciprocating lancet leaf vine scrollwork",
-        "Terracotta main border with stylized floral cartouches",
-        "Navy inner guard stripe with diagonal stripe accent panel",
-        "Symmetrical bilateral composition with quarter-repeat corners"
-      ],
-      "distinguishing": [
-        "The diagonal-stripe spandrel fill in the upper field is an unusual regional detail, suggesting a transitional workshop between Farahan and Sarouk production.",
-        "Ivory grounds of this density are less common in Sarouk Farahan work and typically command heightened collector interest.",
-        "Natural dye palette shows characteristic abrash variation in the terracotta border field."
-      ]
-    },
-    "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/23000.glb",
-    "suggestedRoomUrl": "/rugs/23000-room.png",
-    "lifestyle": [
-      {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/23000-library.png"
-      },
-      {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/23000-modern-living.png"
-      },
-      {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/23000-dining.png"
-      },
-      {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/23000-bedroom.png"
-      }
-    ],
-    "model3dUsdzUrl": "/rugs/23000.usdz"
   },
   {
     "id": 39500,
@@ -424,94 +252,6 @@
       }
     ],
     "model3dUsdzUrl": "/rugs/42500.usdz"
-  },
-  {
-    "id": 63750,
-    "title": "Antique Kazak Triple-Medallion Field Rug",
-    "size": "4'6\" × 6'6\"",
-    "condition": "Good.",
-    "origin": "Caucasian",
-    "region": "Kazak, South Caucasus",
-    "age": "c. 1880–1900",
-    "technique": "Hand-knotted",
-    "materials": [
-      "Wool",
-      "Wool foundation"
-    ],
-    "pile": "Medium",
-    "lead": "A classic Southwest Caucasian composition presenting three bold stepped medallions on a saturated rust-red ground, each medallion rendered in indigo, ivory, and gold, framed by a lively reciprocal-border system characteristic of the Kazak tradition.",
-    "enrichment": {
-      "colorPalette": [
-        {
-          "name": "Rust Red",
-          "hex": "#A63A1E",
-          "weight": "primary"
-        },
-        {
-          "name": "Indigo Blue",
-          "hex": "#2B4A7E",
-          "weight": "primary"
-        },
-        {
-          "name": "Steel Blue",
-          "hex": "#6A8FAF",
-          "weight": "secondary"
-        },
-        {
-          "name": "Ivory",
-          "hex": "#EDE8D5",
-          "weight": "secondary"
-        },
-        {
-          "name": "Olive Gold",
-          "hex": "#8A7A35",
-          "weight": "accent"
-        },
-        {
-          "name": "Forest Green",
-          "hex": "#3D5E3A",
-          "weight": "accent"
-        }
-      ],
-      "designFeatures": [
-        "Triple stepped-octagon medallion column",
-        "Reciprocal serrated-leaf main border",
-        "Hooked geometric filler motifs on open field",
-        "Running diagonal stripe guard borders",
-        "Crab-pattern secondary border in ivory and red"
-      ],
-      "distinguishing": [
-        "Central ivory-ground medallion offers tonal contrast to flanking indigo examples, a hallmark of mature Kazak composition.",
-        "Corner brackets with large triangle motifs in the outer border suggest attribution to the Borjalu or Lori-Pambak sub-district.",
-        "Natural dye palette retains exceptional saturation consistent with late 19th-century pre-synthetic production."
-      ]
-    },
-    "collection": "antique-caucasian",
-    "model3dGlbUrl": "/rugs/63750.glb",
-    "suggestedRoomUrl": "/rugs/63750-room.png",
-    "lifestyle": [
-      {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/63750-library.png"
-      },
-      {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/63750-modern-living.png"
-      },
-      {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/63750-dining.png"
-      },
-      {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/63750-bedroom.png"
-      }
-    ],
-    "model3dUsdzUrl": "/rugs/63750.usdz"
   },
   {
     "id": 71750,
@@ -2386,5 +2126,1353 @@
       }
     ],
     "model3dUsdzUrl": "/rugs/52000.usdz"
+  },
+  {
+    "id": 42289,
+    "title": "Navy Field Four-Medallion Caucasian Gallery Runner",
+    "size": "4'4\" × 10'0\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Shirvan",
+    "age": "c. 1880",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep navy field carries four stacked diamond medallions in brick red, gold, sage, and ivory, each with stepped geometric interiors. Scattered rosettes and hooked devices fill the ground. Ivory main border hosts bold polychrome star-and-cross repeats.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "midnight navy",
+          "hex": "#0D1A3A",
+          "weight": "primary"
+        },
+        {
+          "name": "brick red",
+          "hex": "#A63020",
+          "weight": "secondary"
+        },
+        {
+          "name": "antique ivory",
+          "hex": "#EDE3C8",
+          "weight": "secondary"
+        },
+        {
+          "name": "ochre gold",
+          "hex": "#C48B2F",
+          "weight": "accent"
+        },
+        {
+          "name": "sage green",
+          "hex": "#6B7D5A",
+          "weight": "accent"
+        },
+        {
+          "name": "cobalt blue",
+          "hex": "#2B4A8C",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "four aligned diamond medallions on open field",
+        "stepped and hooked medallion borders",
+        "scattered rosette and star fill motifs",
+        "polychrome star-and-cross main border",
+        "reciprocal running border at outer guard",
+        "geometric animal-form accents at field corners"
+      ],
+      "distinguishing": [
+        "Bold use of uncluttered negative navy space between medallions gives the composition unusual breathing room for a Caucasian runner",
+        "Each of the four medallions carries a distinctly different interior color arrangement, suggesting intentional variation rather than repetition"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/42289.glb",
+    "model3dUsdzUrl": "/rugs/42289.usdz"
+  },
+  {
+    "id": 65671,
+    "title": "Crimson Field Pictorial Medallion Persian Room Carpet",
+    "size": "8'6\" × 10'11\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Kashan",
+    "age": "Mid-20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep crimson open field anchors a lobed navy medallion enclosing a landscape pictorial — architecture, water, trees rendered in soft greens and blues. Corner spandrels carry naturalistic floral sprays. Navy main border with dense scrolling vine; powder-blue guard stripes frame all sides.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "deep crimson",
+          "hex": "#B5003C",
+          "weight": "primary"
+        },
+        {
+          "name": "midnight navy",
+          "hex": "#1C1F4A",
+          "weight": "secondary"
+        },
+        {
+          "name": "powder blue",
+          "hex": "#8AAEC8",
+          "weight": "secondary"
+        },
+        {
+          "name": "sage green",
+          "hex": "#6B7E4E",
+          "weight": "accent"
+        },
+        {
+          "name": "blush rose",
+          "hex": "#D98A8A",
+          "weight": "accent"
+        },
+        {
+          "name": "ivory",
+          "hex": "#EDE3CC",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "lobed pictorial central medallion",
+        "landscape scene with architecture and water",
+        "large naturalistic corner spandrel sprays",
+        "scrolling floral vine main border",
+        "powder-blue guard stripe framing",
+        "open field with pendant floral spray above medallion"
+      ],
+      "distinguishing": [
+        "Pictorial landscape within the medallion — depicting a pavilion or garden structure reflected in water — is uncommon in room-size carpets of this format",
+        "Unusually sparse open field creates strong visual tension against the densely worked border and medallion"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/65671.glb",
+    "model3dUsdzUrl": "/rugs/65671.usdz"
+  },
+  {
+    "id": 73054,
+    "title": "Red Field All-Over Floral Arabesque Room-Size Carpet",
+    "size": "8'6\" × 11'10\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Tabriz",
+    "age": "Mid-20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Warm brick-red field carries a dense, medallion-free all-over lattice of scrolling arabesques and multi-petaled rosettes. Navy main border holds palmettes and split-leaf vinery. Ivory, slate-blue, and amber accents animate both field and guard stripes.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "brick red",
+          "hex": "#B83A1E",
+          "weight": "primary"
+        },
+        {
+          "name": "midnight navy",
+          "hex": "#1C2340",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate blue",
+          "hex": "#6A8FA8",
+          "weight": "secondary"
+        },
+        {
+          "name": "teal green",
+          "hex": "#3D6E6A",
+          "weight": "secondary"
+        },
+        {
+          "name": "warm ivory",
+          "hex": "#E8D9B5",
+          "weight": "accent"
+        },
+        {
+          "name": "amber gold",
+          "hex": "#C98B3A",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "all-over arabesque lattice",
+        "multi-petaled rosettes at vine intersections",
+        "absence of central medallion",
+        "palmette-and-split-leaf main border",
+        "narrow ivory and teal guard stripes",
+        "repeating floral spandrel fill"
+      ],
+      "distinguishing": [
+        "Medallion-free field gives the pattern an unusually democratic, wall-to-wall rhythm uncommon in room-size Persian-style carpets of this type",
+        "Slate-blue lobed cartouche forms at the field center without coalescing into a true medallion — a transitional compositional choice worth noting"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/73054.glb",
+    "model3dUsdzUrl": "/rugs/73054.usdz"
+  },
+  {
+    "id": 83542,
+    "title": "Navy Medallion Allover Floral Isfahan-Style Carpet",
+    "size": "5'5\" × 8'3\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Nain",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep navy field carries a pointed oval medallion dissolving into dense ivory and camel florals on curvilinear vines. Ivory spandrels and a wide ivory main border repeat the scrolling palmette vocabulary. Ivory fringe intact; pile even throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "midnight navy",
+          "hex": "#0D1B2A",
+          "weight": "primary"
+        },
+        {
+          "name": "warm ivory",
+          "hex": "#E8D9B0",
+          "weight": "secondary"
+        },
+        {
+          "name": "camel tan",
+          "hex": "#C4A46B",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate blue",
+          "hex": "#5B7FA6",
+          "weight": "accent"
+        },
+        {
+          "name": "soft grey",
+          "hex": "#A8A89C",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "pointed oval central medallion",
+        "all-over scrolling floral vine fill",
+        "ivory palmette and arabesque main border",
+        "ivory corner spandrels with floral infill",
+        "multiple guard stripe framing",
+        "ivory knotted fringe on short ends"
+      ],
+      "distinguishing": [
+        "Medallion outline dissolves seamlessly into the field lattice rather than sitting as a discrete cartouche — an Isfahan drawing convention executed with notable precision",
+        "The ivory spandrels and ivory border create an unusually strong light-frame-on-dark-field contrast, giving the composition a lantern-like luminosity"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/83542.glb",
+    "model3dUsdzUrl": "/rugs/83542.usdz"
+  },
+  {
+    "id": 86015,
+    "title": "Red Field Lesghi Star Caucasian-Style Square Rug",
+    "size": "4'8\" × 5'0\"",
+    "condition": "Excellent.",
+    "origin": "Persian",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Brick-red field anchors a bold Lesghi star medallion in ivory and sage green, with a dark navy cross axis and gold accents. Scattered rosettes and stylized leaf forms fill the corners. Ivory border carries a star-and-hook repeat with a polychrome stepped inner guard.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "brick red",
+          "hex": "#A8321A",
+          "weight": "primary"
+        },
+        {
+          "name": "ivory",
+          "hex": "#F0E8CC",
+          "weight": "secondary"
+        },
+        {
+          "name": "sage green",
+          "hex": "#6B8C52",
+          "weight": "secondary"
+        },
+        {
+          "name": "midnight navy",
+          "hex": "#1A2245",
+          "weight": "secondary"
+        },
+        {
+          "name": "golden amber",
+          "hex": "#C9923A",
+          "weight": "accent"
+        },
+        {
+          "name": "dark aubergine",
+          "hex": "#4A1E2A",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "Lesghi star central medallion",
+        "navy cross-axis bar",
+        "scattered rosette corner fillers",
+        "polychrome stepped inner guard border",
+        "star-and-hook outer border repeat",
+        "stylized leaf and bird-form field motifs"
+      ],
+      "distinguishing": [
+        "Square format is atypical for this Caucasian star design, which more commonly appears in gallery or runner proportions",
+        "Inscription cartouche visible in upper-left border corner, suggesting a signed or dated weaving"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/86015.glb",
+    "model3dUsdzUrl": "/rugs/86015.usdz"
+  },
+  {
+    "id": 86361,
+    "title": "Red Field Allover Lattice Caucasian Style Area Rug",
+    "size": "3'3\" × 5'5\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Shirvan",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Warm madder-red field carries a dense allover interlocking lattice of ivory S-scrolls and angular vine forms, punctuated by small multicolor rosettes. Wide navy border deploys geometric cartouche repeats between ivory guard stripes. Pile even throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "madder red",
+          "hex": "#A8271E",
+          "weight": "primary"
+        },
+        {
+          "name": "natural ivory",
+          "hex": "#E8DEB8",
+          "weight": "secondary"
+        },
+        {
+          "name": "midnight navy",
+          "hex": "#1C2340",
+          "weight": "secondary"
+        },
+        {
+          "name": "dark burgundy",
+          "hex": "#5A1A1A",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate blue",
+          "hex": "#4A6478",
+          "weight": "accent"
+        },
+        {
+          "name": "ochre gold",
+          "hex": "#C8A83C",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "allover interlocking S-scroll lattice",
+        "scattered multicolor rosette fillers",
+        "geometric cartouche main border",
+        "reciprocal ivory guard stripe",
+        "angular vine repeat throughout field"
+      ],
+      "distinguishing": [
+        "Field reads as two-tone depending on viewing angle — red dominates in one direction, ivory in the other, due to the near-equal weight of the lattice elements",
+        "Border cartouches incorporate Kufic-influenced angular forms uncommon in purely tribal work of this type"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/86361.glb",
+    "model3dUsdzUrl": "/rugs/86361.usdz"
+  },
+  {
+    "id": 86547,
+    "title": "Arts and Crafts Allover Foliate Repeat Navy Border Carpet",
+    "size": "14'0\" × 20'0\"",
+    "condition": "Excellent.",
+    "origin": "Indian",
+    "region": "Arts & Craft",
+    "age": "Contemporary",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Navy border frames a sage and ivory field filled with a tight allover repeat of upright foliate palmette forms, each row interlocked with terracotta floral accents. Gold inner and outer guard stripes carry a leafy vine. The palette reads Arts and Crafts in sensibility.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "midnight navy",
+          "hex": "#1C2A45",
+          "weight": "primary"
+        },
+        {
+          "name": "sage green",
+          "hex": "#7A8C5E",
+          "weight": "primary"
+        },
+        {
+          "name": "warm ivory",
+          "hex": "#D6C99A",
+          "weight": "secondary"
+        },
+        {
+          "name": "antique gold",
+          "hex": "#C9A84C",
+          "weight": "secondary"
+        },
+        {
+          "name": "terracotta red",
+          "hex": "#A63B2A",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "allover interlocked palmette repeat",
+        "bilateral foliate arch motifs",
+        "terracotta floral row accents",
+        "navy main border with stylized bud corner elements",
+        "gold leafy-vine guard stripes",
+        "Arts and Crafts aesthetic layout"
+      ],
+      "distinguishing": [
+        "The overall layout closely references late 19th-century English Arts and Crafts textile design rather than any traditional Near Eastern weaving tradition",
+        "Bud finials at border corners and along border edge are an uncommonly architectural detail for this format"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/86547.glb",
+    "model3dUsdzUrl": "/rugs/86547.usdz"
+  },
+  {
+    "id": 87137,
+    "title": "Ivory Field Medallion Floral Scroll Persian Isfahan Carpet",
+    "size": "6'9\" × 10'3\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Isfahan",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Ivory field carries a navy-accented central medallion with radiating arabesque scrollwork and polychrome florals. Deep crimson main border filled with palmettes and vines. Navy spandrels frame the field. Fringe intact, pile even throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "warm ivory",
+          "hex": "#F2EAD3",
+          "weight": "primary"
+        },
+        {
+          "name": "deep crimson",
+          "hex": "#9B1B2A",
+          "weight": "primary"
+        },
+        {
+          "name": "midnight navy",
+          "hex": "#1C2340",
+          "weight": "secondary"
+        },
+        {
+          "name": "dusty slate blue",
+          "hex": "#7A9BAF",
+          "weight": "secondary"
+        },
+        {
+          "name": "camel tan",
+          "hex": "#C4A97D",
+          "weight": "accent"
+        },
+        {
+          "name": "sage green",
+          "hex": "#8A9A72",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "central medallion with pendant drops",
+        "all-over arabesque vine scrollwork",
+        "navy corner spandrels",
+        "palmette and floral main border",
+        "reciprocal minor guard borders",
+        "polychrome rosette fill florals"
+      ],
+      "distinguishing": [
+        "Navy spandrels contrasting against ivory field create strong visual framing uncommon in lighter Isfahan work",
+        "Slate blue accent coloring within the medallion adds a cooler tone that separates this from standard red-and-ivory examples"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/87137.glb",
+    "model3dUsdzUrl": "/rugs/87137.usdz"
+  },
+  {
+    "id": 87461,
+    "title": "Abstract Vertical Streak Multicolor Modern Runner",
+    "size": "2'4\" × 12'9\"",
+    "condition": "Excellent.",
+    "origin": "Indian",
+    "region": "Static",
+    "age": "Contemporary",
+    "technique": "Hand-woven (flatweave)",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "A narrow runner worked in dense vertical striations of ivory, charcoal, amber, and brown, creating a rainfall or bark-texture effect across the full field. No traditional border; cream selvedge edges frame the composition cleanly.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "warm ivory",
+          "hex": "#E8E0CC",
+          "weight": "primary"
+        },
+        {
+          "name": "charcoal black",
+          "hex": "#2C2B28",
+          "weight": "primary"
+        },
+        {
+          "name": "tawny amber",
+          "hex": "#C47C2B",
+          "weight": "secondary"
+        },
+        {
+          "name": "warm brown",
+          "hex": "#6B4A2A",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate grey",
+          "hex": "#8A8F96",
+          "weight": "accent"
+        },
+        {
+          "name": "rust orange",
+          "hex": "#B8522A",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "all-over vertical streak pattern",
+        "painterly rainfall texture",
+        "borderless open field",
+        "narrow runner format",
+        "organic color blending throughout"
+      ],
+      "distinguishing": [
+        "Highly elongated runner proportion with no conventional border structure",
+        "Mosaic-like short dash motifs produce an impressionistic, almost woven-painting effect"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/87461.glb",
+    "model3dUsdzUrl": "/rugs/87461.usdz"
+  },
+  {
+    "id": 87859,
+    "title": "Ivory Field Medallion Allover Vine Scroll Persian Carpet",
+    "size": "13'2\" × 19'4\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Meshed",
+    "age": "Mid-20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Ivory field carries a dense, symmetrical vine-scroll with rosettes and palmettes radiating from a deep crimson lobed medallion centered with indigo florals. Burgundy main border hosts a continuous floral meander. Fringe intact; pile even throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "warm ivory",
+          "hex": "#EDE3C8",
+          "weight": "primary"
+        },
+        {
+          "name": "deep crimson",
+          "hex": "#7A1020",
+          "weight": "secondary"
+        },
+        {
+          "name": "burgundy",
+          "hex": "#5C0A18",
+          "weight": "secondary"
+        },
+        {
+          "name": "steel indigo",
+          "hex": "#2E4A6B",
+          "weight": "accent"
+        },
+        {
+          "name": "muted rose",
+          "hex": "#C46070",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "lobed central medallion",
+        "all-over vine-scroll and rosette field",
+        "floral meander main border",
+        "ivory floral secondary guard borders",
+        "bilateral symmetry throughout"
+      ],
+      "distinguishing": [
+        "Weaver's signature cartouche visible in lower left corner",
+        "Indigo medallion interior creates rare tri-color focal point against the crimson ground"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/87859.glb",
+    "model3dUsdzUrl": "/rugs/87859.usdz"
+  },
+  {
+    "id": 87861,
+    "title": "Deep Burgundy Field European Scrollwork Flatweave Carpet",
+    "size": "8'7\" × 9'10\"",
+    "condition": "Good.",
+    "origin": "Persian",
+    "region": "Bessarabian",
+    "age": "c. 1900",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "A large European flatweave — likely Savonnerie or Aubusson tradition — with a dense ivory-on-burgundy scrollwork lattice center panel. Acanthus leaf sprays and baroque cartouches fill the wide dark ground border. Teal accent florals at inner corners. Some surface wear visible.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "deep burgundy",
+          "hex": "#6B1020",
+          "weight": "primary"
+        },
+        {
+          "name": "warm ivory",
+          "hex": "#E8D9B0",
+          "weight": "secondary"
+        },
+        {
+          "name": "old gold",
+          "hex": "#C4952A",
+          "weight": "secondary"
+        },
+        {
+          "name": "tawny amber",
+          "hex": "#B87830",
+          "weight": "secondary"
+        },
+        {
+          "name": "teal green",
+          "hex": "#2E6B5E",
+          "weight": "accent"
+        },
+        {
+          "name": "dusty rose",
+          "hex": "#C47870",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "all-over scrollwork lattice center panel",
+        "acanthus leaf and baroque cartouche border",
+        "teal floral accents at inner corners",
+        "ivory arabesques on dark ground",
+        "stepped inner frame with pale blue stripes",
+        "symmetrical four-way composition"
+      ],
+      "distinguishing": [
+        "Flatweave construction consistent with Aubusson or Savonnerie workshop tradition rather than knotted pile",
+        "Unusual pairing of a dense geometric scroll lattice field against a fully pictorial baroque border",
+        "Teal corner rosettes provide a rare chromatic counterpoint within an otherwise warm palette"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/87861.glb",
+    "model3dUsdzUrl": "/rugs/87861.usdz"
+  },
+  {
+    "id": 87898,
+    "title": "Blue Field Abstract Vertical Bar and Zigzag Carpet",
+    "size": "8'0\" × 10'0\"",
+    "condition": "Excellent.",
+    "origin": "Persian",
+    "age": "Contemporary",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Indigo-blue field densely packed with vertical columns of staggered rectangular bars in olive, gold, sage, and slate, punctuated by sinuous white zigzag lines running top to bottom. No traditional border; a narrow navy binding frames the composition. Pile appears even and full throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "indigo blue",
+          "hex": "#2B4070",
+          "weight": "primary"
+        },
+        {
+          "name": "olive gold",
+          "hex": "#8A7D28",
+          "weight": "secondary"
+        },
+        {
+          "name": "sage green",
+          "hex": "#7A9B82",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate grey",
+          "hex": "#8A9BB0",
+          "weight": "secondary"
+        },
+        {
+          "name": "ivory white",
+          "hex": "#E8E4D0",
+          "weight": "accent"
+        },
+        {
+          "name": "deep teal",
+          "hex": "#2F6055",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "all-over vertical rectangular bar columns",
+        "sinuous ivory zigzag lines as vertical dividers",
+        "irregular staggered block rhythm",
+        "borderless field with narrow binding",
+        "tonal blue ground with polychrome overlay"
+      ],
+      "distinguishing": [
+        "Zigzag lines vary in character column to column — some sharp, some wave-like — suggesting deliberate variation rather than a repeated mechanical motif",
+        "Palette shifts subtly across the field, with teal clustering toward center and gold concentrating toward edges, giving a landscape-like depth"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/87898.glb",
+    "model3dUsdzUrl": "/rugs/87898.usdz"
+  },
+  {
+    "id": 88297,
+    "title": "Rust Field Caucasian Long Rug with Stacked Medallions",
+    "size": "3'10\" × 8'9\"",
+    "condition": "Good.",
+    "origin": "Persian",
+    "region": "Kazak",
+    "age": "c. 1880",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "Rust-red elongated field carries a vertical column of five geometric hooked medallions in steel blue, ivory, and navy. Wide ivory border with large stepped triangles in polychrome. Pile worn low throughout, with some foundation visible in lower field.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "burnt rust red",
+          "hex": "#A03A1E",
+          "weight": "primary"
+        },
+        {
+          "name": "ivory ground",
+          "hex": "#E8DAAA",
+          "weight": "secondary"
+        },
+        {
+          "name": "steel blue",
+          "hex": "#4A6F8A",
+          "weight": "secondary"
+        },
+        {
+          "name": "navy",
+          "hex": "#1E2D4A",
+          "weight": "secondary"
+        },
+        {
+          "name": "sage green",
+          "hex": "#7A9178",
+          "weight": "accent"
+        },
+        {
+          "name": "straw yellow",
+          "hex": "#D4B86A",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "vertical column of five hooked geometric medallions",
+        "large stepped-triangle polychrome border",
+        "narrow reciprocal running-dog inner guard",
+        "small scattered infill motifs between medallions",
+        "angular S-hook and crab secondary borders"
+      ],
+      "distinguishing": [
+        "Unusual density of stacked medallions across the full field length suggests Kazak or Karabagh attribution",
+        "Multicolored large-triangle border with strong directional movement is a regional hallmark rarely seen in this scale"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/88297.glb",
+    "model3dUsdzUrl": "/rugs/88297.usdz"
+  },
+  {
+    "id": 88400,
+    "title": "Navy Field Medallion Caucasian Geometric Tribal Carpet",
+    "size": "3'8\" × 4'9\"",
+    "condition": "Good.",
+    "origin": "Persian",
+    "region": "Kazak",
+    "age": "c. 1900",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep indigo field anchors a large lozenge medallion framed in ivory and red, flanked by octagonal rosette panels. Scattered geometric fillers populate the field. Ivory-ground main border carries bold Caucasian chevron and cross motifs. Some low areas visible in field.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "deep indigo navy",
+          "hex": "#1B2A5E",
+          "weight": "primary"
+        },
+        {
+          "name": "saturated crimson red",
+          "hex": "#B01F24",
+          "weight": "secondary"
+        },
+        {
+          "name": "natural ivory",
+          "hex": "#E8DFC0",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate teal",
+          "hex": "#3D6E72",
+          "weight": "accent"
+        },
+        {
+          "name": "warm camel brown",
+          "hex": "#8B6B3D",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "stepped lozenge central medallion",
+        "flanking octagonal rosette panels",
+        "scattered geometric filler motifs",
+        "ivory-ground chevron and cross main border",
+        "inner red reciprocal-tooth guard border",
+        "serrated leaf and star subsidiary elements"
+      ],
+      "distinguishing": [
+        "Asymmetric lower panel with a distinct secondary medallion composition, suggesting a non-repeating field layout",
+        "Hooked s-scroll detailing within medallion interior consistent with Kazak or Karabagh workshop tradition"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/88400.glb",
+    "model3dUsdzUrl": "/rugs/88400.usdz"
+  },
+  {
+    "id": 88847,
+    "title": "Amber Field Medallion Allover Floral Persian Carpet",
+    "size": "9'10\" × 13'0\"",
+    "condition": "Good.",
+    "origin": "Persian",
+    "age": "c. 1900",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "Warm amber-orange field carries a central oval medallion surrounded by dense scrolling vinery and palmettes. A deep indigo border frames the field with large boteh and floral sprays. Heavy wear has opened the pile throughout, lending a painterly, abrash-rich surface.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "burnt amber",
+          "hex": "#C4652A",
+          "weight": "primary"
+        },
+        {
+          "name": "deep indigo",
+          "hex": "#2B3A52",
+          "weight": "secondary"
+        },
+        {
+          "name": "tawny gold",
+          "hex": "#D4903A",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate blue",
+          "hex": "#4A6175",
+          "weight": "accent"
+        },
+        {
+          "name": "near-black navy",
+          "hex": "#1A1F2E",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "oval central medallion",
+        "all-over scrolling floral vinery",
+        "large boteh in main border",
+        "arched cartouche pendants at field corners",
+        "multiple guard stripes with reciprocal meander"
+      ],
+      "distinguishing": [
+        "Unusually pronounced color contrast between amber field and indigo border creates a strong two-tone graphic effect",
+        "Extensive even wear has reduced pile to near-foundation across much of the field, giving the surface a characteristic aged patina rather than localized damage"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/88847.glb",
+    "model3dUsdzUrl": "/rugs/88847.usdz"
+  },
+  {
+    "id": 88848,
+    "title": "Over-Dyed Violet Geometric Medallion Persian Carpet",
+    "size": "9'10\" × 13'0\"",
+    "condition": "Good.",
+    "origin": "Persian",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "A heavily over-dyed piece in saturated violet and near-black, revealing a structured geometric medallion beneath the color wash. Paneled field with repeating lattice and arrow motifs. Wear and dye absorption uneven, creating deliberate distressed effect throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "deep aubergine black",
+          "hex": "#1A0D26",
+          "weight": "primary"
+        },
+        {
+          "name": "saturated violet",
+          "hex": "#7B3B8C",
+          "weight": "secondary"
+        },
+        {
+          "name": "dusty mauve",
+          "hex": "#A86CA8",
+          "weight": "secondary"
+        },
+        {
+          "name": "pale lavender blush",
+          "hex": "#C49EC4",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "octagonal central medallion",
+        "paneled geometric field",
+        "repeating arrow and chevron bands",
+        "stepped border with scrolling vine",
+        "overall distressed over-dye finish"
+      ],
+      "distinguishing": [
+        "Intentional over-dyeing obscures original palette entirely, leaving pattern legible only as dark-on-violet relief",
+        "Uneven dye absorption creates tonal gradient from dark upper field to lighter central zone, suggesting deliberate abrash effect"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/88848.glb",
+    "model3dUsdzUrl": "/rugs/88848.usdz"
+  },
+  {
+    "id": 89086,
+    "title": "Solid Blue Heathered Flatweave Runner",
+    "size": "2'6\" × 12'0\"",
+    "condition": "Excellent.",
+    "origin": "Contemporary",
+    "region": "Carpet",
+    "age": "Contemporary",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "A narrow runner in a single blue-grey ground, woven with vertical streaking that creates a heathered, linen-like texture. No border, no medallion — the design relies entirely on tonal variation in the weave itself.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "slate blue",
+          "hex": "#8090B8",
+          "weight": "primary"
+        },
+        {
+          "name": "periwinkle grey",
+          "hex": "#9AA5C4",
+          "weight": "secondary"
+        },
+        {
+          "name": "cool white",
+          "hex": "#D6DBE8",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "solid field, no motif",
+        "vertical heathered streaking",
+        "borderless construction",
+        "flatweave or low-loop texture",
+        "narrow runner format"
+      ],
+      "distinguishing": [
+        "Tonal streaking gives a hand-dyed or abrash-like movement without traditional pile construction",
+        "Complete absence of border or decorative element — a deliberate minimalist choice"
+      ]
+    },
+    "collection": "contemporary",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/89086.glb",
+    "model3dUsdzUrl": "/rugs/89086.usdz"
+  },
+  {
+    "id": 89106,
+    "title": "Ivory Field Allover Floral Lattice Persian Carpet",
+    "size": "10'0\" × 14'1\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Karastan",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Cream ivory field carries a dense, continuous flowering vine lattice in soft rose, dusty lavender, and sage. A blue-grey main border with matching florals and corner medallions frames the field. Fringed ends intact, pile even throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "warm ivory",
+          "hex": "#F5EDD8",
+          "weight": "primary"
+        },
+        {
+          "name": "blue-grey",
+          "hex": "#8F9EAD",
+          "weight": "secondary"
+        },
+        {
+          "name": "dusty rose",
+          "hex": "#C47E7E",
+          "weight": "secondary"
+        },
+        {
+          "name": "soft lavender",
+          "hex": "#9E94B8",
+          "weight": "accent"
+        },
+        {
+          "name": "sage green",
+          "hex": "#7A8F6A",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "allover flowering vine lattice",
+        "no central medallion — open field design",
+        "blue-grey main border with floral scrollwork",
+        "ivory corner quarter-medallions in border",
+        "multi-guard border system",
+        "knotted fringe at both ends"
+      ],
+      "distinguishing": [
+        "Unusually restrained palette of muted rose, lavender, and grey keeps the dense allover pattern airy rather than heavy",
+        "Corner medallion reserves in the border echo the ivory field, creating a visual interplay between field and frame"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/89106.glb",
+    "model3dUsdzUrl": "/rugs/89106.usdz"
+  },
+  {
+    "id": 89427,
+    "title": "Navy Field All-Over Scrolling Vine Chinese-Style Carpet",
+    "size": "10'0\" × 13'9\"",
+    "condition": "Excellent.",
+    "origin": "Persian",
+    "region": "Bamyan",
+    "age": "Contemporary",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep navy field carries a dense all-over lattice of scrolling vines, lobed leaves, and stylized floral seed-pods in powder blue and ivory. Light blue border with Greek key inner guard and scattered lotus medallions frames the field on all sides.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "midnight navy",
+          "hex": "#0D1F45",
+          "weight": "primary"
+        },
+        {
+          "name": "powder blue",
+          "hex": "#7AAECB",
+          "weight": "secondary"
+        },
+        {
+          "name": "pale sky blue",
+          "hex": "#B8D4E8",
+          "weight": "secondary"
+        },
+        {
+          "name": "antique ivory",
+          "hex": "#E8E0CC",
+          "weight": "accent"
+        },
+        {
+          "name": "dark ink blue",
+          "hex": "#1A2C5B",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "all-over scrolling vine lattice",
+        "lobed oak-style leaf sprays",
+        "stylized floral seed-pods",
+        "Greek key inner guard border",
+        "scattered lotus blossom outer border",
+        "tonal blue-on-navy field layering"
+      ],
+      "distinguishing": [
+        "Deliberate tonal variation within the field creates an abrash-like depth using only blues and ivory",
+        "Greek key meander rendered in navy-on-light-blue with unusual crispness for a pile rug of this scale"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/89427.glb",
+    "model3dUsdzUrl": "/rugs/89427.usdz"
+  },
+  {
+    "id": 89531,
+    "title": "Camel and Slate Geometric Zigzag Tribal Flatweave",
+    "size": "4'0\" × 7'0\"",
+    "condition": "Very good.",
+    "origin": "Contemporary",
+    "region": "Zapotec",
+    "age": "Late 20th century",
+    "technique": "Hand-woven (flatweave)",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Low",
+    "lead": "A flatweave kilim in camel tan and slate grey, organized in horizontal bands alternating field color. Repeating zigzag chevrons in amber outline step-pyramid motifs across the field. Ivory fringe at both ends. No visible restoration.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "camel tan",
+          "hex": "#B8956A",
+          "weight": "primary"
+        },
+        {
+          "name": "slate grey-green",
+          "hex": "#6B7A6A",
+          "weight": "secondary"
+        },
+        {
+          "name": "charcoal grey",
+          "hex": "#4A4A42",
+          "weight": "secondary"
+        },
+        {
+          "name": "amber rust",
+          "hex": "#B8621A",
+          "weight": "accent"
+        },
+        {
+          "name": "ivory",
+          "hex": "#E8E0D0",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "repeating zigzag chevron bands",
+        "step-pyramid geometric motifs",
+        "alternating tan and grey horizontal field bands",
+        "flatweave kilim construction",
+        "ivory twisted fringe ends"
+      ],
+      "distinguishing": [
+        "Subtle tonal striping within the grey bands suggests weft-faced plain weave with natural dye variation or abrash",
+        "Chevron outlines rendered in amber rust contrast sharply against the muted field palette"
+      ]
+    },
+    "collection": "contemporary",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/89531.glb",
+    "model3dUsdzUrl": "/rugs/89531.usdz"
+  },
+  {
+    "id": 89657,
+    "title": "Navy Field Medallion Floral Arabesque Traditional Carpet",
+    "size": "6'1\" × 8'8\"",
+    "condition": "Excellent.",
+    "origin": "Persian",
+    "region": "Aryana",
+    "age": "Contemporary",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep navy field anchors a large-scale arabesque medallion system with branching vines, palmettes, and scattered florals. Crimson main border carries rosette cartouches on a gold inner guard. Ivory and gold accents punctuate throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "midnight navy",
+          "hex": "#1A1F3A",
+          "weight": "primary"
+        },
+        {
+          "name": "deep crimson",
+          "hex": "#8B1A1A",
+          "weight": "secondary"
+        },
+        {
+          "name": "antique gold",
+          "hex": "#C4963A",
+          "weight": "secondary"
+        },
+        {
+          "name": "warm ivory",
+          "hex": "#E8DFC0",
+          "weight": "accent"
+        },
+        {
+          "name": "slate blue",
+          "hex": "#5B7A9D",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "large-scale arabesque medallion",
+        "all-over branching vine system",
+        "palmette and rosette fill",
+        "crimson main border with cartouche rosettes",
+        "reciprocal inner and outer guard stripes",
+        "scattered small floral heads across field"
+      ],
+      "distinguishing": [
+        "Medallion rendered as an open lattice rather than a solid form, allowing the navy field to read through",
+        "Gold vine work achieves unusual visual depth against the dark ground without the use of outlining"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/89657.glb",
+    "model3dUsdzUrl": "/rugs/89657.usdz"
+  },
+  {
+    "id": 89824,
+    "title": "Red Field Allover Floral Vine Tabriz-Style Carpet",
+    "size": "10'10\" × 12'7\"",
+    "condition": "Very good.",
+    "origin": "Persian",
+    "region": "Tabriz",
+    "age": "Late 20th century",
+    "technique": "Hand-knotted",
+    "materials": [
+      "Wool"
+    ],
+    "pile": "Medium",
+    "lead": "Deep crimson field carries a dense, symmetrical allover vine-and-rosette lattice with ivory medallion blooms and multicolor floral heads. Wide ivory main border displays scrolling arabesques and botanical sprays. Pile is even with good color retention throughout.",
+    "enrichment": {
+      "colorPalette": [
+        {
+          "name": "deep crimson",
+          "hex": "#8B0A1A",
+          "weight": "primary"
+        },
+        {
+          "name": "warm ivory",
+          "hex": "#EDE4C8",
+          "weight": "secondary"
+        },
+        {
+          "name": "slate blue",
+          "hex": "#5A6E8A",
+          "weight": "secondary"
+        },
+        {
+          "name": "navy",
+          "hex": "#1C2542",
+          "weight": "accent"
+        },
+        {
+          "name": "sage green",
+          "hex": "#7A9478",
+          "weight": "accent"
+        },
+        {
+          "name": "golden ochre",
+          "hex": "#C9A84C",
+          "weight": "accent"
+        }
+      ],
+      "designFeatures": [
+        "allover vine-and-rosette lattice",
+        "large circular ivory floral medallions on field",
+        "wide ivory main border with botanical arabesques",
+        "inner and outer guard borders with repeating floral sprigs",
+        "multicolor palmette and peony heads",
+        "no central medallion — full-field repeat"
+      ],
+      "distinguishing": [
+        "Near-square format, relatively uncommon in large room-size carpets of this style",
+        "Unusual density of large circular ivory bloom clusters evenly distributed across the entire field without a focal medallion"
+      ]
+    },
+    "collection": "antique-persian",
+    "draft": false,
+    "model3dGlbUrl": "/rugs/89824.glb",
+    "model3dUsdzUrl": "/rugs/89824.usdz"
   }
 ]

@@ -1,14 +1,5 @@
 [
   {
-    "id": "17600",
-    "fit": "pass",
-    "topDown": true,
-    "cleanEdges": true,
-    "cleanBackground": true,
-    "noObjects": true,
-    "reason": "Straight overhead shot of a rectangular rug with clean edges, neutral uniform background, no extraneous objects, and good color/sharpness throughout."
-  },
-  {
     "id": "20300",
     "fit": "pass",
     "topDown": true,
@@ -16,15 +7,6 @@
     "cleanBackground": true,
     "noObjects": true,
     "reason": "Straight overhead shot of a rectangular rug with clean edges, dark uniform background, no extraneous objects, and good resolution."
-  },
-  {
-    "id": "23000",
-    "fit": "pass",
-    "topDown": true,
-    "cleanEdges": true,
-    "cleanBackground": true,
-    "noObjects": true,
-    "reason": "Straight overhead shot with clean rectangular edges, uniform neutral background, no foreign objects, and good color clarity."
   },
   {
     "id": "39500",
@@ -52,15 +34,6 @@
     "cleanBackground": true,
     "noObjects": true,
     "reason": "Clean top-down shot with a pure white background, sharp detail, full rectangular rug visible, and no extraneous objects."
-  },
-  {
-    "id": "63750",
-    "fit": "pass",
-    "topDown": true,
-    "cleanEdges": true,
-    "cleanBackground": true,
-    "noObjects": true,
-    "reason": "Straight overhead shot of a rectangular Caucasian rug on a clean neutral background with no extraneous objects and good color/sharpness."
   },
   {
     "id": "71750",
