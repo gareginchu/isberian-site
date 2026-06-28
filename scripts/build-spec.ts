@@ -191,7 +191,7 @@ function featureBlock(opts: {
 }
 
 function buildDoc() {
-  const children: Paragraph[] = [];
+  const children: (Paragraph | Table)[] = [];
 
   // ── Cover ────────────────────────────────────────────────────────────
   children.push(
