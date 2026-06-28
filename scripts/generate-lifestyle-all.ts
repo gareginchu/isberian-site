@@ -175,6 +175,20 @@ async function generate(dataUri: string, instruction: string, retries = 0): Prom
 
 type Job = { rug: Rug; scene: Scene };
 
+/** Inject the rug's real-world dimensions into the scene instruction so
+ *  Kontext doesn't auto-scale a 4'×6' scatter to look like a room rug, or a
+ *  12'×18' oversize to look like an accent. Kontext usually honors explicit
+ *  measurements when stated. The hint is added before the closing "preserve
+ *  pattern, colors, proportions" sentence so the size context lands first. */
+function instructionWithSize(scene: Scene, rug: Rug): string {
+  const size = rug.size?.trim();
+  if (!size) return scene.instruction;
+  return scene.instruction.replace(
+    /(\s*Preserve the rug's [^.]+\.\s*)$/,
+    ` The rug measures ${size} — show it at that real-world scale within the room, neither stretched to fill the floor nor shrunk to an accent. $1`,
+  );
+}
+
 async function processJob(job: Job, idx: number, total: number): Promise<{ ok: boolean; rugId: number; slug: string; reason?: string }> {
   const { rug, scene } = job;
   const outFile = path.join(OUT_DIR, `${rug.id}-${scene.slug}.png`);
@@ -190,7 +204,7 @@ async function processJob(job: Job, idx: number, total: number): Promise<{ ok: b
   const rugBuf = await readFile(rugPhoto);
   const dataUri = `data:image/jpeg;base64,${rugBuf.toString("base64")}`;
   try {
-    const url = await generate(dataUri, scene.instruction);
+    const url = await generate(dataUri, instructionWithSize(scene, rug));
     const ab = (await (await fetch(url)).arrayBuffer()) as ArrayBuffer;
     const buf = Buffer.from(ab);
     await writeFile(outFile, buf);

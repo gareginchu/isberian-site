@@ -115,7 +115,7 @@ function buildPrompt(rug: Rug): string {
   const primary = (rug.enrichment?.colorPalette ?? []).find((p) => p.weight === "primary");
   const secondary = (rug.enrichment?.colorPalette ?? []).filter((p) => p.weight === "secondary").map((p) => p.name.toLowerCase());
 
-  const rugDescription = `a ${rug.size} hand-knotted ${rug.origin} ${rug.region ? rug.region + " " : ""}rug, ${rug.age}, ${(rug.materials ?? ["wool"]).join(" and ").toLowerCase()}, ${(rug.pile ?? "low").toLowerCase()} pile, on the floor — ${rug.lead.toLowerCase().replace(/\.$/, "")}`;
+  const rugDescription = `a ${rug.size} hand-knotted ${rug.origin} ${rug.region ? rug.region + " " : ""}rug measuring exactly ${rug.size} at real-world scale, ${rug.age}, ${(rug.materials ?? ["wool"]).join(" and ").toLowerCase()}, ${(rug.pile ?? "low").toLowerCase()} pile, on the floor — ${rug.lead.toLowerCase().replace(/\.$/, "")}`;
 
   return [
     "Photorealistic editorial interior photograph, shot on medium-format film, shallow grain.",
