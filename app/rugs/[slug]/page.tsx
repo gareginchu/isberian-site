@@ -84,7 +84,15 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
                 <div
                   key={i}
                   className="relative bg-cream-200 overflow-hidden mx-auto"
-                  style={{ aspectRatio: ratio, maxWidth: ratio < 0.7 ? "70%" : "100%" }}
+                  style={{
+                    aspectRatio: ratio,
+                    // Cap height so the rug photo never dominates the viewport.
+                    // Width auto-derives from the aspect ratio + height cap.
+                    maxHeight: "min(75vh, 720px)",
+                    // Runners shrink horizontally so they don't become unreadable
+                    // strips; everything else fills the column.
+                    maxWidth: ratio < 0.5 ? "55%" : "100%",
+                  }}
                 >
                   <Image
                     src={img.src}

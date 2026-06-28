@@ -99,8 +99,8 @@ export function FloatingConcierge() {
       aria-labelledby="concierge-title"
       className={`fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-40 flex flex-col bg-cream shadow-[0_12px_40px_-12px_rgba(20,20,18,0.18)] ring-1 ring-ink/10 transition-all duration-200 ${
         open
-          ? "w-[calc(100vw-2rem)] sm:w-[400px] max-h-[min(620px,calc(100dvh-2.5rem))] rounded-3xl"
-          : "w-[calc(100vw-2rem)] sm:w-[360px] rounded-full"
+          ? "w-[min(360px,calc(100vw-2rem))] max-h-[min(580px,calc(100dvh-2.5rem))] rounded-3xl"
+          : "w-[min(280px,calc(100vw-2rem))] rounded-full"
       }`}
     >
       <h2 id="concierge-title" className="sr-only">

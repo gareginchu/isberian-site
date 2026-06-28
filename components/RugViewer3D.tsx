@@ -173,11 +173,12 @@ export function RugViewer3D({
 
       {/* Floating toolbar — bottom-right of the canvas. Visible always so visitors
           can see what they can do. AR button is rendered by model-viewer itself
-          (bottom-center) when the device supports it. */}
+          (bottom-center) when the device supports it. z-20 so model-viewer's
+          own stacking context can't paint over the controls. */}
       <div
         role="toolbar"
         aria-label="3D viewer controls"
-        className="absolute bottom-3 right-3 flex flex-col gap-1 rounded-full bg-white/90 backdrop-blur-sm shadow-md ring-1 ring-ink/10 p-1"
+        className="absolute bottom-3 right-3 z-20 flex flex-col gap-1 rounded-full bg-white shadow-lg ring-1 ring-ink/20 p-1"
       >
         <ToolbarButton label="Zoom in" onClick={() => setRadius(-ZOOM_STEP_PCT)}>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -249,7 +250,7 @@ function ToolbarButton({
       title={label}
       aria-pressed={typeof active === "boolean" ? active : undefined}
       className={`inline-flex items-center justify-center w-9 h-9 rounded-full transition-colors ${
-        active ? "text-ink bg-ink/10" : "text-ink/70 hover:text-ink hover:bg-ink/5"
+        active ? "text-ink bg-ink/15" : "text-ink hover:bg-ink/10"
       }`}
     >
       {children}

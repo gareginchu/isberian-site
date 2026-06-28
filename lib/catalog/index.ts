@@ -3,6 +3,7 @@ import type { CatalogSource } from "./source";
 import type { RugSearchFilters } from "./types";
 import { FixtureCatalogSource } from "./fixture-source";
 import { PostgresCatalogSource } from "./postgres-source";
+import { SanityCatalogSource } from "./sanity-source";
 
 /**
  * Catalog adapter — the single seam between the rest of the app and whichever source backs the
@@ -11,12 +12,22 @@ import { PostgresCatalogSource } from "./postgres-source";
  * `CATALOG_SOURCE` and re-exports the three contract methods plus the auxiliary ones the app
  * already depends on, so call sites under /app and /lib stay untouched.
  *
- * Default: `fixture` (the current dev behavior). Set `CATALOG_SOURCE=postgres` when the real DB
- * and the row-to-domain mapper land.
+ * Default: `fixture` (dev). Set `CATALOG_SOURCE=sanity` to read from the Sanity-backed CMS
+ * (live editorial). `CATALOG_SOURCE=postgres` is reserved for the Plan A direct DB path.
  */
 
 function selectSource(): CatalogSource {
   const choice = (process.env.CATALOG_SOURCE ?? "fixture").toLowerCase();
+  if (choice === "sanity") {
+    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[catalog] CATALOG_SOURCE=sanity but NEXT_PUBLIC_SANITY_PROJECT_ID is missing. Falling back to "fixture".`,
+      );
+      return new FixtureCatalogSource();
+    }
+    return new SanityCatalogSource();
+  }
   if (choice === "postgres") return new PostgresCatalogSource();
   if (choice !== "fixture") {
     // Unknown value → fall back to fixtures rather than crash dev. Log once so it's not silent.

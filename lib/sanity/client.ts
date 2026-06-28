@@ -15,7 +15,11 @@ export function sanity(): SanityClient | null {
     projectId,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
     apiVersion: "2024-12-01",
-    useCdn: true,
+    // useCdn:false because new Sanity projects ship with the dataset marked
+    // private, and the CDN doesn't authenticate. SanityCatalogSource has its
+    // own 30s in-memory cache so the latency cost is negligible. Flip to
+    // useCdn:true once the dataset is made public in sanity.io → Settings.
+    useCdn: false,
     token: process.env.SANITY_API_TOKEN,
   });
   return _client;
