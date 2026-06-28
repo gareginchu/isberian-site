@@ -16,9 +16,12 @@ const SEEDS_PATH = path.resolve(process.cwd(), "lib", "catalog", "new-fixture-se
 
 function convertOne(glbPath, usdzPath) {
   return new Promise((resolve) => {
+    // No shell: on Windows, shell:true routes through cmd.exe without quoting
+    // the args, and our paths contain spaces ("OneDrive\Desktop\Isberian new
+    // site\..."). Spawning python directly uses CreateProcessW which handles
+    // spaces correctly.
     const child = spawn("python", ["scripts/glb-to-usdz.py", glbPath, usdzPath], {
       stdio: "pipe",
-      shell: true,
     });
     let out = "";
     child.stdout.on("data", (d) => { out += d.toString(); });
