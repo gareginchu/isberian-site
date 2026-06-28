@@ -165,7 +165,21 @@ export function EditForm({ seed }: { seed: Seed }) {
       <Section label="Color palette">
         <div className="space-y-2">
           {s.enrichment.colorPalette.map((c, i) => (
-            <div key={i} className="grid grid-cols-[1fr_120px_100px_30px] gap-2 items-center">
+            <div key={i} className="grid grid-cols-[36px_1fr_120px_100px_30px] gap-2 items-center">
+              {/* Color swatch — actual rendered color from the hex. Click opens a
+                  native color picker so the editor can sample/adjust visually. */}
+              <label className="relative block w-9 h-9 rounded border border-ink-300/60 overflow-hidden cursor-pointer" style={{ backgroundColor: isValidHex(c.hex) ? c.hex : undefined }}>
+                <input
+                  type="color"
+                  value={isValidHex(c.hex) ? c.hex : "#000000"}
+                  onChange={(e) => setPalette(i, "hex", e.target.value.toUpperCase())}
+                  className="absolute inset-0 opacity-0 cursor-pointer"
+                  aria-label="Pick color"
+                />
+                {!isValidHex(c.hex) && (
+                  <span className="absolute inset-0 flex items-center justify-center text-[10px] text-ink-500">?</span>
+                )}
+              </label>
               <input className={ipt} value={c.name} onChange={(e) => setPalette(i, "name", e.target.value)} placeholder="color name" />
               <input className={ipt} value={c.hex} onChange={(e) => setPalette(i, "hex", e.target.value)} placeholder="#hex" />
               <select className={ipt} value={c.weight} onChange={(e) => setPalette(i, "weight", e.target.value)}>
@@ -204,6 +218,10 @@ export function EditForm({ seed }: { seed: Seed }) {
 }
 
 const ipt = "block w-full text-sm bg-white border border-ink-300/60 rounded px-3 py-2 focus:outline-none focus:border-ink";
+
+function isValidHex(s: string): boolean {
+  return /^#[0-9a-fA-F]{6}$/.test(s.trim());
+}
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
