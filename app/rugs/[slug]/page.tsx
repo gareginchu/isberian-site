@@ -68,18 +68,14 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
         ]}
       />
       <Container size="wide">
-        <section className="pt-10 pb-6">
-          <Link href="/rugs" className="text-xs tracking-wide-2 uppercase text-oxblood hover:underline">
-            ← The collection
-          </Link>
-        </section>
-        <section className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 pb-20">
-          {/* Image column: sticky just below the navbar so the photograph
-              stays in view while the visitor reads the description, the 3D
-              viewer, and the quote form. top-32 = 128px to clear the
-              ~110px sticky header without leaving a gap; no internal
-              overflow so the column doesn't double-scroll. */}
-          <div className="space-y-6 lg:sticky lg:top-32 lg:self-start">
+        <section className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 pt-6 pb-20">
+          {/* Image column: sticky just below the navbar at lg:top-40 (160px,
+              matches the interior-page sticky header height: 48px top strip
+              + 111px main row). Because the section's pt-6 puts the image
+              at roughly the sticky-top position from the start, the column
+              barely moves before locking — visitors don't perceive any
+              shift when they begin to scroll the right column. */}
+          <div className="space-y-6 lg:sticky lg:top-40 lg:self-start">
             {rug.images.map((img, i) => {
               // Use the rug's real physical dimensions (e.g. 4'2" × 8'0") to shape the frame.
               // Without this every rug would be cropped to a single aspect — runners would lose
@@ -116,6 +112,17 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
               the image. */}
           <div className="space-y-10">
             <div>
+              {/* Back link moved into the right column from the standalone
+                  breadcrumb section above the grid. This lets the image
+                  column start at the very top of the grid so its natural
+                  position matches lg:top-40 and it doesn't shift when the
+                  visitor begins to scroll. */}
+              <Link
+                href="/rugs"
+                className="text-xs tracking-wide-2 uppercase text-oxblood hover:underline inline-block mb-6"
+              >
+                ← The collection
+              </Link>
               <Eyebrow>
                 No. {rug.id.replace(/^rug-/, "")} ·{" "}
                 {rug.status === "available" ? "Available" : rug.status === "on-memo" ? "On memo" : "Sold"} ·{" "}
