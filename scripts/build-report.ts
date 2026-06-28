@@ -165,6 +165,9 @@ function buildDoc() {
       "We rebuilt the site keeping every part of the Isberian story intact — the heritage, the voice, the two showrooms in Chicago and Evanston, and the quoted-only business model. Nothing about how you sell rugs has changed. What's different is what happens before the visitor calls the showroom: instead of a static catalog and a contact form, the front door is now a conversation, a camera, and a catalog that machines can read."
     ),
     body(
+      "The site is currently showing forty-nine rugs, ingested directly from the live Isberian inventory feed — sizes, origins, and materials come from the same source the showroom already maintains. Every one of those rugs has a 3D model, an augmented-reality companion for iPhone and Android, a structured description, and a room visualization. The catalog itself now lives in a hosted editorial system — when the showroom edits a rug, the change appears on the public site within about thirty seconds. No engineer required."
+    ),
+    body(
       "Every feature below was designed with one rule in mind: it must make a visitor more likely to call, book a visit, or send a real question to the showroom — never less. Each one routes back to a person."
     ),
   );
@@ -174,11 +177,11 @@ function buildDoc() {
     rule(),
     eyebrow("Feature 01"),
     h2("Ask anything — the concierge."),
-    lead("A quiet pill at the bottom of every page. Type a question. Get a real answer in your voice."),
+    lead("A single pill anchored over the home-page imagery: Ask anything. Click it, type a question, get a real answer in your voice."),
     body(
-      "A visitor types something like \"I'm looking for something for a dining room with a blue ceiling,\" or \"I have an old Persian rug — can it be cleaned?\", or \"When can I come in?\". The concierge answers in the Isberian voice, links to real rugs in the collection, and offers to book a visit or send the question straight to the showroom."
+      "The first thing a visitor sees on the home page is the carousel of rugs and, sitting over it, a quiet pill that reads Ask anything. The same pill is present on every other page of the site. A visitor types something like \"I'm looking for something for a dining room with a blue ceiling,\" or \"I have an old Persian rug — can it be cleaned?\", or \"When can I come in?\". The concierge answers in the Isberian voice, links to real rugs in the collection, and offers to book a visit or send the question straight to the showroom."
     ),
-    labeled("Why it matters.", "Most visitors leave silently. This catches the ones who would have closed the tab and routes them to a real conversation with you."),
+    labeled("Why it matters.", "Most visitors leave silently. Putting the question box at the very top of the home page — instead of hiding it as a chat bubble in the corner — catches the ones who would have closed the tab and routes them to a real conversation with you."),
     labeled("What it will never do.", "Quote a price. Invent a rug. Recommend bleach on a silk runner. Each of those is enforced by automated tests that block the site from going live if they're violated."),
   );
 
@@ -215,9 +218,13 @@ function buildDoc() {
     h2("See the rug in your room."),
     lead("Every rug becomes a 3D object on its page. A QR code next to it places the rug on the visitor's floor through their phone camera — at true scale, no app to install."),
     body(
-      "On a rug's page the visitor can rotate the rug in 3D. Beside it sits a small QR code. They scan it with the phone camera — the rug opens in augmented reality on their floor, sized to scale. Works on both iPhones (through Quick Look) and Android phones (through Scene Viewer). No download, no account."
+      "On a rug's page the visitor can rotate the rug in 3D. A small toolbar floats over the viewer — zoom in, zoom out, reset, auto-rotate, fullscreen — so the controls are visible, not hidden behind a guessed gesture. Beside the viewer sits a small QR code. The visitor scans it with the phone camera and the rug opens in augmented reality on their floor, sized to scale. This now works for every rug in the catalog on both iPhone (through Quick Look) and Android (through Scene Viewer). No download, no account."
     ),
-    labeled("Why it matters.", "The single thing a photo cannot communicate about a rug is size — the visitor can't tell whether a 9×12 covers their dining room. Augmented reality closes that gap. It is the most direct answer to the question \"will this fit?\" you can give online."),
+    body(
+      "Below the description we also show two AI-rendered room scenes for each rug: a single \"imagined in your room\" photograph, and a four-image strip — library, modern living room, dining room, bedroom. The copy beneath them is explicit that these are imagined settings and the pattern is approximate. They are mood, not specification; the AR view is the specification."
+    ),
+    labeled("Why it matters.", "The single thing a photo cannot communicate about a rug is size — the visitor can't tell whether a 9×12 covers their dining room. Augmented reality closes that gap. The room scenes answer the softer question — \"what does this rug feel like in a real interior?\" — that a flat product photograph cannot."),
+    labeled("True to scale.", "An automated check measures every rug's 3D model against the size recorded in the catalog. Forty-nine out of forty-nine currently pass within one percent. If a model ever drifts out of scale, the site refuses to ship until it is fixed."),
     labeled("Where the QR code can live.", "On the website, but also printed on a card next to the rug in the showroom — so a visitor walking the floor can scan and see the rug in their kitchen at home, before they leave."),
   );
 
@@ -237,12 +244,17 @@ function buildDoc() {
   children.push(
     rule(),
     eyebrow("Feature 06"),
-    h2("Every rug, described the same way."),
-    lead("A typed structure: a one-line lead, the technical details, the palette as actual color chips, design features, distinguishing notes, and provenance."),
+    h2("Every rug, described the same way — and edited live."),
+    lead("A typed structure: a one-line lead, the technical details, the palette as actual color chips, design features, distinguishing notes, and provenance. Edited from a browser, not a codebase."),
     body(
-      "Today's site has free prose on each rug — sometimes a paragraph, sometimes a sentence. The new site uses the same set of fields on every rug, so each rug is answerable in a consistent way: by visitors scanning the page, by search engines, and by AI assistants (ChatGPT, Google's AI overviews) that increasingly answer questions directly. The AI drafts each field from the photos and attributes; an editor at the showroom verifies anything about origin, age, or knot count before it goes live. Anything unverified stays visibly flagged."
+      "Today's site has free prose on each rug — sometimes a paragraph, sometimes a sentence. The new site uses the same set of fields on every rug, so each rug is answerable in a consistent way: by visitors scanning the page, by search engines, and by AI assistants (ChatGPT, Google's AI overviews) that increasingly answer questions directly. The AI drafts each field from the photos and the inventory data; an editor at the showroom verifies anything about origin, age, or knot count before it goes live. Anything unverified stays visibly flagged."
     ),
-    labeled("Why it matters.", "Structured data is what makes Isberian appear inside the answers people get from search engines and AI assistants. Without it, the rugs are invisible to that traffic. With it, your editorial bar — never claim what you can't verify — is enforced by the structure itself, not by hope."),
+    body(
+      "Each rug also carries its inventory number — No. 17600, No. 51500 — as a small eyebrow above the title on the card and on its own page. Matches the convention on the current site and lets a customer reference a rug by number when they call the showroom."
+    ),
+    labeled("Edited from the browser.", "The catalog now lives in a hosted editorial system. The curator opens the rug, edits the title or the lead or the color palette, hits publish, and the public site reflects the change within about thirty seconds. No code, no engineer. If the curator prefers a simpler view, there is a private editing surface on the site itself at /curator that writes through to the same catalog — same edits, leaner interface, unlisted from search engines."),
+    labeled("Reading order on every rug page.", "Title and inventory number first, then the description, then the 3D viewer and the AR code, then the request-a-quote form, then the human exit — phone and book-a-visit. The text answers the visitor before the toys do."),
+    labeled("Why it matters.", "Structured data is what makes Isberian appear inside the answers people get from search engines and AI assistants. Without it, the rugs are invisible to that traffic. With it, your editorial bar — never claim what you can't verify — is enforced by the structure itself, not by hope. And because the showroom can now edit any rug at any time without an engineer, the catalog is a living document instead of a quarterly project."),
   );
 
   // ── Feature 7: Care Knowledge Base ───────────────────────────────────

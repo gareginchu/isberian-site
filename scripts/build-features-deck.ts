@@ -45,16 +45,16 @@ const FEATURES: FeatureSlide[] = [
   {
     index: "01",
     eyebrow: "Conversation",
-    headline: "Ask anything — the concierge.",
+    headline: "Ask anything — front and centre.",
     shot: "concierge-open",
     notes: [
       {
         label: "What it does",
-        body: "A quiet pill at the bottom of every page. Type a question — about a rug, a room, care, or a visit. Answers in your voice, links to real rugs, offers to book a visit.",
+        body: "A prominent pill anchored over the home carousel, and a quiet one on every other page. Type a question — about a rug, a room, care, or a visit. Answers in your voice, links to real rugs, offers to book a visit.",
       },
       {
         label: "Why it matters",
-        body: "Catches visitors who would have closed the tab silently. Routes them to a real conversation with the showroom.",
+        body: "Borrows the pattern visitors already know from ChatGPT and Perplexity. Catches the ones who would have closed the tab silently, and routes them to a real conversation with the showroom.",
       },
       {
         label: "Will never",
@@ -110,15 +110,15 @@ const FEATURES: FeatureSlide[] = [
     notes: [
       {
         label: "What it does",
-        body: "Every rug becomes a 3D object on its page. A QR code beside it opens AR on the visitor's phone — places the rug on their floor at true scale. iPhone and Android both. No app to install.",
+        body: "Every rug in the catalog — all 49 — becomes a 3D object on its page, with a toolbar to zoom, reset, auto-rotate, and view fullscreen. A QR code beside it opens AR on the visitor's phone at true scale. iPhone and Android both. No app to install.",
       },
       {
         label: "Why it matters",
-        body: "Size is the one thing a photo cannot communicate. AR is the most direct answer to \"will this fit my room?\" you can give online.",
+        body: "Size is the one thing a photo cannot communicate. AR is the most direct answer to \"will this fit my room?\" you can give online. A size verifier asserts every 3D plane matches the rug's real dimensions within one percent.",
       },
       {
         label: "Where the QR lives",
-        body: "On the website, on the rug's detail page — and printed on a card next to the rug in the showroom, so visitors walking the floor can scan and see it at home before they leave.",
+        body: "On the rug's detail page — and printed on a card next to the rug in the showroom, so visitors walking the floor can scan and see it at home before they leave.",
       },
     ],
   },
@@ -146,7 +146,7 @@ const FEATURES: FeatureSlide[] = [
     notes: [
       {
         label: "What it does",
-        body: "A typed structure on every rug: one-line lead, technical details, color palette as actual chips, design features, distinguishing notes, provenance. AI drafts, editor verifies origin / age / knot count before publish.",
+        body: "Forty-nine rugs, each rendered the same way: SKU eyebrow (\"No. 17600\"), description, 3D viewer, a suggested-setting room, a four-scene lifestyle row, and a structured block — lead, technical details, color palette as actual chips, design features, distinguishing notes, provenance. Sizes, origins, and materials are ingested from the upstream inventory; AI drafts the prose; editor verifies before publish.",
       },
       {
         label: "Why it matters",
@@ -156,6 +156,26 @@ const FEATURES: FeatureSlide[] = [
   },
   {
     index: "07",
+    eyebrow: "Editorial",
+    headline: "Edit the catalog from your browser.",
+    shot: "rug-detail",
+    notes: [
+      {
+        label: "What it does",
+        body: "The catalog lives in a hosted editorial workspace (Sanity). Sign in, change a description, change a price status, swap an image — the public site reflects it within about thirty seconds. No developer, no deploy, no commit.",
+      },
+      {
+        label: "Why it matters",
+        body: "Editorial control sits with the showroom, not engineering. The structured description rules still apply: AI drafts, an editor verifies origin / age / knot count before anything goes live.",
+      },
+      {
+        label: "Two ways in",
+        body: "The standard editor at sanity.io, or a quiet in-house surface at /curator on the site itself — same content, two doors.",
+      },
+    ],
+  },
+  {
+    index: "08",
     eyebrow: "Care knowledge",
     headline: "A knowledge base behind every care answer.",
     shot: "care",
@@ -321,7 +341,7 @@ function makeDeck() {
       color: ACCENT,
       italic: true,
     });
-    s.addText("On the next pages — seven additions, one per page.", {
+    s.addText("On the next pages — eight additions, one per page.", {
       x: 0.5,
       y: 6.6,
       w: 12,
@@ -429,7 +449,7 @@ function makeDeck() {
   // ── Five rules slide ─────────────────────────────────────────────────
   {
     const s = pres.addSlide({ masterName: "BASE" });
-    s.addText("FEATURE 08  ·  OPERATIONS", {
+    s.addText("FEATURE 09  ·  OPERATIONS", {
       x: 0.5,
       y: 0.9,
       w: 8,
@@ -512,7 +532,7 @@ function makeDeck() {
   // ── Performance + SEO slide ──────────────────────────────────────────
   {
     const s = pres.addSlide({ masterName: "BASE" });
-    s.addText("FEATURE 09  ·  REACH", {
+    s.addText("FEATURE 10  ·  REACH", {
       x: 0.5,
       y: 0.9,
       w: 8,
