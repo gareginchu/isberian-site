@@ -29,7 +29,10 @@ function UnverifiedNote({ what }: { what: string }) {
 export function RugDescriptionBlock({ d }: { d: RugDescription }) {
   return (
     <div>
-      <p className="display text-2xl lg:text-3xl text-ink leading-snug">{d.lead}</p>
+      {/* Lead is body prose, not a headline — body font at editorial reading
+          size (~17-19px), generous line-height. The display serif at 30px
+          read like a pull-quote and competed with the H1 above. */}
+      <p className="text-base lg:text-lg text-ink-700 leading-relaxed max-w-prose">{d.lead}</p>
       <div className="mt-8">
         <Section label="Details">
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8">
