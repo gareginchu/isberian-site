@@ -208,7 +208,7 @@ export function FloatingConcierge() {
                 send(input);
               }
             }}
-            placeholder="Ask anything…"
+            placeholder="Ask anything · 24/7"
             rows={1}
             aria-expanded={open}
             className="flex-1 bg-transparent text-[14px] text-ink placeholder:text-ink/40 focus:outline-none resize-none leading-[20px] py-[6px] max-h-24"

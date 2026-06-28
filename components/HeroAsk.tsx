@@ -70,7 +70,7 @@ export function HeroAsk() {
             aria-controls="hero-ask-panel"
             className="group inline-flex items-center gap-3 bg-cream/95 backdrop-blur-sm text-ink rounded-full pl-6 pr-2 py-2 shadow-[0_8px_28px_-8px_rgba(20,20,18,0.45)] ring-1 ring-ink/10 hover:bg-cream transition-colors"
           >
-            <span className="text-sm lg:text-base font-medium tracking-wide">Ask anything</span>
+            <span className="text-sm lg:text-base font-medium tracking-wide">Ask anything · 24/7</span>
             <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-ink text-cream group-hover:bg-ink-900 transition-colors">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <line x1="22" y1="2" x2="11" y2="13" />
