@@ -3,10 +3,11 @@ import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { RugFilters } from "@/components/RugFilters";
 import { RugGrid } from "@/components/RugGrid";
+import { RugGridControls } from "@/components/RugGridControls";
 import { BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { listRugs } from "@/lib/catalog";
 import { filterRugs } from "@/lib/search";
-import type { RugFacets } from "@/lib/types/rug";
+import type { Rug, RugFacets } from "@/lib/types/rug";
 
 export const metadata: Metadata = {
   title: "Rugs — the collection",
@@ -25,6 +26,43 @@ function paramsToFacets(sp: Record<string, string | string[] | undefined>): RugF
   };
 }
 
+/** Free-text token match across title, lead, palette, design features,
+ *  region, and materials. Light-weight; sufficient for the catalog scale. */
+function matchesQuery(r: Rug, q: string): boolean {
+  if (!q) return true;
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  const hay = [
+    r.title,
+    r.description.lead,
+    r.description.designFeatures.join(" "),
+    r.description.colorPalette.map((c) => c.name).join(" "),
+    r.description.provenance.origin,
+    r.description.provenance.region ?? "",
+    r.description.details.materials.join(" "),
+  ].join(" ").toLowerCase();
+  return terms.every((t) => hay.includes(t));
+}
+
+function sortRugs(rugs: Rug[], sort: string): Rug[] {
+  const arr = [...rugs];
+  if (sort === "title-asc") arr.sort((a, b) => a.title.localeCompare(b.title));
+  else if (sort === "title-desc") arr.sort((a, b) => b.title.localeCompare(a.title));
+  else if (sort === "size-asc" || sort === "size-desc") {
+    const area = (r: Rug) => {
+      const m = r.description.details.sizeImperial.match(/(\d+)'\s*(\d+)?"?\s*[×x]\s*(\d+)'\s*(\d+)?"?/);
+      if (!m) return 0;
+      const w = parseInt(m[1] ?? "0", 10) + parseInt(m[2] ?? "0", 10) / 12;
+      const l = parseInt(m[3] ?? "0", 10) + parseInt(m[4] ?? "0", 10) / 12;
+      return w * l;
+    };
+    arr.sort((a, b) => sort === "size-asc" ? area(a) - area(b) : area(b) - area(a));
+  } else {
+    // Default "Newest" — sort by updatedAt descending.
+    arr.sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""));
+  }
+  return arr;
+}
+
 export default async function RugsPage({
   searchParams,
 }: {
@@ -32,8 +70,18 @@ export default async function RugsPage({
 }) {
   const sp = await searchParams;
   const facets = paramsToFacets(sp);
+  const q = (typeof sp.q === "string" ? sp.q : "").trim();
+  const sort = typeof sp.sort === "string" ? sp.sort : "new";
+  const perPage = Math.max(6, Math.min(100, parseInt((typeof sp.perPage === "string" ? sp.perPage : "24"), 10) || 24));
+  const page = Math.max(1, parseInt((typeof sp.page === "string" ? sp.page : "1"), 10) || 1);
+
   const all = await listRugs();
-  const rugs = filterRugs(all, facets);
+  const facetFiltered = filterRugs(all, facets);
+  const queryFiltered = q ? facetFiltered.filter((r) => matchesQuery(r, q)) : facetFiltered;
+  const sorted = sortRugs(queryFiltered, sort);
+  const pageCount = Math.max(1, Math.ceil(sorted.length / perPage));
+  const clampedPage = Math.min(page, pageCount);
+  const visible = sorted.slice((clampedPage - 1) * perPage, clampedPage * perPage);
 
   return (
     <Container size="wide">
@@ -43,20 +91,44 @@ export default async function RugsPage({
           { name: "Rugs", href: "/rugs" },
         ]}
       />
-      <section className="py-16 lg:py-20">
+      <section className="py-12 lg:py-16">
         <Eyebrow>The collection</Eyebrow>
-        <h1 className="display text-5xl text-ink mt-3 leading-tight">{rugs.length} of {all.length} pieces</h1>
-        <p className="mt-4 max-w-2xl text-ink-700">
+        <h1 className="display text-4xl lg:text-5xl text-ink mt-3 leading-tight">
+          {sorted.length === all.length ? `${all.length} pieces` : `${sorted.length} of ${all.length} pieces`}
+        </h1>
+        <p className="mt-4 max-w-2xl text-ink-700 text-sm lg:text-base">
           A rotating selection. The full collection is much larger than what fits online; tell us what
-          you're looking for and we'll bring out what isn't on the floor.
+          you&apos;re looking for and we&apos;ll bring out what isn&apos;t on the floor.
         </p>
       </section>
       <section className="grid lg:grid-cols-[16rem_1fr] gap-12 pb-24">
         <RugFilters />
         <div>
-          <RugGrid rugs={rugs} />
+          <RugGridControls
+            total={all.length}
+            filtered={sorted.length}
+            page={clampedPage}
+            pageCount={pageCount}
+          />
+          <RugGrid rugs={visible} />
+          {pageCount > 1 && (
+            <div className="mt-10 flex justify-center">
+              <BottomPagination page={clampedPage} pageCount={pageCount} />
+            </div>
+          )}
         </div>
       </section>
     </Container>
+  );
+}
+
+/** Lightweight duplicate of the top pagination — server-rendered so the page
+ *  works without JS for crawlers (the client controls live in RugGridControls
+ *  for filter interactivity). */
+function BottomPagination({ page, pageCount }: { page: number; pageCount: number }) {
+  return (
+    <p className="text-xs text-ink-700">
+      Page <strong className="text-ink">{page}</strong> of {pageCount}
+    </p>
   );
 }
