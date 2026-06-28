@@ -1119,6 +1119,11 @@
         "slug": "dining",
         "label": "Under a dining table",
         "src": "/rugs/lifestyle/65000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/65000-bedroom.png"
       }
     ],
     "model3dUsdzUrl": "/rugs/65000.usdz"
@@ -1196,6 +1201,11 @@
         "slug": "dining",
         "label": "Under a dining table",
         "src": "/rugs/lifestyle/80100-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/80100-bedroom.png"
       }
     ],
     "model3dUsdzUrl": "/rugs/80100.usdz"
@@ -1468,6 +1478,11 @@
     "model3dGlbUrl": "/rugs/53000.glb",
     "suggestedRoomUrl": "/rugs/53000-room.png",
     "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/53000-library.png"
+      },
       {
         "slug": "modern-living",
         "label": "In a modern living room",
@@ -1924,6 +1939,11 @@
     "suggestedRoomUrl": "/rugs/50750-room.png",
     "lifestyle": [
       {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/50750-library.png"
+      },
+      {
         "slug": "modern-living",
         "label": "In a modern living room",
         "src": "/rugs/lifestyle/50750-modern-living.png"
@@ -2261,6 +2281,11 @@
     "model3dUsdzUrl": "/rugs/65671.usdz",
     "suggestedRoomUrl": "/rugs/65671-room.png",
     "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/65671-library.png"
+      },
       {
         "slug": "modern-living",
         "label": "In a modern living room",
@@ -2786,6 +2811,11 @@
         "slug": "dining",
         "label": "Under a dining table",
         "src": "/rugs/lifestyle/87137-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/87137-bedroom.png"
       }
     ]
   },
@@ -3772,6 +3802,11 @@
         "slug": "dining",
         "label": "Under a dining table",
         "src": "/rugs/lifestyle/89531-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/89531-bedroom.png"
       }
     ]
   },
