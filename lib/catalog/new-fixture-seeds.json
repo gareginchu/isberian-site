@@ -56,7 +56,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/17600.glb"
+    "model3dGlbUrl": "/rugs/17600.glb",
+    "suggestedRoomUrl": "/rugs/17600-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/17600-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/17600-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/17600-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/17600-bedroom.png"
+      }
+    ]
   },
   {
     "id": 20300,
@@ -115,7 +138,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/20300.glb"
+    "model3dGlbUrl": "/rugs/20300.glb",
+    "suggestedRoomUrl": "/rugs/20300-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/20300-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/20300-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/20300-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/20300-bedroom.png"
+      }
+    ]
   },
   {
     "id": 23000,
@@ -180,7 +226,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/23000.glb"
+    "model3dGlbUrl": "/rugs/23000.glb",
+    "suggestedRoomUrl": "/rugs/23000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/23000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/23000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/23000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/23000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 39500,
@@ -245,7 +314,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/39500.glb"
+    "model3dGlbUrl": "/rugs/39500.glb",
+    "suggestedRoomUrl": "/rugs/39500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/39500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/39500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/39500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/39500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 42500,
@@ -303,7 +395,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/42500.glb"
+    "model3dGlbUrl": "/rugs/42500.glb",
+    "suggestedRoomUrl": "/rugs/42500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/42500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/42500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/42500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/42500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 63750,
@@ -367,7 +482,30 @@
       ]
     },
     "collection": "antique-caucasian",
-    "model3dGlbUrl": "/rugs/63750.glb"
+    "model3dGlbUrl": "/rugs/63750.glb",
+    "suggestedRoomUrl": "/rugs/63750-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/63750-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/63750-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/63750-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/63750-bedroom.png"
+      }
+    ]
   },
   {
     "id": 71750,
@@ -428,7 +566,30 @@
     "collection": "antique-caucasian",
     "viewer3dQrUrl": "/rugs/qr-71750.png",
     "model3dGlbUrl": "/rugs/71750.glb",
-    "model3dUsdzUrl": "/rugs/71750.usdz"
+    "model3dUsdzUrl": "/rugs/71750.usdz",
+    "suggestedRoomUrl": "/rugs/71750-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/71750-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/71750-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/71750-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/71750-bedroom.png"
+      }
+    ]
   },
   {
     "id": 79250,
@@ -492,7 +653,30 @@
       ]
     },
     "collection": "antique-caucasian",
-    "model3dGlbUrl": "/rugs/79250.glb"
+    "model3dGlbUrl": "/rugs/79250.glb",
+    "suggestedRoomUrl": "/rugs/79250-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/79250-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/79250-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/79250-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/79250-bedroom.png"
+      }
+    ]
   },
   {
     "id": 82000,
@@ -551,7 +735,30 @@
       ]
     },
     "collection": "antique-caucasian",
-    "model3dGlbUrl": "/rugs/82000.glb"
+    "model3dGlbUrl": "/rugs/82000.glb",
+    "suggestedRoomUrl": "/rugs/82000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/82000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/82000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/82000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/82000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 86000,
@@ -609,7 +816,30 @@
       ]
     },
     "collection": "antique-caucasian",
-    "model3dGlbUrl": "/rugs/86000.glb"
+    "model3dGlbUrl": "/rugs/86000.glb",
+    "suggestedRoomUrl": "/rugs/86000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/86000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/86000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/86000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/86000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 18800,
@@ -667,7 +897,30 @@
       ]
     },
     "collection": "antique-turkish",
-    "model3dGlbUrl": "/rugs/18800.glb"
+    "model3dGlbUrl": "/rugs/18800.glb",
+    "suggestedRoomUrl": "/rugs/18800-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/18800-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/18800-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/18800-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/18800-bedroom.png"
+      }
+    ]
   },
   {
     "id": 61500,
@@ -725,7 +978,30 @@
       ]
     },
     "collection": "antique-european",
-    "model3dGlbUrl": "/rugs/61500.glb"
+    "model3dGlbUrl": "/rugs/61500.glb",
+    "suggestedRoomUrl": "/rugs/61500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/61500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/61500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/61500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/61500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 44000,
@@ -773,7 +1049,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/44000.glb"
+    "model3dGlbUrl": "/rugs/44000.glb",
+    "suggestedRoomUrl": "/rugs/44000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/44000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/44000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/44000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/44000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 57750,
@@ -821,7 +1120,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/57750.glb"
+    "model3dGlbUrl": "/rugs/57750.glb",
+    "suggestedRoomUrl": "/rugs/57750-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/57750-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/57750-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/57750-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/57750-bedroom.png"
+      }
+    ]
   },
   {
     "id": 58750,
@@ -870,7 +1192,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/58750.glb"
+    "model3dGlbUrl": "/rugs/58750.glb",
+    "suggestedRoomUrl": "/rugs/58750-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/58750-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/58750-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/58750-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/58750-bedroom.png"
+      }
+    ]
   },
   {
     "id": 51750,
@@ -919,7 +1264,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/51750.glb"
+    "model3dGlbUrl": "/rugs/51750.glb",
+    "suggestedRoomUrl": "/rugs/51750-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/51750-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/51750-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/51750-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/51750-bedroom.png"
+      }
+    ]
   },
   {
     "id": 65000,
@@ -979,7 +1347,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/65000.glb"
+    "model3dGlbUrl": "/rugs/65000.glb",
+    "suggestedRoomUrl": "/rugs/65000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/65000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/65000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/65000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/65000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 80100,
@@ -1037,7 +1428,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/80100.glb"
+    "model3dGlbUrl": "/rugs/80100.glb",
+    "suggestedRoomUrl": "/rugs/80100-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/80100-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/80100-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/80100-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/80100-bedroom.png"
+      }
+    ]
   },
   {
     "id": 36500,
@@ -1090,7 +1504,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/36500.glb"
+    "model3dGlbUrl": "/rugs/36500.glb",
+    "suggestedRoomUrl": "/rugs/36500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/36500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/36500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/36500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/36500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 49000,
@@ -1136,7 +1573,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/49000.glb"
+    "model3dGlbUrl": "/rugs/49000.glb",
+    "suggestedRoomUrl": "/rugs/49000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/49000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/49000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/49000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/49000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 50000,
@@ -1190,7 +1650,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/50000.glb"
+    "model3dGlbUrl": "/rugs/50000.glb",
+    "suggestedRoomUrl": "/rugs/50000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/50000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/50000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/50000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/50000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 53000,
@@ -1232,7 +1715,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/53000.glb"
+    "model3dGlbUrl": "/rugs/53000.glb",
+    "suggestedRoomUrl": "/rugs/53000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/53000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/53000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/53000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/53000-bedroom.png"
+      }
+    ]
   },
   {
     "id": 54500,
@@ -1285,7 +1791,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/54500.glb"
+    "model3dGlbUrl": "/rugs/54500.glb",
+    "suggestedRoomUrl": "/rugs/54500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/54500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/54500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/54500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/54500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 45500,
@@ -1331,7 +1860,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/45500.glb"
+    "model3dGlbUrl": "/rugs/45500.glb",
+    "suggestedRoomUrl": "/rugs/45500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/45500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/45500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/45500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/45500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 52250,
@@ -1376,7 +1928,30 @@
       ]
     },
     "collection": "contemporary",
-    "model3dGlbUrl": "/rugs/52250.glb"
+    "model3dGlbUrl": "/rugs/52250.glb",
+    "suggestedRoomUrl": "/rugs/52250-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/52250-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/52250-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/52250-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/52250-bedroom.png"
+      }
+    ]
   },
   {
     "id": 51500,
@@ -1435,7 +2010,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/51500.glb"
+    "model3dGlbUrl": "/rugs/51500.glb",
+    "suggestedRoomUrl": "/rugs/51500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/51500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/51500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/51500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/51500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 50500,
@@ -1494,7 +2092,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/50500.glb"
+    "model3dGlbUrl": "/rugs/50500.glb",
+    "suggestedRoomUrl": "/rugs/50500-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/50500-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/50500-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/50500-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/50500-bedroom.png"
+      }
+    ]
   },
   {
     "id": 50750,
@@ -1548,7 +2169,30 @@
       ]
     },
     "collection": "antique-turkish",
-    "model3dGlbUrl": "/rugs/50750.glb"
+    "model3dGlbUrl": "/rugs/50750.glb",
+    "suggestedRoomUrl": "/rugs/50750-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/50750-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/50750-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/50750-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/50750-bedroom.png"
+      }
+    ]
   },
   {
     "id": 51250,
@@ -1607,7 +2251,30 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/51250.glb"
+    "model3dGlbUrl": "/rugs/51250.glb",
+    "suggestedRoomUrl": "/rugs/51250-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/51250-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/51250-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/51250-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/51250-bedroom.png"
+      }
+    ]
   },
   {
     "id": 52000,
@@ -1666,6 +2333,29 @@
       ]
     },
     "collection": "antique-persian",
-    "model3dGlbUrl": "/rugs/52000.glb"
+    "model3dGlbUrl": "/rugs/52000.glb",
+    "suggestedRoomUrl": "/rugs/52000-room.png",
+    "lifestyle": [
+      {
+        "slug": "library",
+        "label": "In a traditional library",
+        "src": "/rugs/lifestyle/52000-library.png"
+      },
+      {
+        "slug": "modern-living",
+        "label": "In a modern living room",
+        "src": "/rugs/lifestyle/52000-modern-living.png"
+      },
+      {
+        "slug": "dining",
+        "label": "Under a dining table",
+        "src": "/rugs/lifestyle/52000-dining.png"
+      },
+      {
+        "slug": "bedroom",
+        "label": "At the foot of a bed",
+        "src": "/rugs/lifestyle/52000-bedroom.png"
+      }
+    ]
   }
 ]

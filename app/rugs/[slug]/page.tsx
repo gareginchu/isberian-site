@@ -11,6 +11,7 @@ import { HumanExit } from "@/components/HumanExit";
 import { View3DButton } from "@/components/View3DButton";
 import { View3DQr } from "@/components/View3DQr";
 import { RugViewer3D } from "@/components/RugViewer3D";
+import { RugLifestyleRow } from "@/components/RugLifestyleRow";
 import { RugJsonLd, BreadcrumbListJsonLd } from "@/components/JsonLd";
 import { getRug, findSimilar, listRugs } from "@/lib/catalog";
 
@@ -140,6 +141,10 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
             <HumanExit tone="muted" />
           </div>
         </section>
+
+        {rug.lifestyle && rug.lifestyle.length > 0 && (
+          <RugLifestyleRow scenes={rug.lifestyle} rugTitle={rug.title} />
+        )}
 
         {similar.length > 0 && (
           <section className="py-16 border-t border-ink-300/40">

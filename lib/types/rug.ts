@@ -27,6 +27,13 @@ export type ColorChip = {
   weight: "primary" | "secondary" | "accent";
 };
 
+/** One scene in the lifestyle row — same rug, different imagined interior. */
+export type LifestyleScene = {
+  slug: string; // "library", "modern-living", "dining", "bedroom"
+  label: string; // short editorial label rendered under the image
+  src: string; // path under /public, e.g. "/rugs/lifestyle/17600-library.png"
+};
+
 /**
  * The structured description block. Every rug page renders these fields, not a free prose blob.
  * AI drafts each field from attributes + images; an editor verifies before publish. Any unverified
@@ -88,6 +95,15 @@ export type Rug = {
   /** Optional iOS-specific .usdz model. Without it, iOS users see the 3D
    * viewer but not the AR button (Quick Look needs USDZ). */
   model3dUsdzUrl?: string;
+  /** AI-generated "suggested setting" room image, derived from the rug's
+   * RugDescription (palette, era, region, size). Labelled clearly in the UI
+   * as a suggestion, never as the visitor's room — AR is for that. */
+  suggestedRoomUrl?: string;
+  /** AI-rendered lifestyle row — this rug placed into several different
+   * room scenes via image-to-image. Pattern isn't pixel-perfect (the real
+   * photo is in `images`); identity and palette survive. Rendered as a
+   * full-width row below the description. */
+  lifestyle?: LifestyleScene[];
   updatedAt: string; // ISO
   draft: boolean; // until editor approves
 };

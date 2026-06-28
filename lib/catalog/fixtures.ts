@@ -1,4 +1,4 @@
-import type { Rug, RugOrigin, RugDescription } from "@/lib/types/rug";
+import type { Rug, RugOrigin, RugDescription, LifestyleScene } from "@/lib/types/rug";
 import newSeedsRaw from "./new-fixture-seeds.json" with { type: "json" };
 
 /**
@@ -57,6 +57,10 @@ type Seed = {
   model3dGlbUrl?: string;
   /** Optional iOS-specific .usdz model for Quick Look AR. */
   model3dUsdzUrl?: string;
+  /** AI-generated "suggested setting" image for the rug. */
+  suggestedRoomUrl?: string;
+  /** AI-rendered lifestyle row entries. */
+  lifestyle?: LifestyleScene[];
 };
 
 const seeds: Seed[] = [];
@@ -107,6 +111,8 @@ function build(seed: Seed): Rug {
     ...(seed.viewer3dQrUrl ? { viewer3dQrUrl: seed.viewer3dQrUrl } : {}),
     ...(seed.model3dGlbUrl ? { model3dGlbUrl: seed.model3dGlbUrl } : {}),
     ...(seed.model3dUsdzUrl ? { model3dUsdzUrl: seed.model3dUsdzUrl } : {}),
+    ...(seed.suggestedRoomUrl ? { suggestedRoomUrl: seed.suggestedRoomUrl } : {}),
+    ...(seed.lifestyle && seed.lifestyle.length > 0 ? { lifestyle: seed.lifestyle } : {}),
     updatedAt: "2026-06-24T00:00:00.000Z",
     draft: seed.draft === true,
   };
