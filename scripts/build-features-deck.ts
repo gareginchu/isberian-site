@@ -17,8 +17,8 @@ import { existsSync } from "node:fs";
 const INK = "1F1F1E";
 const MUTED = "6E6E6C";
 const PAPER = "FAFAF8";
-const STONE = "F1F1EE";
-const ACCENT = "6B1F1A";
+const STONE = "E2E2E2"; // legacy isberian.com body background — sampled live
+const ACCENT = "570F12"; // legacy isberian.com link/label burgundy — sampled live
 
 const SANS = "Calibri";
 const SERIF = "Georgia";

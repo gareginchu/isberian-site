@@ -28,10 +28,9 @@ const SHOTS: Shot[] = [
   { name: "rugs-grid", url: "/rugs", settleMs: 1500 },
   {
     name: "rug-detail",
-    url: "/rugs/imperial-medallion-kazak-1888-17109",
+    url: "/rugs/red-field-lesghi-star-caucasian-style-square-rug-86015",
     settleMs: 1500,
   },
-  { name: "discover", url: "/discover", settleMs: 1500, viewportOnly: true },
   {
     name: "concierge-open",
     url: "/rugs",
