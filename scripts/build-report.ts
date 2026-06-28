@@ -162,7 +162,7 @@ function buildDoc() {
     eyebrow("In short"),
     h1("Same century. Same craft. A new front door."),
     body(
-      "We rebuilt the site keeping every part of the Isberian story intact — the heritage, the voice, the two showrooms in Chicago and Evanston, and the quoted-only business model. Nothing about how you sell rugs has changed. What's different is what happens before the visitor calls the showroom: instead of a static catalog and a contact form, the front door is now a conversation, a camera, and a catalog that machines can read."
+      "We rebuilt the site keeping every part of the Isberian story intact — the heritage, the voice, the two showrooms in Chicago and Evanston, and the quoted-only business model. Nothing about how you sell rugs has changed. The navbar on every interior page carries the same pale-gray register as the current isberian.com, with the dark logo and burgundy on hover, so a returning customer recognizes the house at a glance; on the home page the navbar sits over the rug carousel in cream, because there the imagery is the anchor. What's different is what happens before the visitor calls the showroom: instead of a static catalog and a contact form, the front door is now a conversation, a camera, and a catalog that machines can read."
     ),
     body(
       "The site is currently showing forty-nine rugs, ingested directly from the live Isberian inventory feed — sizes, origins, and materials come from the same source the showroom already maintains. Every one of those rugs has a 3D model, an augmented-reality companion for iPhone and Android, a structured description, and a room visualization. The catalog itself now lives in a hosted editorial system — when the showroom edits a rug, the change appears on the public site within about thirty seconds. No engineer required."
@@ -177,11 +177,11 @@ function buildDoc() {
     rule(),
     eyebrow("Feature 01"),
     h2("Ask anything — the concierge."),
-    lead("A single pill anchored over the home-page imagery: Ask anything. Click it, type a question, get a real answer in your voice."),
+    lead("A single quiet pill in the bottom-right corner of every page: Ask anything. Click it, type a question, get a real answer in your voice."),
     body(
-      "The first thing a visitor sees on the home page is the carousel of rugs and, sitting over it, a quiet pill that reads Ask anything. The same pill is present on every other page of the site. A visitor types something like \"I'm looking for something for a dining room with a blue ceiling,\" or \"I have an old Persian rug — can it be cleaned?\", or \"When can I come in?\". The concierge answers in the Isberian voice, links to real rugs in the collection, and offers to book a visit or send the question straight to the showroom."
+      "On every page of the site — including the home page — a quiet pill sits in the bottom-right corner: Ask anything. There is one concierge, in one place, and the visitor never has to hunt for it. A visitor types something like \"I'm looking for something for a dining room with a blue ceiling,\" or \"I have an old Persian rug — can it be cleaned?\", or \"When can I come in?\". The concierge answers in the Isberian voice, links to real rugs in the collection, and offers to book a visit or send the question straight to the showroom."
     ),
-    labeled("Why it matters.", "Most visitors leave silently. Putting the question box at the very top of the home page — instead of hiding it as a chat bubble in the corner — catches the ones who would have closed the tab and routes them to a real conversation with you."),
+    labeled("Why it matters.", "Most visitors leave silently. A single, always-present concierge — in the same place on every page, including the home page — catches the ones who would have closed the tab and routes them to a real conversation with you."),
     labeled("What it will never do.", "Quote a price. Invent a rug. Recommend bleach on a silk runner. Each of those is enforced by automated tests that block the site from going live if they're violated."),
   );
 

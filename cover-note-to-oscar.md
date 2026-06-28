@@ -19,10 +19,10 @@ The new site has moved on enough that it's worth your eye on it again. Three sho
 
 The build itself is live at **isberian-site-qbj6.vercel.app**. A few pages worth clicking through:
 
-- The **home page** for the brand register and the prominent "Ask anything" pill anchored over the hero — click it and the concierge opens in place, the carousel still visible behind it.
+- The **home page** for the brand register — the eight-image hero carousel and the four ways in below.
 - Any **rug detail page** — the rug number at the top (the way the showroom has always referred to a piece), the structured description, the 3D viewer with its zoom and rotate controls, the AR button that opens the rug in your room on a phone, the QR code for visitors on a laptop, and the four-room lifestyle strip below — the same rug imagined in a library, a modern living room, a dining room, and a bedroom.
+- The **floating concierge pill** in the bottom-right corner of every page — including the home page. It's the only door to the conversation; click it from anywhere to ask a question and the answer comes back in the house voice.
 - The **/curator** page — a private editing surface for the catalog. Hidden from search engines, not linked from anywhere on the public site. Edit a rug's title, palette, description, age, anything; save lands on the public site within roughly half a minute.
-- The **/discover** page if you want a longer conversation with the concierge.
 - The **/identify** and **/services/triage** pages for the vision-based intake tools.
 
 Three notes on what changed since the last time you looked:

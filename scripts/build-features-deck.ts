@@ -50,11 +50,11 @@ const FEATURES: FeatureSlide[] = [
     notes: [
       {
         label: "What it does",
-        body: "A prominent pill anchored over the home carousel, and a quiet floating one on every other page. Type a question — about a rug, a room, care, or a visit. Answers in your voice, links to real rugs, offers to book a visit. The arrow button never grays out — the concierge always reads as awake and ready.",
+        body: "A single floating pill in the bottom-right corner of every page — home included. Type a question — about a rug, a room, care, or a visit. Answers in your voice, links to real rugs, offers to book a visit. The arrow button never grays out — the concierge always reads as awake and ready.",
       },
       {
         label: "Why it matters",
-        body: "Borrows the pattern visitors already know from ChatGPT and Perplexity. Two doors instead of three: the hero pill and the floating pill carry the load, so the navbar no longer needs its own \"Ask\" link competing with them. Catches the visitors who would have closed the tab silently, and routes them to a real conversation with the showroom.",
+        body: "One door, not four. The home hero pill, the inline \"Talk to us\" section, and the dedicated discover page are all gone — the floating pill carries the load everywhere, so visitors never wonder which surface to use. Borrows the pattern people already know from ChatGPT and Perplexity. Catches the visitors who would have closed the tab silently, and routes them to a real conversation with the showroom.",
       },
       {
         label: "Will never",
@@ -114,7 +114,7 @@ const FEATURES: FeatureSlide[] = [
       },
       {
         label: "Why it matters",
-        body: "Size is the one thing a photo cannot communicate. AR is the most direct answer to \"will this fit my room?\" you can give online. A size verifier asserts every 3D plane matches the rug's real dimensions within one percent. The detail page itself is built to keep the rug visible: the lead paragraph sits at editorial size, the image stays in view as the text scrolls past, and the floating concierge holds its corner without crowding the photo.",
+        body: "Size is the one thing a photo cannot communicate. AR is the most direct answer to \"will this fit my room?\" you can give online. A size verifier asserts every 3D plane matches the rug's real dimensions within one percent. The detail page itself is built to keep the rug visible: the lead paragraph sits at editorial size, the image locks in place the instant you start scrolling and holds perfectly still as the text moves past, and the floating concierge holds its corner without crowding the photo.",
       },
       {
         label: "Where the QR lives",
@@ -150,11 +150,11 @@ const FEATURES: FeatureSlide[] = [
       },
       {
         label: "Familiar collection page",
-        body: "The /rugs grid now mirrors the legacy clearance-page layout — search bar, sort dropdown, per-page dropdown, pagination, collapsible filter groups, a \"Your Selections\" summary at the top. Returning customers' muscle memory still works.",
+        body: "The /rugs grid now mirrors the legacy clearance-page layout — search bar, sort dropdown, per-page dropdown, paginator arrows top and bottom (« ‹ Page X of Y › »), collapsible filter groups, a \"Your Selections\" summary at the top. Returning customers' muscle memory still works.",
       },
       {
         label: "Why it matters",
-        body: "The burgundy is back — the signature #570F12 from the old isberian.com lives again in eyebrows, links, field labels, and the Clear button, so the new site reads as the same house. And structured data is what makes Isberian appear inside answers from search engines and AI assistants like ChatGPT.",
+        body: "The burgundy is back — the signature #570F12 from the old isberian.com lives again in eyebrows, links, field labels, and the Clear button. The navbar carries the same register on every interior page: pale cool gray background, dark logo, dark text, burgundy hover — visitors recognize the brand from the navbar alone, just as they did on the old site. And structured data is what makes Isberian appear inside answers from search engines and AI assistants like ChatGPT.",
       },
     ],
   },
