@@ -39,7 +39,7 @@ async function main() {
       "button[title]",
       (els, idx) => {
         const el = els[idx];
-        if (el) (el as HTMLButtonElement).click();
+        if (el) el.click();
       },
       idx,
     );

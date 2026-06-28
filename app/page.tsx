@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { HeroAsk } from "@/components/HeroAsk";
 import { HomeConcierge } from "@/components/HomeConcierge";
 import { showrooms } from "@/lib/booking/showrooms";
 import { listRugs } from "@/lib/catalog";
@@ -113,9 +114,11 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO — 8-image rotating carousel (matches upstream isberian.com).
-          No text overlay — the navbar floats on top, the imagery does the work. */}
-      <HeroCarousel slides={HERO_SLIDES} />
+      {/* HERO — 8-image rotating carousel with the Ask-anything pill anchored
+          over the imagery. Click expands into the concierge surface in place. */}
+      <HeroCarousel slides={HERO_SLIDES}>
+        <HeroAsk />
+      </HeroCarousel>
 
       {/* Inline concierge — AI as the front door, in the house voice. */}
       <HomeConcierge />

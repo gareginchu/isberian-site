@@ -192,7 +192,7 @@ export function Visualizer3D({ rugs, initialRoomSlug = "bedroom", initialRugId }
       {rug && (
         <div className="border-t border-ink-300/60 pt-6 flex flex-col sm:flex-row gap-4 sm:items-end sm:justify-between">
           <div>
-            <p className="eyebrow">Selected piece</p>
+            <p className="eyebrow">Selected piece · No. {rug.id}</p>
             <p className="display text-2xl text-ink mt-1">{rug.title}</p>
             <p className="text-sm text-ink-500 mt-1">
               {rug.description.provenance.origin}

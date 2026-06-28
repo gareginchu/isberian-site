@@ -101,11 +101,13 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
           <div className="lg:sticky lg:top-24 lg:self-start space-y-10">
             <div>
               <Eyebrow>
+                No. {rug.id} ·{" "}
                 {rug.status === "available" ? "Available" : rug.status === "on-memo" ? "On memo" : "Sold"} ·{" "}
                 {rug.description.provenance.region ?? rug.description.provenance.origin}
               </Eyebrow>
               <h1 className="display text-4xl text-ink mt-3 leading-tight">{rug.title}</h1>
             </div>
+            <RugDescriptionBlock d={rug.description} />
             {rug.model3dGlbUrl ? (
               <div className="space-y-5">
                 <RugViewer3D
@@ -126,7 +128,6 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
             ) : rug.viewer3dUrl ? (
               <View3DButton url={rug.viewer3dUrl} title={rug.title} />
             ) : null}
-            <RugDescriptionBlock d={rug.description} />
             {rug.status === "available" && (
               <div className="border-t border-ink-300/40 pt-8">
                 <LeadForm

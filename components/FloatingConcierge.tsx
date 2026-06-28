@@ -31,7 +31,9 @@ export function FloatingConcierge() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const hideOnRoute = pathname === "/discover";
+  // Hide on /discover (full-screen concierge owns the conversation) and on /
+  // (the hero already carries an "Ask anything" pill — two would be redundant).
+  const hideOnRoute = pathname === "/discover" || pathname === "/";
   const isIdle = history.length === 0 && !pending;
 
   useEffect(() => {
