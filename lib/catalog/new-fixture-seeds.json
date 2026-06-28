@@ -2190,7 +2190,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/42289.glb",
-    "model3dUsdzUrl": "/rugs/42289.usdz"
+    "model3dUsdzUrl": "/rugs/42289.usdz",
+    "suggestedRoomUrl": "/rugs/42289-room.png"
   },
   {
     "id": 65671,
@@ -2255,7 +2256,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/65671.glb",
-    "model3dUsdzUrl": "/rugs/65671.usdz"
+    "model3dUsdzUrl": "/rugs/65671.usdz",
+    "suggestedRoomUrl": "/rugs/65671-room.png"
   },
   {
     "id": 73054,
@@ -2320,7 +2322,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/73054.glb",
-    "model3dUsdzUrl": "/rugs/73054.usdz"
+    "model3dUsdzUrl": "/rugs/73054.usdz",
+    "suggestedRoomUrl": "/rugs/73054-room.png"
   },
   {
     "id": 83542,
@@ -2380,7 +2383,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/83542.glb",
-    "model3dUsdzUrl": "/rugs/83542.usdz"
+    "model3dUsdzUrl": "/rugs/83542.usdz",
+    "suggestedRoomUrl": "/rugs/83542-room.png"
   },
   {
     "id": 86015,
@@ -2444,7 +2448,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/86015.glb",
-    "model3dUsdzUrl": "/rugs/86015.usdz"
+    "model3dUsdzUrl": "/rugs/86015.usdz",
+    "suggestedRoomUrl": "/rugs/86015-room.png"
   },
   {
     "id": 86361,
@@ -2508,7 +2513,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/86361.glb",
-    "model3dUsdzUrl": "/rugs/86361.usdz"
+    "model3dUsdzUrl": "/rugs/86361.usdz",
+    "suggestedRoomUrl": "/rugs/86361-room.png"
   },
   {
     "id": 86547,
@@ -2568,7 +2574,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/86547.glb",
-    "model3dUsdzUrl": "/rugs/86547.usdz"
+    "model3dUsdzUrl": "/rugs/86547.usdz",
+    "suggestedRoomUrl": "/rugs/86547-room.png"
   },
   {
     "id": 87137,
@@ -2633,7 +2640,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/87137.glb",
-    "model3dUsdzUrl": "/rugs/87137.usdz"
+    "model3dUsdzUrl": "/rugs/87137.usdz",
+    "suggestedRoomUrl": "/rugs/87137-room.png"
   },
   {
     "id": 87461,
@@ -2697,7 +2705,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/87461.glb",
-    "model3dUsdzUrl": "/rugs/87461.usdz"
+    "model3dUsdzUrl": "/rugs/87461.usdz",
+    "suggestedRoomUrl": "/rugs/87461-room.png"
   },
   {
     "id": 87859,
@@ -2756,7 +2765,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/87859.glb",
-    "model3dUsdzUrl": "/rugs/87859.usdz"
+    "model3dUsdzUrl": "/rugs/87859.usdz",
+    "suggestedRoomUrl": "/rugs/87859-room.png"
   },
   {
     "id": 87861,
@@ -2822,7 +2832,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/87861.glb",
-    "model3dUsdzUrl": "/rugs/87861.usdz"
+    "model3dUsdzUrl": "/rugs/87861.usdz",
+    "suggestedRoomUrl": "/rugs/87861-room.png"
   },
   {
     "id": 87898,
@@ -2885,7 +2896,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/87898.glb",
-    "model3dUsdzUrl": "/rugs/87898.usdz"
+    "model3dUsdzUrl": "/rugs/87898.usdz",
+    "suggestedRoomUrl": "/rugs/87898-room.png"
   },
   {
     "id": 88297,
@@ -2949,7 +2961,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/88297.glb",
-    "model3dUsdzUrl": "/rugs/88297.usdz"
+    "model3dUsdzUrl": "/rugs/88297.usdz",
+    "suggestedRoomUrl": "/rugs/88297-room.png"
   },
   {
     "id": 88400,
@@ -3009,7 +3022,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/88400.glb",
-    "model3dUsdzUrl": "/rugs/88400.usdz"
+    "model3dUsdzUrl": "/rugs/88400.usdz",
+    "suggestedRoomUrl": "/rugs/88400-room.png"
   },
   {
     "id": 88847,
@@ -3067,7 +3081,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/88847.glb",
-    "model3dUsdzUrl": "/rugs/88847.usdz"
+    "model3dUsdzUrl": "/rugs/88847.usdz",
+    "suggestedRoomUrl": "/rugs/88847-room.png"
   },
   {
     "id": 88848,
@@ -3120,7 +3135,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/88848.glb",
-    "model3dUsdzUrl": "/rugs/88848.usdz"
+    "model3dUsdzUrl": "/rugs/88848.usdz",
+    "suggestedRoomUrl": "/rugs/88848-room.png"
   },
   {
     "id": 89086,
@@ -3169,7 +3185,8 @@
     "collection": "contemporary",
     "draft": false,
     "model3dGlbUrl": "/rugs/89086.glb",
-    "model3dUsdzUrl": "/rugs/89086.usdz"
+    "model3dUsdzUrl": "/rugs/89086.usdz",
+    "suggestedRoomUrl": "/rugs/89086-room.png"
   },
   {
     "id": 89106,
@@ -3229,7 +3246,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/89106.glb",
-    "model3dUsdzUrl": "/rugs/89106.usdz"
+    "model3dUsdzUrl": "/rugs/89106.usdz",
+    "suggestedRoomUrl": "/rugs/89106-room.png"
   },
   {
     "id": 89427,
@@ -3289,7 +3307,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/89427.glb",
-    "model3dUsdzUrl": "/rugs/89427.usdz"
+    "model3dUsdzUrl": "/rugs/89427.usdz",
+    "suggestedRoomUrl": "/rugs/89427-room.png"
   },
   {
     "id": 89531,
@@ -3348,7 +3367,8 @@
     "collection": "contemporary",
     "draft": false,
     "model3dGlbUrl": "/rugs/89531.glb",
-    "model3dUsdzUrl": "/rugs/89531.usdz"
+    "model3dUsdzUrl": "/rugs/89531.usdz",
+    "suggestedRoomUrl": "/rugs/89531-room.png"
   },
   {
     "id": 89657,
@@ -3408,7 +3428,8 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/89657.glb",
-    "model3dUsdzUrl": "/rugs/89657.usdz"
+    "model3dUsdzUrl": "/rugs/89657.usdz",
+    "suggestedRoomUrl": "/rugs/89657-room.png"
   },
   {
     "id": 89824,
@@ -3473,6 +3494,7 @@
     "collection": "antique-persian",
     "draft": false,
     "model3dGlbUrl": "/rugs/89824.glb",
-    "model3dUsdzUrl": "/rugs/89824.usdz"
+    "model3dUsdzUrl": "/rugs/89824.usdz",
+    "suggestedRoomUrl": "/rugs/89824-room.png"
   }
 ]
