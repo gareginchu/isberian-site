@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Eyebrow } from "@/components/Eyebrow";
 import { RugFilters } from "@/components/RugFilters";
@@ -113,7 +114,7 @@ export default async function RugsPage({
           <RugGrid rugs={visible} />
           {pageCount > 1 && (
             <div className="mt-10 flex justify-center">
-              <BottomPagination page={clampedPage} pageCount={pageCount} />
+              <BottomPagination page={clampedPage} pageCount={pageCount} sp={sp} />
             </div>
           )}
         </div>
@@ -122,13 +123,66 @@ export default async function RugsPage({
   );
 }
 
-/** Lightweight duplicate of the top pagination — server-rendered so the page
- *  works without JS for crawlers (the client controls live in RugGridControls
- *  for filter interactivity). */
-function BottomPagination({ page, pageCount }: { page: number; pageCount: number }) {
+/** Server-rendered bottom pagination so the page is fully navigable without
+ *  JS (crawlers, accessibility tools). Arrows are <Link>s that preserve every
+ *  other query param (?q, ?sort, ?perPage, facets) and only update ?page. */
+function BottomPagination({
+  page,
+  pageCount,
+  sp,
+}: {
+  page: number;
+  pageCount: number;
+  sp: Record<string, string | string[] | undefined>;
+}) {
+  function hrefFor(n: number): string {
+    const params = new URLSearchParams();
+    for (const [k, v] of Object.entries(sp)) {
+      if (k === "page") continue;
+      if (Array.isArray(v)) v.forEach((item) => params.append(k, item));
+      else if (v !== undefined) params.set(k, v);
+    }
+    if (n > 1) params.set("page", String(n));
+    const qs = params.toString();
+    return qs ? `/rugs?${qs}` : "/rugs";
+  }
+  const atFirst = page === 1;
+  const atLast = page === pageCount;
   return (
-    <p className="text-xs text-ink-700">
-      Page <strong className="text-ink">{page}</strong> of {pageCount}
-    </p>
+    <nav aria-label="Pagination" className="flex items-center gap-2 text-xs text-ink-700">
+      <PageLink href={hrefFor(1)} disabled={atFirst} label="First page">«</PageLink>
+      <PageLink href={hrefFor(page - 1)} disabled={atFirst} label="Previous page">‹</PageLink>
+      <span className="px-2">
+        Page <strong className="text-ink">{page}</strong> of {pageCount}
+      </span>
+      <PageLink href={hrefFor(page + 1)} disabled={atLast} label="Next page">›</PageLink>
+      <PageLink href={hrefFor(pageCount)} disabled={atLast} label="Last page">»</PageLink>
+    </nav>
+  );
+}
+
+function PageLink({
+  href,
+  disabled,
+  label,
+  children,
+}: {
+  href: string;
+  disabled: boolean;
+  label: string;
+  children: React.ReactNode;
+}) {
+  const cls = "inline-flex items-center justify-center w-7 h-7 border border-ink-300/60 transition-colors";
+  if (disabled) {
+    return (
+      <span aria-disabled className={`${cls} text-ink/20 cursor-not-allowed`}>
+        {children}
+      </span>
+    );
+  }
+  return (
+    <Link href={href} aria-label={label} className={`${cls} text-ink-700 hover:border-ink hover:text-oxblood`}>
+      {children}
+    </Link>
   );
 }
