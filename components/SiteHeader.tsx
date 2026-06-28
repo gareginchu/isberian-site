@@ -122,23 +122,37 @@ export function SiteHeader() {
                   >
                     <Link
                       href={item.href}
-                      className="text-cream hover:text-cream/70 py-2 inline-flex items-center gap-1 whitespace-nowrap"
+                      className={`py-2 inline-flex items-center gap-1 whitespace-nowrap ${
+                        isHome
+                          ? "text-cream hover:text-cream/70"
+                          : "text-ink hover:text-oxblood"
+                      }`}
                     >
                       {item.label}
                       {item.children && (
-                        <span aria-hidden className="text-cream/50 text-xs">
+                        <span aria-hidden className={`text-xs ${isHome ? "text-cream/50" : "text-ink/40"}`}>
                           ▾
                         </span>
                       )}
                     </Link>
                     {item.children && open === item.href && (
                       <div className="absolute left-0 top-full pt-2">
-                        <ul className="min-w-[16rem] bg-ink border border-cream/10 py-2 shadow-lg">
+                        <ul
+                          className={`min-w-[16rem] py-2 shadow-lg ${
+                            isHome
+                              ? "bg-ink border border-cream/10"
+                              : "bg-stone-100 border border-stone-200"
+                          }`}
+                        >
                           {item.children.map((child) => (
                             <li key={child.href}>
                               <Link
                                 href={child.href}
-                                className="block px-4 py-2 nav-text text-[14px] text-cream hover:bg-cream/10"
+                                className={`block px-4 py-2 nav-text text-[14px] ${
+                                  isHome
+                                    ? "text-cream hover:bg-cream/10"
+                                    : "text-ink hover:bg-stone-200 hover:text-oxblood"
+                                }`}
                               >
                                 {child.label}
                               </Link>
@@ -160,9 +174,9 @@ export function SiteHeader() {
               aria-label="Toggle menu"
               aria-expanded={open === "mobile"}
             >
-              <span aria-hidden className="block w-6 h-px bg-cream mb-1.5" />
-              <span aria-hidden className="block w-6 h-px bg-cream mb-1.5" />
-              <span aria-hidden className="block w-6 h-px bg-cream" />
+              <span aria-hidden className={`block w-6 h-px mb-1.5 ${isHome ? "bg-cream" : "bg-ink"}`} />
+              <span aria-hidden className={`block w-6 h-px mb-1.5 ${isHome ? "bg-cream" : "bg-ink"}`} />
+              <span aria-hidden className={`block w-6 h-px ${isHome ? "bg-cream" : "bg-ink"}`} />
             </button>
           </div>
 
