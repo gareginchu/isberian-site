@@ -137,11 +137,16 @@ export function SiteHeader() {
                     </Link>
                     {item.children && open === item.href && (
                       <div className="absolute left-0 top-full pt-2">
+                        {/* Interior-page dropdowns open on a transparent
+                            backdrop the way the legacy isberian.com does —
+                            the page underneath shows through, the dropdown
+                            sits over it with shadow + subtle ring rather
+                            than a solid panel. */}
                         <ul
                           className={`min-w-[16rem] py-2 shadow-lg ${
                             isHome
                               ? "bg-ink border border-cream/10"
-                              : "bg-stone-100 border border-stone-200"
+                              : "bg-transparent"
                           }`}
                         >
                           {item.children.map((child) => (
@@ -151,7 +156,7 @@ export function SiteHeader() {
                                 className={`block px-4 py-2 nav-text text-[14px] ${
                                   isHome
                                     ? "text-cream hover:bg-cream/10"
-                                    : "text-ink hover:bg-stone-200 hover:text-oxblood"
+                                    : "text-ink hover:text-oxblood"
                                 }`}
                               >
                                 {child.label}
