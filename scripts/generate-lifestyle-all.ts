@@ -41,7 +41,8 @@ const ONLY_IDS = onlyArg ? new Set(onlyArg.split(",").map((s) => s.trim())) : nu
 
 type Scene = { slug: string; label: string; instruction: string };
 
-const SCENES: Scene[] = [
+// Standard scene set — for room-sized rectangles (aspect 0.5–1.2).
+const ROOM_SCENES: Scene[] = [
   {
     slug: "library",
     label: "In a traditional library",
@@ -68,9 +69,56 @@ const SCENES: Scene[] = [
   },
 ];
 
+// Runner scene set — for long, narrow rugs (aspect < 0.5). Dining tables,
+// beds, and library reading chairs don't fit a 2'6" × 16' format; long
+// foyers, staircases, gallery hallways, and kitchen galleys do.
+const RUNNER_SCENES: Scene[] = [
+  {
+    slug: "foyer",
+    label: "Down a long foyer",
+    instruction:
+      "Place this exact long runner down the centre of a generous foyer or entrance hall. The runner stretches the full length toward an interior view, with a console table and lamp along one wall, an antique mirror above, dark hardwood beneath. Warm afternoon light. Photograph from the entrance looking down the runner. Preserve the rug's pattern, colors, and exact long-narrow proportions.",
+  },
+  {
+    slug: "staircase",
+    label: "Up a staircase",
+    instruction:
+      "Place this exact long runner on a graceful staircase, the runner following the treads up and around the turn. Brass stair rods at each riser, dark walnut handrail, ivory plaster walls, framed art on the wall beside the stairs. Photograph from the bottom looking up. Preserve the rug's pattern, colors, and exact long-narrow proportions.",
+  },
+  {
+    slug: "gallery-hallway",
+    label: "Along a gallery hallway",
+    instruction:
+      "Place this exact long runner down the centre of a long, narrow hallway lined with framed black-and-white photographs on both walls. The runner stretches toward a window with soft daylight at the far end, oak floor beneath. Eye-level photograph looking straight down the hallway. Preserve the rug's pattern, colors, and exact long-narrow proportions.",
+  },
+  {
+    slug: "kitchen-galley",
+    label: "Through a galley kitchen",
+    instruction:
+      "Place this exact long runner running the length of a galley kitchen, between cream cabinetry on one side and a marble-topped island on the other. Brass pendant lights overhead, soft north light from a window at the far end, terracotta or hardwood floor beneath. Eye-level photograph from one end. Preserve the rug's pattern, colors, and exact long-narrow proportions.",
+  },
+];
+
+function scenesForRug(rug: Rug): Scene[] {
+  const aspect = parseRugAspect(rug.size);
+  // Aspect < 0.5 → long narrow runner; otherwise the standard room set.
+  return aspect < 0.5 ? RUNNER_SCENES : ROOM_SCENES;
+}
+
+function parseRugAspect(size: string | undefined): number {
+  if (!size) return 1;
+  const m = size.match(/(\d+)'(\d+)?"?\s*[×x]\s*(\d+)'(\d+)?"?/);
+  if (!m) return 1;
+  const w = parseInt(m[1]!, 10) + parseInt(m[2] ?? "0", 10) / 12;
+  const l = parseInt(m[3]!, 10) + parseInt(m[4] ?? "0", 10) / 12;
+  if (!w || !l) return 1;
+  return w / l;
+}
+
 type Rug = {
   id: number;
   title: string;
+  size?: string;
   lifestyle?: { slug: string; label: string; src: string }[];
 };
 
@@ -174,20 +222,22 @@ async function main() {
   const seeds: Rug[] = JSON.parse(await readFile(SEEDS, "utf8"));
   const targetRugs = ONLY_IDS ? seeds.filter((r) => ONLY_IDS.has(String(r.id))) : seeds;
 
-  // Cross-product of rugs × scenes.
+  // Cross-product of rugs × scenes (scene set picked per-rug by aspect).
   const jobs: Job[] = [];
   for (const rug of targetRugs) {
-    for (const scene of SCENES) jobs.push({ rug, scene });
+    for (const scene of scenesForRug(rug)) jobs.push({ rug, scene });
   }
-  console.log(`Generating ${jobs.length} lifestyle images (${targetRugs.length} rugs × ${SCENES.length} scenes, concurrency ${CONCURRENCY}${FORCE ? ", force" : ""})…\n`);
+  console.log(`Generating ${jobs.length} lifestyle images for ${targetRugs.length} rugs (concurrency ${CONCURRENCY}${FORCE ? ", force" : ""})…\n`);
 
   const results = await pool(jobs, CONCURRENCY, (job, i) => processJob(job, i, jobs.length));
 
   // Patch each rug's `lifestyle` array based on which files now exist on disk.
+  // Uses the shape-appropriate scene set per rug so runners get runner scenes
+  // and room-sized rugs get room scenes.
   let patched = 0;
   for (const seed of seeds) {
     const lifestyle: { slug: string; label: string; src: string }[] = [];
-    for (const scene of SCENES) {
+    for (const scene of scenesForRug(seed)) {
       const expected = path.join(OUT_DIR, `${seed.id}-${scene.slug}.png`);
       if (await fileExists(expected)) {
         lifestyle.push({

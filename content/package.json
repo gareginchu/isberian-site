@@ -1,0 +1,20 @@
+{
+  "name": "isberian-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sanity Studio for Oscar Isberian Rugs",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
+  },
+  "dependencies": {
+    "@sanity/vision": "^3.57.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^3.57.0",
+    "styled-components": "^6.1.13"
+  }
+}

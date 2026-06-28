@@ -650,24 +650,24 @@
     "suggestedRoomUrl": "/rugs/18800-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/18800-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/18800-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/18800-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/18800-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/18800-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/18800-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/18800-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/18800-kitchen-galley.png"
       }
     ],
     "model3dUsdzUrl": "/rugs/18800.usdz"
@@ -949,24 +949,24 @@
     "suggestedRoomUrl": "/rugs/58750-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/58750-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/58750-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/58750-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/58750-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/58750-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/58750-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/58750-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/58750-kitchen-galley.png"
       }
     ],
     "model3dUsdzUrl": "/rugs/58750.usdz"
@@ -1778,24 +1778,24 @@
     "suggestedRoomUrl": "/rugs/51500-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/51500-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/51500-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/51500-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/51500-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/51500-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/51500-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/51500-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/51500-kitchen-galley.png"
       }
     ],
     "model3dUsdzUrl": "/rugs/51500.usdz"
@@ -2194,24 +2194,24 @@
     "suggestedRoomUrl": "/rugs/42289-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/42289-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/42289-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/42289-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/42289-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/42289-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/42289-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/42289-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/42289-kitchen-galley.png"
       }
     ]
   },
@@ -2885,24 +2885,24 @@
     "suggestedRoomUrl": "/rugs/87461-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/87461-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/87461-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/87461-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/87461-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/87461-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/87461-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/87461-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/87461-kitchen-galley.png"
       }
     ]
   },
@@ -3228,24 +3228,24 @@
     "suggestedRoomUrl": "/rugs/88297-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/88297-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/88297-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/88297-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/88297-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/88297-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/88297-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/88297-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/88297-kitchen-galley.png"
       }
     ]
   },
@@ -3540,24 +3540,24 @@
     "suggestedRoomUrl": "/rugs/89086-room.png",
     "lifestyle": [
       {
-        "slug": "library",
-        "label": "In a traditional library",
-        "src": "/rugs/lifestyle/89086-library.png"
+        "slug": "foyer",
+        "label": "Down a long foyer",
+        "src": "/rugs/lifestyle/89086-foyer.png"
       },
       {
-        "slug": "modern-living",
-        "label": "In a modern living room",
-        "src": "/rugs/lifestyle/89086-modern-living.png"
+        "slug": "staircase",
+        "label": "Up a staircase",
+        "src": "/rugs/lifestyle/89086-staircase.png"
       },
       {
-        "slug": "dining",
-        "label": "Under a dining table",
-        "src": "/rugs/lifestyle/89086-dining.png"
+        "slug": "gallery-hallway",
+        "label": "Along a gallery hallway",
+        "src": "/rugs/lifestyle/89086-gallery-hallway.png"
       },
       {
-        "slug": "bedroom",
-        "label": "At the foot of a bed",
-        "src": "/rugs/lifestyle/89086-bedroom.png"
+        "slug": "kitchen-galley",
+        "label": "Through a galley kitchen",
+        "src": "/rugs/lifestyle/89086-kitchen-galley.png"
       }
     ]
   },
