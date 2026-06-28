@@ -50,11 +50,11 @@ const FEATURES: FeatureSlide[] = [
     notes: [
       {
         label: "What it does",
-        body: "A prominent pill anchored over the home carousel, and a quiet one on every other page. Type a question — about a rug, a room, care, or a visit. Answers in your voice, links to real rugs, offers to book a visit.",
+        body: "A prominent pill anchored over the home carousel, and a quiet floating one on every other page. Type a question — about a rug, a room, care, or a visit. Answers in your voice, links to real rugs, offers to book a visit. The arrow button never grays out — the concierge always reads as awake and ready.",
       },
       {
         label: "Why it matters",
-        body: "Borrows the pattern visitors already know from ChatGPT and Perplexity. Catches the ones who would have closed the tab silently, and routes them to a real conversation with the showroom.",
+        body: "Borrows the pattern visitors already know from ChatGPT and Perplexity. Two doors instead of three: the hero pill and the floating pill carry the load, so the navbar no longer needs its own \"Ask\" link competing with them. Catches the visitors who would have closed the tab silently, and routes them to a real conversation with the showroom.",
       },
       {
         label: "Will never",
@@ -114,7 +114,7 @@ const FEATURES: FeatureSlide[] = [
       },
       {
         label: "Why it matters",
-        body: "Size is the one thing a photo cannot communicate. AR is the most direct answer to \"will this fit my room?\" you can give online. A size verifier asserts every 3D plane matches the rug's real dimensions within one percent.",
+        body: "Size is the one thing a photo cannot communicate. AR is the most direct answer to \"will this fit my room?\" you can give online. A size verifier asserts every 3D plane matches the rug's real dimensions within one percent. The detail page itself is built to keep the rug visible: the lead paragraph sits at editorial size, the image stays in view as the text scrolls past, and the floating concierge holds its corner without crowding the photo.",
       },
       {
         label: "Where the QR lives",
@@ -146,11 +146,15 @@ const FEATURES: FeatureSlide[] = [
     notes: [
       {
         label: "What it does",
-        body: "Forty-nine rugs, each rendered the same way: SKU eyebrow (\"No. 17600\"), description, 3D viewer, a suggested-setting room, a four-scene lifestyle row, and a structured block — lead, technical details, color palette as actual chips, design features, distinguishing notes, provenance. Sizes, origins, and materials are ingested from the upstream inventory; AI drafts the prose; editor verifies before publish.",
+        body: "Forty-nine rugs, each rendered the same way: SKU eyebrow (\"No. 17600\"), description, 3D viewer, a suggested-setting room, a four-scene lifestyle row, and a structured block — lead, technical details, color palette as actual chips, design features, distinguishing notes, provenance. Sizes, origins, and materials are ingested from the upstream inventory; AI drafts the prose; editor verifies before publish. The lifestyle scenes know their rug: runners get long foyers, staircases, gallery hallways, and galley kitchens — not dining tables and bedrooms. Every scene is generated with the rug's real dimensions baked into the prompt, so the AI cannot quietly resize the piece to fit the room.",
+      },
+      {
+        label: "Familiar collection page",
+        body: "The /rugs grid now mirrors the legacy clearance-page layout — search bar, sort dropdown, per-page dropdown, pagination, collapsible filter groups, a \"Your Selections\" summary at the top. Returning customers' muscle memory still works.",
       },
       {
         label: "Why it matters",
-        body: "Structured data is what makes Isberian appear inside answers from search engines and AI assistants like ChatGPT. The editorial rule — never claim what you can't verify — is enforced by the structure itself.",
+        body: "The burgundy is back — the signature #570F12 from the old isberian.com lives again in eyebrows, links, field labels, and the Clear button, so the new site reads as the same house. And structured data is what makes Isberian appear inside answers from search engines and AI assistants like ChatGPT.",
       },
     ],
   },

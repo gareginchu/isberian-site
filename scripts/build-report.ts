@@ -27,7 +27,7 @@ import path from "node:path";
 
 const INK = "1F1F1E";
 const MUTED = "6E6E6C";
-const ACCENT = "6B1F1A";
+const ACCENT = "570F12";
 
 function eyebrow(text: string) {
   return new Paragraph({
@@ -221,7 +221,7 @@ function buildDoc() {
       "On a rug's page the visitor can rotate the rug in 3D. A small toolbar floats over the viewer — zoom in, zoom out, reset, auto-rotate, fullscreen — so the controls are visible, not hidden behind a guessed gesture. Beside the viewer sits a small QR code. The visitor scans it with the phone camera and the rug opens in augmented reality on their floor, sized to scale. This now works for every rug in the catalog on both iPhone (through Quick Look) and Android (through Scene Viewer). No download, no account."
     ),
     body(
-      "Below the description we also show two AI-rendered room scenes for each rug: a single \"imagined in your room\" photograph, and a four-image strip — library, modern living room, dining room, bedroom. The copy beneath them is explicit that these are imagined settings and the pattern is approximate. They are mood, not specification; the AR view is the specification."
+      "Below the description we also show two AI-rendered room scenes for each rug: a single \"imagined in your room\" photograph, and a four-image strip. The scene set is chosen by the rug's shape — a standard rug is imagined in a library, a modern living room, a dining room, and a bedroom; a runner is imagined down a long foyer, up a staircase, along a gallery hallway, and through a galley kitchen. Each scene is also rendered against the rug's real-world size, so a small accent doesn't get scaled up to fill a sectional and a large carpet doesn't get shrunk to look incidental. The copy beneath the strip is explicit that these are imagined settings and the pattern is approximate. They are mood, not specification; the AR view is the specification."
     ),
     labeled("Why it matters.", "The single thing a photo cannot communicate about a rug is size — the visitor can't tell whether a 9×12 covers their dining room. Augmented reality closes that gap. The room scenes answer the softer question — \"what does this rug feel like in a real interior?\" — that a flat product photograph cannot."),
     labeled("True to scale.", "An automated check measures every rug's 3D model against the size recorded in the catalog. Forty-nine out of forty-nine currently pass within one percent. If a model ever drifts out of scale, the site refuses to ship until it is fixed."),
@@ -251,6 +251,9 @@ function buildDoc() {
     ),
     body(
       "Each rug also carries its inventory number — No. 17600, No. 51500 — as a small eyebrow above the title on the card and on its own page. Matches the convention on the current site and lets a customer reference a rug by number when they call the showroom."
+    ),
+    body(
+      "The collection page itself reads the way the current isberian.com clearance page reads. A search box at the top of the sidebar, then collapsible filter groups — by style, by color, by size, by origin — that open and close with a plus or minus. The filters a visitor has chosen are summarized at the top of the grid as small chips they can clear one at a time, or all at once. The grid carries a count of pieces found, a sort menu (newest, title, size small to large or large to small), and page-by-page navigation. A returning customer's muscle memory still works."
     ),
     labeled("Edited from the browser.", "The catalog now lives in a hosted editorial system. The curator opens the rug, edits the title or the lead or the color palette, hits publish, and the public site reflects the change within about thirty seconds. No code, no engineer. If the curator prefers a simpler view, there is a private editing surface on the site itself at /curator that writes through to the same catalog — same edits, leaner interface, unlisted from search engines."),
     labeled("Reading order on every rug page.", "Title and inventory number first, then the description, then the 3D viewer and the AR code, then the request-a-quote form, then the human exit — phone and book-a-visit. The text answers the visitor before the toys do."),
