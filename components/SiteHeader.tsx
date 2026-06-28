@@ -53,31 +53,45 @@ export function SiteHeader() {
   const isHome = pathname === "/";
   const [open, setOpen] = useState<string | null>(null);
 
-  // Home: header overlays the carousel (absolute, transparent main row).
-  // Interior pages: sticky header on solid black so logo + nav stay legible
-  // against the cream page background.
+  // Home: header overlays the carousel (absolute, transparent main row) — the
+  // hero imagery sits behind, so the navbar reads in cream over the photos.
+  // Interior pages: sticky header on a pale cool grey (legacy isberian.com
+  // page colour, #E2E2E2) with dark logo and dark ink nav text — matches
+  // the legacy /clearance/ register and pulls the new site closer to the
+  // brand visitors already recognise.
   const headerCls = isHome
     ? "absolute top-0 left-0 right-0 z-30 text-cream"
-    : "sticky top-0 z-30 text-cream bg-ink";
+    : "sticky top-0 z-30 text-ink bg-stone";
 
-  const mainRowCls = isHome ? "bg-transparent" : "bg-ink";
+  const mainRowCls = isHome ? "bg-transparent" : "bg-stone";
 
   return (
     <header className={headerCls}>
-      {/* Top utility strip — solid black, white text, 48px tall, Montserrat 14px.
-          Houses the secondary nav (concierge, identify, journal, story) + phones. */}
-      <div className="hidden lg:block bg-ink h-[48px] px-[25px] py-[10px]">
-        <div className="flex items-center justify-end gap-6 nav-text text-[14px] text-cream h-full whitespace-nowrap">
+      {/* Top utility strip — on home it stays solid ink so the cream text reads
+          over the hero. On interior pages it sits on the pale grey body with
+          dark text, matching the legacy clearance navbar. */}
+      <div className={`hidden lg:block h-[48px] px-[25px] py-[10px] ${isHome ? "bg-ink" : "bg-stone-100 border-b border-stone-200"}`}>
+        <div className={`flex items-center justify-end gap-6 nav-text text-[14px] h-full whitespace-nowrap ${isHome ? "text-cream" : "text-stone-700"}`}>
           {SECONDARY.map((s) => (
-            <Link key={s.href} href={s.href} className="hover:text-cream/70 transition-colors whitespace-nowrap">
+            <Link
+              key={s.href}
+              href={s.href}
+              className={`transition-colors whitespace-nowrap ${isHome ? "hover:text-cream/70" : "hover:text-oxblood"}`}
+            >
               {s.label}
             </Link>
           ))}
-          <span aria-hidden className="text-cream/40">·</span>
-          <a href="tel:+13124671212" className="hover:text-cream/70 whitespace-nowrap">
+          <span aria-hidden className={isHome ? "text-cream/40" : "text-stone-500"}>·</span>
+          <a
+            href="tel:+13124671212"
+            className={`whitespace-nowrap ${isHome ? "hover:text-cream/70" : "hover:text-oxblood"}`}
+          >
             Chicago 312-467-1212
           </a>
-          <a href="tel:+18474750000" className="hover:text-cream/70 whitespace-nowrap">
+          <a
+            href="tel:+18474750000"
+            className={`whitespace-nowrap ${isHome ? "hover:text-cream/70" : "hover:text-oxblood"}`}
+          >
             Evanston 847-475-0000
           </a>
         </div>
@@ -88,7 +102,7 @@ export function SiteHeader() {
           <div className="flex items-center justify-between py-5 lg:py-6">
             <Link href="/" className="block" aria-label="Oscar Isberian Rugs — Established 1920">
               <Image
-                src="/logo-white.png"
+                src={isHome ? "/logo-white.png" : "/logo.png"}
                 alt="Oscar Isberian Rugs — Established 1920"
                 width={337}
                 height={94}

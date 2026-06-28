@@ -30,6 +30,18 @@ const config: Config = {
           800: "#37090B",
           900: "#280608",
         },
+        // `stone` → pale cool grey. Matches the legacy isberian.com page
+        // background (#E2E2E2 sampled live). The 700 variant matches the
+        // legacy body text (#58595B). Used as the navbar background on
+        // non-home routes to evoke the same light register as the legacy
+        // /clearance/ surface.
+        stone: {
+          DEFAULT: "#E2E2E2",
+          100: "#EFEFED",
+          200: "#E6E6E4",
+          500: "#9B9B9D",
+          700: "#58595B",
+        },
         // `saddle` → muted warm grey (small accent / "needs review" chip).
         saddle: {
           DEFAULT: "#7A716A",
