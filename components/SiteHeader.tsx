@@ -38,8 +38,11 @@ const PRIMARY: Item[] = [
   { href: "/wishlists", label: "Wishlists" },
 ];
 
+// Note: no "Ask" link here. The home page carries a large hero pill and
+// every other route has the floating bottom-right pill — adding "Ask" to
+// the nav was a third front door to the same room. /discover is still
+// reachable by submitting any pill (which navigates to /discover?q=…).
 const SECONDARY: Item[] = [
-  { href: "/discover", label: "Ask" },
   { href: "/identify", label: "Identify a rug" },
   { href: "/journal", label: "Journal" },
   { href: "/story", label: "Story" },

@@ -51,15 +51,38 @@ function shortIdFromDocId(docId: string): string {
   return docId.replace(/^rug\./, "rug-");
 }
 
+/** Compute the metric size string from imperial (e.g. "5'6\" × 7'9\"" → "1.68 × 2.36 m").
+ *  Sanity docs only store the imperial measurement; the description block needs both
+ *  to render correctly. Done at request time so the data doesn't have to be migrated. */
+function imperialToMetric(imperial: string): string {
+  const m = imperial.match(/(\d+)'\s*(\d+)?"?\s*[×x]\s*(\d+)'\s*(\d+)?"?/);
+  if (!m) return imperial;
+  const [, w, wi, l, li] = m;
+  const wm = parseInt(w!, 10) * 0.3048 + parseInt(wi ?? "0", 10) * 0.0254;
+  const lm = parseInt(l!, 10) * 0.3048 + parseInt(li ?? "0", 10) * 0.0254;
+  return `${wm.toFixed(2)} × ${lm.toFixed(2)} m`;
+}
+
 function toRug(doc: SanityRugDoc): Rug {
   const collection = typeof doc.collection === "string" ? doc.collection : doc.collection?._ref;
+  // Backfill sizeMetric if the Sanity doc only has sizeImperial — the description
+  // block renders "12'0" × 13'0" (3.66 × 3.96 m)" and the parens look broken empty.
+  const description = doc.description?.details?.sizeImperial && !doc.description.details.sizeMetric
+    ? {
+        ...doc.description,
+        details: {
+          ...doc.description.details,
+          sizeMetric: imperialToMetric(doc.description.details.sizeImperial),
+        },
+      }
+    : doc.description;
   return {
     id: shortIdFromDocId(doc._id),
     slug: doc.slug,
     title: doc.title,
     status: doc.status ?? "available",
     collection: collection ?? "antique-persian",
-    description: doc.description,
+    description,
     images: doc.images ?? [],
     ...(doc.viewer3dUrl ? { viewer3dUrl: doc.viewer3dUrl } : {}),
     ...(doc.viewer3dQrUrl ? { viewer3dQrUrl: doc.viewer3dQrUrl } : {}),
