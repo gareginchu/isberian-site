@@ -33,6 +33,8 @@ Three notes on what changed since the last time you looked:
 
 3. **AR and 3D work on every rug, not just a demo piece.** Every rug page has a working 3D viewer with controls visible over the canvas, and "View in your space" works on both iPhone and Android. We verified independently that each model carries the rug's real-world dimensions to within one percent.
 
+4. **The site now reads in the family register.** The collection page mirrors the structure of your current clearance page — sidebar with search, "Your Selections" with chips, collapsible filter groups, sort dropdown, page-of-page pagination — so returning customers find their muscle memory works. The heritage burgundy (the same one you use today, the one that's been the house colour for a century) carries through every section heading, every link, every field label. On every interior page the navbar register is the same pale grey as the current site. Visitors should feel they're on Isberian, not a generic ecommerce shell. The concierge pill quietly carries "· 24/7" so visitors who arrive after hours understand they can still get an answer in their voice.
+
 Two things I'd still want to talk through whenever it's easy:
 
 1. **Status sync from the showroom.** The catalog now pulls from your inventory feed, but "available", "on memo", and "sold" still rely on someone updating them in the editor. To keep those states accurate without manual touches, the new site needs a live link to the showroom's status system. That's a one-meeting decision with the inventory team.
