@@ -16,6 +16,9 @@
     "vision:classify": "tsx scripts/vision-classify.ts",
     "vision:apply": "tsx scripts/apply-vision-classify.ts",
     "deck:build": "tsx scripts/build-deck.ts",
+    "deck:features": "tsx scripts/build-features-deck.ts",
+    "report:build": "tsx scripts/build-report.ts",
+    "spec:build": "tsx scripts/build-spec.ts",
     "shots": "tsx scripts/capture-screenshots.ts",
     "a11y": "echo 'a11y check stub — wire pa11y-ci or axe-core in CI'"
   },
@@ -42,6 +45,7 @@
     "@types/three": "^0.185.0",
     "@xenova/transformers": "^2.17.2",
     "autoprefixer": "^10.4.20",
+    "docx": "^9.7.1",
     "dotenv": "^17.4.2",
     "eslint": "^9.18.0",
     "eslint-config-next": "16.2.9",
