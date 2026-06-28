@@ -228,13 +228,24 @@ export function FloatingConcierge() {
               </svg>
             </button>
           )}
+          {/* Arrow doubles as expand-when-empty so the pill always feels active.
+              When the input is empty, clicking opens the concierge in place
+              instead of triggering a no-op submit. When there's text, normal
+              submit fires. Avoids the grayed-out "dead" appearance visitors
+              flagged. */}
           <button
-            type="submit"
-            disabled={pending || !input.trim()}
-            aria-label="Send"
+            type={input.trim() ? "submit" : "button"}
+            disabled={pending}
+            onClick={() => {
+              if (!input.trim()) {
+                setOpen(true);
+                inputRef.current?.focus();
+              }
+            }}
+            aria-label={input.trim() ? "Send" : "Open concierge"}
             className={`inline-flex items-center justify-center rounded-full transition-colors ${
               open
-                ? "w-10 h-10 bg-ink-300/40 text-ink disabled:opacity-50 disabled:cursor-not-allowed hover:bg-ink-300/70"
+                ? "w-10 h-10 bg-ink text-cream disabled:opacity-50 disabled:cursor-not-allowed hover:bg-ink-900"
                 : "w-9 h-9 bg-ink text-cream disabled:opacity-40 disabled:cursor-not-allowed hover:bg-ink-900"
             }`}
           >
