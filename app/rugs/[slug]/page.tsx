@@ -74,7 +74,11 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
           </Link>
         </section>
         <section className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 pb-20">
-          <div className="space-y-6">
+          {/* Image column: sticky so the photograph stays in view while the
+              visitor reads the description, the 3D viewer, and the quote
+              form. Standard product-PDP behavior — without this, page 2 of
+              the scroll has a giant empty left half. */}
+          <div className="space-y-6 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto">
             {rug.images.map((img, i) => {
               // Use the rug's real physical dimensions (e.g. 4'2" × 8'0") to shape the frame.
               // Without this every rug would be cropped to a single aspect — runners would lose
@@ -106,7 +110,10 @@ export default async function RugDetailPage({ params }: { params: Promise<{ slug
               );
             })}
           </div>
-          <div className="lg:sticky lg:top-24 lg:self-start space-y-10">
+          {/* Right column scrolls naturally so the visitor can read through
+              description → 3D viewer + AR → request a quote without leaving
+              the image. */}
+          <div className="space-y-10">
             <div>
               <Eyebrow>
                 No. {rug.id.replace(/^rug-/, "")} ·{" "}
