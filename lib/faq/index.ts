@@ -98,7 +98,12 @@ export type FaqAnswer = {
 export async function answerFaq(query: string, category?: string): Promise<FaqAnswer> {
   const qTokens = tokens(query);
   const all = await fetchFaq();
-  const pool = category ? all.filter((e) => e.category === category) : all;
+  // Only editor-verified entries are eligible for retrieval. AI-drafted SOP
+  // entries land in the KB with verified: false and stay invisible to the
+  // concierge until an editor reviews them in Sanity Studio and flips the
+  // flag. This is the guardrail for CLAUDE.md's "AI copy human-reviewed" rule.
+  const verified = all.filter((e) => e.verified === true);
+  const pool = category ? verified.filter((e) => e.category === category) : verified;
   const scored = pool.map((e) => ({ e, s: scoreEntry(e, qTokens) })).sort((a, b) => b.s - a.s);
   const top = scored[0];
   if (!top || top.s === 0) {
